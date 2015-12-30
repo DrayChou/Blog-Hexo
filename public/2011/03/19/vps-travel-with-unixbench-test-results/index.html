@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>用UnixBench测试是遨游VPS结果 | Dray&#39;s Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用UnixBench测试是遨游VPS结果">
+<meta property="og:url" content="http://idc.wf/2011/03/19/vps-travel-with-unixbench-test-results/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description">
+<meta property="og:updated_time" content="2015-12-30T14:12:19.584Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用UnixBench测试是遨游VPS结果">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="Dray&#39;s Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Dray</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">疯狂痴呆傻，美甘苦涩禅。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/DrayChou/" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="http://feeds.feedburner.com/WesHome" title="rss">rss</a>
+					        
+								<a class="twitter" target="_blank" href="http://twitter.com/_0dc/" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/80/" style="font-size: 10px;">80</a> <a href="/tags/Octopress/" style="font-size: 10px;">Octopress</a> <a href="/tags/PushBullet/" style="font-size: 10px;">PushBullet</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/app/" style="font-size: 10px;">app</a> <a href="/tags/archlinux/" style="font-size: 10px;">archlinux</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/bluehost/" style="font-size: 10px;">bluehost</a> <a href="/tags/bmp/" style="font-size: 10px;">bmp</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/buzz/" style="font-size: 10px;">buzz</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chrome/" style="font-size: 12px;">chrome</a> <a href="/tags/completion/" style="font-size: 10px;">completion</a> <a href="/tags/cow/" style="font-size: 10px;">cow</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/diary/" style="font-size: 12px;">diary</a> <a href="/tags/dir/" style="font-size: 10px;">dir</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10px;">download</a> <a href="/tags/facebook/" style="font-size: 12px;">facebook</a> <a href="/tags/file/" style="font-size: 10px;">file</a> <a href="/tags/file-exists/" style="font-size: 10px;">file_exists</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/fqrouter/" style="font-size: 10px;">fqrouter</a> <a href="/tags/free/" style="font-size: 10px;">free</a> <a href="/tags/fund/" style="font-size: 10px;">fund</a> <a href="/tags/gedit/" style="font-size: 10px;">gedit</a> <a href="/tags/gfw/" style="font-size: 12px;">gfw</a> <a href="/tags/gnome/" style="font-size: 10px;">gnome</a> <a href="/tags/god/" style="font-size: 10px;">god</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/googlereader/" style="font-size: 10px;">googlereader</a> <a href="/tags/grub/" style="font-size: 10px;">grub</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10px;">ie6</a> <a href="/tags/it/" style="font-size: 10px;">it</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jquery/" style="font-size: 12px;">jquery</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/kde/" style="font-size: 10px;">kde</a> <a href="/tags/lamp/" style="font-size: 10px;">lamp</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/linux/" style="font-size: 16px;">linux</a> <a href="/tags/litespeed/" style="font-size: 10px;">litespeed</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/mail/" style="font-size: 10px;">mail</a> <a href="/tags/mantis/" style="font-size: 10px;">mantis</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mysql/" style="font-size: 14px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad</a> <a href="/tags/oschina/" style="font-size: 10px;">oschina</a> <a href="/tags/password/" style="font-size: 10px;">password</a> <a href="/tags/php/" style="font-size: 14px;">php</a> <a href="/tags/pi/" style="font-size: 10px;">pi</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/proxy/" style="font-size: 12px;">proxy</a> <a href="/tags/ruby/" style="font-size: 12px;">ruby</a> <a href="/tags/seo/" style="font-size: 10px;">seo</a> <a href="/tags/seperator/" style="font-size: 10px;">seperator</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/smarty/" style="font-size: 16px;">smarty</a> <a href="/tags/soap/" style="font-size: 10px;">soap</a> <a href="/tags/sources/" style="font-size: 12px;">sources</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/ssh/" style="font-size: 14px;">ssh</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/sublimetext/" style="font-size: 10px;">sublimetext</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/taobao/" style="font-size: 10px;">taobao</a> <a href="/tags/twister/" style="font-size: 10px;">twister</a> <a href="/tags/twitter/" style="font-size: 18px;">twitter</a> <a href="/tags/unlink/" style="font-size: 10px;">unlink</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/vanilla/" style="font-size: 10px;">vanilla</a> <a href="/tags/vps/" style="font-size: 20px;">vps</a> <a href="/tags/week/" style="font-size: 10px;">week</a> <a href="/tags/weibo/" style="font-size: 10px;">weibo</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/wsdl/" style="font-size: 10px;">wsdl</a> <a href="/tags/xampp/" style="font-size: 10px;">xampp</a> <a href="/tags/xmarks/" style="font-size: 10px;">xmarks</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.fangshanzi.com/">方片子的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://locyoo.com/blog/">Locyoo Manor|部落格</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fpnews.cn/">方片快报</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://hskb.me/">黄书快报</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Dray</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Dray</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">疯狂痴呆傻，美甘苦涩禅。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/DrayChou/" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="http://feeds.feedburner.com/WesHome" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="http://twitter.com/_0dc/" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-vps-travel-with-unixbench-test-results" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2011/03/19/vps-travel-with-unixbench-test-results/" class="article-date">
+  	<time datetime="2011-03-18T16:00:00.000Z" itemprop="datePublished">2011-03-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用UnixBench测试是遨游VPS结果
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vps/">vps</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/web/">web</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="23__23__23__23__23__23__23_23_23_23_23__23_23_23_23_23_23__23__23__23_23_23_23__23__23__23__23__23_23__23__23__23__23__23__23__23__23_23__23__23__23__23__23__23__23__23__23__23__23__23_23__23_23_23_23_23__23_23_23_23_23__23__23__23__23__23_23_23_23_23_23__23__23__23__23__23__23__23_23__23__23__23__23__23__23__23__23__23__23__23__23__23_23__23__23__23__23__23__23__23__23_23__23__23__23__23__23_23_23_23__23__23__23__23__23__23_23_23_23_23__23_23_23_23_23_23__23__23__23_23_23_23__23__23__3C_21-more-_3E_Version_5-1-2_Based_on_the_Byte_Magazine_Unix_Benchmark_Multi-CPU_version_Version_5_revisions_by_Ian_Smith_2C_Sunnyvale_2C_CA_2C_USA_December_22_2C_2007_johantheghost_at_yahoo_period_com_1_x_Dhrystone_2_using_register_variables_1_2_3_4_5_6_7_8_9_10_1_x_Double-Precision_Whetstone_1_2_3_4_5_6_7_8_9_10_1_x_Execl_Throughput_1_2_3_1_x_File_Copy_1024_bufsize_2000_maxblocks_1_2_3_1_x_File_Copy_256_bufsize_500_maxblocks_1_2_3_1_x_File_Copy_4096_bufsize_8000_maxblocks_1_2_3_1_x_Pipe_Throughput_1_2_3_4_5_6_7_8_9_10_1_x_Pipe-based_Context_Switching_1_2_3_4_5_6_7_8_9_10_1_x_Process_Creation_1_2_3_1_x_System_Call_Overhead_1_2_3_4_5_6_7_8_9_10_1_x_Shell_Scripts__281_concurrent_29_1_2_3_1_x_Shell_Scripts__288_concurrent_29_1_2_3__3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_BYTE_UNIX_Benchmarks__28Version_5-1-2_29_System_3A_MyVPS1098_3A_GNU/linux_os_3A_GNU/linux__u2013_2-6-18-194-32-1-el5xen__u2013__231_SMP_Wed_Jan_5_19_3A32_3A33_EST_2011_machine_3A_i686__28i386_29_Language_3A_en_US-utf8__28charmap_3D_u201DUTF-8_u201D_2C_collate_3D_u201DUTF-8_u201D_29_CPU_0_3A_Intel_28R_29_Core_28TM_29_i3_CPU_540_@_3-07GHz__287674-2_bogomips_29_Hyper-Threading_2C_MMX_2C_Physical_Address_Ext_17_3A45_3A56_up_1_3A32_2C_3_users_2C_load_average_3A_0-93_2C_0-85_2C_0-54_3B_runlevel_3__u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_Benchmark_Run_3A_Sat_Mar_19_2011_17_3A45_3A57_-_18_3A14_3A25_1_CPU_in_system_3B_running_1_parallel_copy_of_tests_Dhrystone_2_using_register_variables_12805110-0_lps__2810-0_s_2C_7_samples_29_Double-Precision_Whetstone_2713-2_MWIPS__2810-0_s_2C_7_samples_29_Execl_Throughput_2705-1_lps__2830-0_s_2C_2_samples_29_File_Copy_1024_bufsize_2000_maxblocks_534348-0_KBps__2830-0_s_2C_2_samples_29_File_Copy_256_bufsize_500_maxblocks_150244-5_KBps__2830-0_s_2C_2_samples_29_File_Copy_4096_bufsize_8000_maxblocks_1168488-0_KBps__2830-0_s_2C_2_samples_29_Pipe_Throughput_842648-2_lps__2810-3_s_2C_7_samples_29_Pipe-based_Context_Switching_127343-8_lps__2810-1_s_2C_7_samples_29_Process_Creation_5105-5_lps__2830-0_s_2C_2_samples_29_Shell_Scripts__281_concurrent_29_4463-6_lpm__2860-0_s_2C_2_samples_29_Shell_Scripts__288_concurrent_29_616-9_lpm__2860-1_s_2C_2_samples_29_System_Call_Overhead_667586-6_lps__2810-0_s_2C_7_samples_29_System_Benchmarks_Index_Values_BASELINE_RESULT_INDEX_Dhrystone_2_using_register_variables_116700-0_12805110-0_1097-3_Double-Precision_Whetstone_55-0_2713-2_493-3_Execl_Throughput_43-0_2705-1_629-1_File_Copy_1024_bufsize_2000_maxblocks_3960-0_534348-0_1349-4_File_Copy_256_bufsize_500_maxblocks_1655-0_150244-5_907-8_File_Copy_4096_bufsize_8000_maxblocks_5800-0_1168488-0_2014-6_Pipe_Throughput_12440-0_842648-2_677-4_Pipe-based_Context_Switching_4000-0_127343-8_318-4_Process_Creation_126-0_5105-5_405-2_Shell_Scripts__281_concurrent_29_42-4_4463-6_1052-7_Shell_Scripts__288_concurrent_29_6-0_616-9_1028-2_System_Call_Overhead_15000-0_667586-6_445-1__3D_3D_3D_3D_3D_3D_3D_3D_System_Benchmarks_Index_Score_756-9__3D_3D_3D_3D_3D_3D_3D_Script_description_and_score_comparison_3A__3D_3D_3D_3D_3D_3D_3D_http_3A//www-ctohome-com/FuWuQi/c5/172-html__u7ED9_u529B_u4E00_u952E_u6D4B_u8BD5_u811A_u672C_uFF1A"><a href="#23__23__23__23__23__23__23_23_23_23_23__23_23_23_23_23_23__23__23__23_23_23_23__23__23__23__23__23_23__23__23__23__23__23__23__23__23_23__23__23__23__23__23__23__23__23__23__23__23__23_23__23_23_23_23_23__23_23_23_23_23__23__23__23__23__23_23_23_23_23_23__23__23__23__23__23__23__23_23__23__23__23__23__23__23__23__23__23__23__23__23__23_23__23__23__23__23__23__23__23__23_23__23__23__23__23__23_23_23_23__23__23__23__23__23__23_23_23_23_23__23_23_23_23_23_23__23__23__23_23_23_23__23__23__3C_21-more-_3E_Version_5-1-2_Based_on_the_Byte_Magazine_Unix_Benchmark_Multi-CPU_version_Version_5_revisions_by_Ian_Smith_2C_Sunnyvale_2C_CA_2C_USA_December_22_2C_2007_johantheghost_at_yahoo_period_com_1_x_Dhrystone_2_using_register_variables_1_2_3_4_5_6_7_8_9_10_1_x_Double-Precision_Whetstone_1_2_3_4_5_6_7_8_9_10_1_x_Execl_Throughput_1_2_3_1_x_File_Copy_1024_bufsize_2000_maxblocks_1_2_3_1_x_File_Copy_256_bufsize_500_maxblocks_1_2_3_1_x_File_Copy_4096_bufsize_8000_maxblocks_1_2_3_1_x_Pipe_Throughput_1_2_3_4_5_6_7_8_9_10_1_x_Pipe-based_Context_Switching_1_2_3_4_5_6_7_8_9_10_1_x_Process_Creation_1_2_3_1_x_System_Call_Overhead_1_2_3_4_5_6_7_8_9_10_1_x_Shell_Scripts__281_concurrent_29_1_2_3_1_x_Shell_Scripts__288_concurrent_29_1_2_3__3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_3D_BYTE_UNIX_Benchmarks__28Version_5-1-2_29_System_3A_MyVPS1098_3A_GNU/linux_os_3A_GNU/linux__u2013_2-6-18-194-32-1-el5xen__u2013__231_SMP_Wed_Jan_5_19_3A32_3A33_EST_2011_machine_3A_i686__28i386_29_Language_3A_en_US-utf8__28charmap_3D_u201DUTF-8_u201D_2C_collate_3D_u201DUTF-8_u201D_29_CPU_0_3A_Intel_28R_29_Core_28TM_29_i3_CPU_540_@_3-07GHz__287674-2_bogomips_29_Hyper-Threading_2C_MMX_2C_Physical_Address_Ext_17_3A45_3A56_up_1_3A32_2C_3_users_2C_load_average_3A_0-93_2C_0-85_2C_0-54_3B_runlevel_3__u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_u2014_Benchmark_Run_3A_Sat_Mar_19_2011_17_3A45_3A57_-_18_3A14_3A25_1_CPU_in_system_3B_running_1_parallel_copy_of_tests_Dhrystone_2_using_register_variables_12805110-0_lps__2810-0_s_2C_7_samples_29_Double-Precision_Whetstone_2713-2_MWIPS__2810-0_s_2C_7_samples_29_Execl_Throughput_2705-1_lps__2830-0_s_2C_2_samples_29_File_Copy_1024_bufsize_2000_maxblocks_534348-0_KBps__2830-0_s_2C_2_samples_29_File_Copy_256_bufsize_500_maxblocks_150244-5_KBps__2830-0_s_2C_2_samples_29_File_Copy_4096_bufsize_8000_maxblocks_1168488-0_KBps__2830-0_s_2C_2_samples_29_Pipe_Throughput_842648-2_lps__2810-3_s_2C_7_samples_29_Pipe-based_Context_Switching_127343-8_lps__2810-1_s_2C_7_samples_29_Process_Creation_5105-5_lps__2830-0_s_2C_2_samples_29_Shell_Scripts__281_concurrent_29_4463-6_lpm__2860-0_s_2C_2_samples_29_Shell_Scripts__288_concurrent_29_616-9_lpm__2860-1_s_2C_2_samples_29_System_Call_Overhead_667586-6_lps__2810-0_s_2C_7_samples_29_System_Benchmarks_Index_Values_BASELINE_RESULT_INDEX_Dhrystone_2_using_register_variables_116700-0_12805110-0_1097-3_Double-Precision_Whetstone_55-0_2713-2_493-3_Execl_Throughput_43-0_2705-1_629-1_File_Copy_1024_bufsize_2000_maxblocks_3960-0_534348-0_1349-4_File_Copy_256_bufsize_500_maxblocks_1655-0_150244-5_907-8_File_Copy_4096_bufsize_8000_maxblocks_5800-0_1168488-0_2014-6_Pipe_Throughput_12440-0_842648-2_677-4_Pipe-based_Context_Switching_4000-0_127343-8_318-4_Process_Creation_126-0_5105-5_405-2_Shell_Scripts__281_concurrent_29_42-4_4463-6_1052-7_Shell_Scripts__288_concurrent_29_6-0_616-9_1028-2_System_Call_Overhead_15000-0_667586-6_445-1__3D_3D_3D_3D_3D_3D_3D_3D_System_Benchmarks_Index_Score_756-9__3D_3D_3D_3D_3D_3D_3D_Script_description_and_score_comparison_3A__3D_3D_3D_3D_3D_3D_3D_http_3A//www-ctohome-com/FuWuQi/c5/172-html__u7ED9_u529B_u4E00_u952E_u6D4B_u8BD5_u811A_u672C_uFF1A" class="headerlink" title="#  #    #  #  #    #          #####   ######  #    #   ####   #    #      #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #       #    #  # #  #  #    ##            #####   #####   # #  #  #       ######       #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #       #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #        ####   #    #  #  #    #          #####   ######  #    #   ####   #    # <a id=" more"=""></a>   Version 5.1.2                      Based on the Byte Magazine Unix Benchmark      Multi-CPU version                  Version 5 revisions by Ian Smith,                                         Sunnyvale, CA, USA       December 22, 2007                  johantheghost at yahoo period com   1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10   1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10   1 x Execl Throughput  1 2 3   1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3   1 x File Copy 256 bufsize 500 maxblocks  1 2 3   1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3   1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10   1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10   1 x Process Creation  1 2 3   1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10   1 x Shell Scripts (1 concurrent)  1 2 3   1 x Shell Scripts (8 concurrent)  1 2 3   ========================================================================      BYTE UNIX Benchmarks (Version 5.1.2)      System: MyVPS1098: GNU/linux      os: GNU/linux – 2.6.18-194.32.1.el5xen – #1 SMP Wed Jan 5 19:32:33 EST 2011       machine: i686 (i386)       Language: en_US.utf8 (charmap=”UTF-8”, collate=”UTF-8”)       CPU 0: Intel(R) Core(TM) i3 CPU 540 @ 3.07GHz (7674.2 bogomips)              Hyper-Threading, MMX, Physical Address Ext       17:45:56 up  1:32,  3 users,  load average: 0.93, 0.85, 0.54; runlevel 3   ————————————————————————   Benchmark Run: Sat Mar 19 2011 17:45:57 - 18:14:25    1 CPU in system; running 1 parallel copy of tests   Dhrystone 2 using register variables       12805110.0 lps   (10.0 s, 7 samples)   Double-Precision Whetstone                     2713.2 MWIPS (10.0 s, 7 samples)    Execl Throughput                               2705.1 lps   (30.0 s, 2 samples)    File Copy 1024 bufsize 2000 maxblocks        534348.0 KBps  (30.0 s, 2 samples)    File Copy 256 bufsize 500 maxblocks          150244.5 KBps  (30.0 s, 2 samples)    File Copy 4096 bufsize 8000 maxblocks       1168488.0 KBps  (30.0 s, 2 samples)    Pipe Throughput                              842648.2 lps   (10.3 s, 7 samples)    Pipe-based Context Switching                 127343.8 lps   (10.1 s, 7 samples)    Process Creation                               5105.5 lps   (30.0 s, 2 samples)    Shell Scripts (1 concurrent)                   4463.6 lpm   (60.0 s, 2 samples)    Shell Scripts (8 concurrent)                    616.9 lpm   (60.1 s, 2 samples)    System Call Overhead                         667586.6 lps   (10.0 s, 7 samples)   System Benchmarks Index Values               BASELINE       RESULT    INDEX   Dhrystone 2 using register variables         116700.0   12805110.0   1097.3    Double-Precision Whetstone                       55.0       2713.2    493.3    Execl Throughput                                 43.0       2705.1    629.1    File Copy 1024 bufsize 2000 maxblocks          3960.0     534348.0   1349.4    File Copy 256 bufsize 500 maxblocks            1655.0     150244.5    907.8    File Copy 4096 bufsize 8000 maxblocks          5800.0    1168488.0   2014.6    Pipe Throughput                               12440.0     842648.2    677.4    Pipe-based Context Switching                   4000.0     127343.8    318.4    Process Creation                                126.0       5105.5    405.2    Shell Scripts (1 concurrent)                     42.4       4463.6   1052.7    Shell Scripts (8 concurrent)                      6.0        616.9   1028.2    System Call Overhead                          15000.0     667586.6    445.1                                                                       ========    System Benchmarks Index Score                                         756.9   ======= Script description and score comparison: =======   http://www.ctohome.com/FuWuQi/c5/172.html     给力一键测试脚本：">#  #    #  #  #    #          #####   ######  #    #   ####   #    #   <br>   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #    <br>   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######    <br>   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #    <br>   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #    <br>    ####   #    #  #  #    #          #####   ######  #    #   ####   #    # <!--more-->   Version 5.1.2                      Based on the Byte Magazine Unix Benchmark      Multi-CPU version                  Version 5 revisions by Ian Smith,   <br>                                      Sunnyvale, CA, USA    <br>   December 22, 2007                  johantheghost at yahoo period com   1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10   1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10   1 x Execl Throughput  1 2 3   1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3   1 x File Copy 256 bufsize 500 maxblocks  1 2 3   1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3   1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10   1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10   1 x Process Creation  1 2 3   1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10   1 x Shell Scripts (1 concurrent)  1 2 3   1 x Shell Scripts (8 concurrent)  1 2 3   ========================================================================   <br>   BYTE UNIX Benchmarks (Version 5.1.2)      System: MyVPS1098: GNU/linux   <br>   os: GNU/linux – 2.6.18-194.32.1.el5xen – #1 SMP Wed Jan 5 19:32:33 EST 2011    <br>   machine: i686 (i386)    <br>   Language: en_US.utf8 (charmap=”UTF-8”, collate=”UTF-8”)    <br>   CPU 0: Intel(R) Core(TM) i3 CPU 540 @ 3.07GHz (7674.2 bogomips)    <br>          Hyper-Threading, MMX, Physical Address Ext    <br>   17:45:56 up  1:32,  3 users,  load average: 0.93, 0.85, 0.54; runlevel 3   ————————————————————————   <br>Benchmark Run: Sat Mar 19 2011 17:45:57 - 18:14:25    <br>1 CPU in system; running 1 parallel copy of tests   Dhrystone 2 using register variables       12805110.0 lps   (10.0 s, 7 samples)   <br>Double-Precision Whetstone                     2713.2 MWIPS (10.0 s, 7 samples)    <br>Execl Throughput                               2705.1 lps   (30.0 s, 2 samples)    <br>File Copy 1024 bufsize 2000 maxblocks        534348.0 KBps  (30.0 s, 2 samples)    <br>File Copy 256 bufsize 500 maxblocks          150244.5 KBps  (30.0 s, 2 samples)    <br>File Copy 4096 bufsize 8000 maxblocks       1168488.0 KBps  (30.0 s, 2 samples)    <br>Pipe Throughput                              842648.2 lps   (10.3 s, 7 samples)    <br>Pipe-based Context Switching                 127343.8 lps   (10.1 s, 7 samples)    <br>Process Creation                               5105.5 lps   (30.0 s, 2 samples)    <br>Shell Scripts (1 concurrent)                   4463.6 lpm   (60.0 s, 2 samples)    <br>Shell Scripts (8 concurrent)                    616.9 lpm   (60.1 s, 2 samples)    <br>System Call Overhead                         667586.6 lps   (10.0 s, 7 samples)   System Benchmarks Index Values               BASELINE       RESULT    INDEX   <br>Dhrystone 2 using register variables         116700.0   12805110.0   1097.3    <br>Double-Precision Whetstone                       55.0       2713.2    493.3    <br>Execl Throughput                                 43.0       2705.1    629.1    <br>File Copy 1024 bufsize 2000 maxblocks          3960.0     534348.0   1349.4    <br>File Copy 256 bufsize 500 maxblocks            1655.0     150244.5    907.8    <br>File Copy 4096 bufsize 8000 maxblocks          5800.0    1168488.0   2014.6    <br>Pipe Throughput                               12440.0     842648.2    677.4    <br>Pipe-based Context Switching                   4000.0     127343.8    318.4    <br>Process Creation                                126.0       5105.5    405.2    <br>Shell Scripts (1 concurrent)                     42.4       4463.6   1052.7    <br>Shell Scripts (8 concurrent)                      6.0        616.9   1028.2    <br>System Call Overhead                          15000.0     667586.6    445.1    <br>                                                                   ========    <br>System Benchmarks Index Score                                         756.9   ======= Script description and score comparison: =======   <a href="http://www.ctohome.com/FuWuQi/c5/172.html" target="_blank" rel="external">http://www.ctohome.com/FuWuQi/c5/172.html</a>     给力一键测试脚本：</h1><p>wget http:<span style="color: #008000">//www.CTOHome.com/linux-vps-pack/unixbench.sh;sh ./unixbench.sh;</span></p>
+<p>教程：<a href="http://www.deepvps.com/vpsunixbench.html" target="_blank" rel="external">http://www.deepvps.com/vpsunixbench.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2011/03/19/vps-hosting-to-do-with-just-bought-a-mirror/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          用刚买的VPS主机做了一个镜像站
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/03/12/google-buzz-real-time-synchronization-method-of-twitter/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Google Buzz实时同步Twitter的方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Dray
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

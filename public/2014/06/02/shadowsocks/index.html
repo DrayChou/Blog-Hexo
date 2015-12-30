@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Shadowsocks 新手指南 | Dray&#39;s Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#Shadowsocks
+shadowsocks 簡稱 ss 是一套的代理協議，包含服務端應用和客戶端應用。使用 ss:// 格式的鏈接協議來標識服務器地址。
+客戶端如果你已經有了服務器地址，那麼我們就直接來配置客戶端吧，如果沒有，那麼你需要去找IT男要一個，或者去 ShadowSocks公益组织 找一個吧。
+參見： Shadowsocks 客戶端列表
+Windows &amp;amp;&amp;amp; Lin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shadowsocks 新手指南">
+<meta property="og:url" content="http://idc.wf/2014/06/02/shadowsocks/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="#Shadowsocks
+shadowsocks 簡稱 ss 是一套的代理協議，包含服務端應用和客戶端應用。使用 ss:// 格式的鏈接協議來標識服務器地址。
+客戶端如果你已經有了服務器地址，那麼我們就直接來配置客戶端吧，如果沒有，那麼你需要去找IT男要一個，或者去 ShadowSocks公益组织 找一個吧。
+參見： Shadowsocks 客戶端列表
+Windows &amp;amp;&amp;amp; Lin">
+<meta property="og:updated_time" content="2015-12-30T14:12:19.572Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shadowsocks 新手指南">
+<meta name="twitter:description" content="#Shadowsocks
+shadowsocks 簡稱 ss 是一套的代理協議，包含服務端應用和客戶端應用。使用 ss:// 格式的鏈接協議來標識服務器地址。
+客戶端如果你已經有了服務器地址，那麼我們就直接來配置客戶端吧，如果沒有，那麼你需要去找IT男要一個，或者去 ShadowSocks公益组织 找一個吧。
+參見： Shadowsocks 客戶端列表
+Windows &amp;amp;&amp;amp; Lin">
+  
+    <link rel="alternative" href="/atom.xml" title="Dray&#39;s Home" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Dray</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">疯狂痴呆傻，美甘苦涩禅。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/DrayChou/" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="http://feeds.feedburner.com/WesHome" title="rss">rss</a>
+					        
+								<a class="twitter" target="_blank" href="http://twitter.com/_0dc/" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/80/" style="font-size: 10px;">80</a> <a href="/tags/Octopress/" style="font-size: 10px;">Octopress</a> <a href="/tags/PushBullet/" style="font-size: 10px;">PushBullet</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/app/" style="font-size: 10px;">app</a> <a href="/tags/archlinux/" style="font-size: 10px;">archlinux</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/bluehost/" style="font-size: 10px;">bluehost</a> <a href="/tags/bmp/" style="font-size: 10px;">bmp</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/buzz/" style="font-size: 10px;">buzz</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chrome/" style="font-size: 12px;">chrome</a> <a href="/tags/completion/" style="font-size: 10px;">completion</a> <a href="/tags/cow/" style="font-size: 10px;">cow</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/diary/" style="font-size: 12px;">diary</a> <a href="/tags/dir/" style="font-size: 10px;">dir</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10px;">download</a> <a href="/tags/facebook/" style="font-size: 12px;">facebook</a> <a href="/tags/file/" style="font-size: 10px;">file</a> <a href="/tags/file-exists/" style="font-size: 10px;">file_exists</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/fqrouter/" style="font-size: 10px;">fqrouter</a> <a href="/tags/free/" style="font-size: 10px;">free</a> <a href="/tags/fund/" style="font-size: 10px;">fund</a> <a href="/tags/gedit/" style="font-size: 10px;">gedit</a> <a href="/tags/gfw/" style="font-size: 12px;">gfw</a> <a href="/tags/gnome/" style="font-size: 10px;">gnome</a> <a href="/tags/god/" style="font-size: 10px;">god</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/googlereader/" style="font-size: 10px;">googlereader</a> <a href="/tags/grub/" style="font-size: 10px;">grub</a> <a href="/tags/history/" style="font-size: 10px;">history</a> <a href="/tags/hosts/" style="font-size: 10px;">hosts</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10px;">ie6</a> <a href="/tags/it/" style="font-size: 10px;">it</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jquery/" style="font-size: 12px;">jquery</a> <a href="/tags/js/" style="font-size: 18px;">js</a> <a href="/tags/kde/" style="font-size: 10px;">kde</a> <a href="/tags/lamp/" style="font-size: 10px;">lamp</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/linux/" style="font-size: 16px;">linux</a> <a href="/tags/litespeed/" style="font-size: 10px;">litespeed</a> <a href="/tags/log/" style="font-size: 10px;">log</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/mail/" style="font-size: 10px;">mail</a> <a href="/tags/mantis/" style="font-size: 10px;">mantis</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mysql/" style="font-size: 14px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/notepad/" style="font-size: 10px;">notepad</a> <a href="/tags/oschina/" style="font-size: 10px;">oschina</a> <a href="/tags/password/" style="font-size: 10px;">password</a> <a href="/tags/php/" style="font-size: 14px;">php</a> <a href="/tags/pi/" style="font-size: 10px;">pi</a> <a href="/tags/ping/" style="font-size: 10px;">ping</a> <a href="/tags/proxy/" style="font-size: 12px;">proxy</a> <a href="/tags/ruby/" style="font-size: 12px;">ruby</a> <a href="/tags/seo/" style="font-size: 10px;">seo</a> <a href="/tags/seperator/" style="font-size: 10px;">seperator</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/smarty/" style="font-size: 16px;">smarty</a> <a href="/tags/soap/" style="font-size: 10px;">soap</a> <a href="/tags/sources/" style="font-size: 12px;">sources</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/ssh/" style="font-size: 14px;">ssh</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/sublimetext/" style="font-size: 10px;">sublimetext</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/taobao/" style="font-size: 10px;">taobao</a> <a href="/tags/twister/" style="font-size: 10px;">twister</a> <a href="/tags/twitter/" style="font-size: 18px;">twitter</a> <a href="/tags/unlink/" style="font-size: 10px;">unlink</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/vanilla/" style="font-size: 10px;">vanilla</a> <a href="/tags/vps/" style="font-size: 20px;">vps</a> <a href="/tags/week/" style="font-size: 10px;">week</a> <a href="/tags/weibo/" style="font-size: 10px;">weibo</a> <a href="/tags/wine/" style="font-size: 10px;">wine</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/wsdl/" style="font-size: 10px;">wsdl</a> <a href="/tags/xampp/" style="font-size: 10px;">xampp</a> <a href="/tags/xmarks/" style="font-size: 10px;">xmarks</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.fangshanzi.com/">方片子的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://locyoo.com/blog/">Locyoo Manor|部落格</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fpnews.cn/">方片快报</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://hskb.me/">黄书快报</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Dray</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Dray</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">疯狂痴呆傻，美甘苦涩禅。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/DrayChou/" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="http://feeds.feedburner.com/WesHome" title="rss">rss</a>
+			        
+						<a class="twitter" target="_blank" href="http://twitter.com/_0dc/" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/06/02/shadowsocks/" class="article-date">
+  	<time datetime="2014-06-01T16:00:00.000Z" itemprop="datePublished">2014-06-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Shadowsocks 新手指南
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cow/">cow</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Shadowsocks</p>
+<p>shadowsocks 簡稱 ss 是一套的代理協議，包含服務端應用和客戶端應用。使用 ss:// 格式的鏈接協議來標識服務器地址。</p>
+<h2 id="u5BA2_u6236_u7AEF"><a href="#u5BA2_u6236_u7AEF" class="headerlink" title="客戶端"></a>客戶端</h2><p>如果你已經有了服務器地址，那麼我們就直接來配置客戶端吧，如果沒有，那麼你需要去找IT男要一個，或者去 <a href="https://www.shadowsocks.net/" target="_blank" rel="external">ShadowSocks公益组织</a> 找一個吧。</p>
+<p>參見： <a href="https://github.com/clowwindy/shadowsocks/wiki/Ports-and-Clients" target="_blank" rel="external">Shadowsocks 客戶端列表</a></p>
+<h2 id="Windows__26amp_3B_26amp_3B_Linux__26amp_3B_26amp_3B_OSX"><a href="#Windows__26amp_3B_26amp_3B_Linux__26amp_3B_26amp_3B_OSX" class="headerlink" title="Windows &amp;&amp; Linux &amp;&amp; OSX"></a>Windows &amp;&amp; Linux &amp;&amp; OSX</h2><p>鄙人平常主用 <a href="https://github.com/cyfdecyf/cow" target="_blank" rel="external">cow</a> ,這個客戶端用 golang 語言編寫，是一个简化穿墙的 HTTP 代理服务器。它能自动检测被墙网站，仅对这些网站使用二级代理，支持 http,ssh 轉發 直接支持 ss ，所以可以用 cow 做二級代理來支持本地其他類型的代理。<br>比如： 用 cow 轉發 http,ssh,ss 到 pac 代理，讓本地的瀏覽器手機等可以無憂翻牆。</p>
+<h3 id="u5FEB_u901F_u958B_u59CB"><a href="#u5FEB_u901F_u958B_u59CB" class="headerlink" title="快速開始"></a>快速開始</h3><p>OS X, Linux (x86, ARM): 执行以下命令（也可用于更新）</p>
+<pre><code>curl -L git.io/cow | bash
+</code></pre><p>Windows: <a href="http://dl.chenyufei.info/cow/" target="_blank" rel="external">点此下载</a></p>
+<p>熟悉 Go 的用户可用 go get github.com/cyfdecyf/cow 从源码安装<br>编辑 ~/.cow/rc (Linux) 或 rc.txt (Windows)，简单的配置例子如下：</p>
+<pre><code>#开头的行是注释，会被忽略
+# 本地 HTTP 代理地址
+# 配置 HTTP 和 HTTPS 代理时请填入该地址
+# 或者在自动代理配置中填入 http://127.0.0.1:7777/pac
+listen = http://127.0.0.1:7777
+
+# SOCKS5 二级代理
+proxy = socks5://127.0.0.1:1080
+# HTTP 二级代理
+proxy = http://127.0.0.1:8080
+proxy = http://user:password@127.0.0.1:8080
+# shadowsocks 二级代理
+proxy = ss://aes-128-cfb:password@1.2.3.4:8388
+# cow 二级代理
+proxy = cow://aes-128-cfb:password@1.2.3.4:8388
+使用 cow 协议的二级代理需要在国外服务器上安装 COW，并使用如下配置：
+
+listen = cow://aes-128-cfb:password@0.0.0.0:8388
+完成配置后启动 COW 并配置好代理即可使用。
+</code></pre><p>然後修改IE瀏覽器設置， internet 選項 -&gt; 連接 -&gt; 局域網設置 -&gt; 使用自動配置腳本，填入：<a href="http://127.0.0.1:7777/pac" target="_blank" rel="external">http://127.0.0.1:7777/pac</a> ，然後就OK了。</p>
+<h2 id="u670D_u52D9_u7AEF"><a href="#u670D_u52D9_u7AEF" class="headerlink" title="服務端"></a>服務端</h2><p>Shadowsocks 服務端本身支持 c, go, nodejs, python, erlang 等語言，如果你需要配置服務端，那麼說明你是有一定技術基礎的，請參見官方介紹吧。<a href="https://github.com/clowwindy/shadowsocks/wiki/Ports-and-Clients" target="_blank" rel="external">Shadowsocks 服務端</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/07/28/twister/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          P2P 微薄
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/05/15/ubuntu-bash-completion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu 安装命令行自动补全</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Dray
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
