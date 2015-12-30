@@ -2,3 +2,7 @@
 	path = themes/yilia
 	url = https://github.com/DrayChou/hexo-theme-spfk
 	branch = master
+[submodule "public"]
+	path = public
+	url = https://github.com/DrayChou/Blog-Hexo
+	branch = gh-pages
