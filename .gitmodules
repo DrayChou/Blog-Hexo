@@ -1,8 +1,3 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/DrayChou/Blog-Hexo.git
-	branch = gh-pages
-
 [submodule "theme-yilia"]
 	path = themes/yilia
 	url = https://github.com/DrayChou/hexo-theme-spfk
