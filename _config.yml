@@ -72,3 +72,9 @@ deploy:
 
 #disqus 论坛
 disqus_shortname: weshome
+
+feed:
+  type: atom
+  path: rss.xml
+  limit: 20
+  hub:
