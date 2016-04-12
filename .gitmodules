@@ -1,6 +1,6 @@
-[submodule "theme-yilia"]
-	path = themes/yilia
-	url = https://github.com/DrayChou/hexo-theme-spfk
+[submodule "theme-fexo"]
+	path = themes/fexo
+	url = https://github.com/DrayChou/hexo-theme-fexo
 	branch = master
 [submodule "public"]
 	path = public
