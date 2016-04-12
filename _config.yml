@@ -5,7 +5,8 @@
 # Site
 title: Dray's Home
 subtitle: 疯狂痴呆傻，美甘苦涩禅。
-description: dray,_0dc,we_get,疯,狂,痴,呆,傻,美,甘,苦,涩,禅,疯狂,痴呆,傻,美甘,苦涩,禅,疯狂痴呆傻,美甘苦涩禅
+keywords: dray,_0dc,we_get,疯,狂,痴,呆,傻,美,甘,苦,涩,禅,疯狂,痴呆,傻,美甘,苦涩,禅,疯狂痴呆傻,美甘苦涩禅
+description: Dray's Blog
 author: Dray
 language: zh-CN
 timezone: Asia/ShangHai
@@ -22,7 +23,7 @@ source_dir: source
 public_dir: public
 tag_dir: tags
 archive_dir: archives
-category_dir: categories
+category_dir: category
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -63,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: yilia
+theme: fexo
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
