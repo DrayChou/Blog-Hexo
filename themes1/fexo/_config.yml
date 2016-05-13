@@ -1,0 +1,140 @@
+# Set avatar (Absolute url and relative url)
+avatar: http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200
+
+# Set favicon
+favicon: /favicon.ico
+
+home_nav:
+  - name: Blog
+    url: /archives
+    target_blank: false #不在新页面打开
+  - name: Project
+    url: /project
+    target_blank: false #不在新页面打开
+  - name: Github
+    url: "https://github.com/DrayChou/"
+    target_blank: true  #在新页面打开
+
+# config page nav
+page_nav:
+  - name: 博客
+    url: /archives/
+    target_blank: false # 不在新页面打开
+  - name: 分类
+    url: /category/
+    target_blank: false
+  - name: 标签
+    url: /tags/
+    target_blank: false
+  - name: 友链
+    url: /link/
+    target_blank: false
+  - name: 关于
+    url: /about/
+    target_blank: false
+  - name: RSS
+    url: "http://feeds.feedburner.com/WesHome"
+    target_blank: true # 在新页面打开
+
+page_nav_style: CIRCLE  # CIRCLE|ROUND_RECT
+
+# 面包屑
+breadcrumb:
+  isShow: true # true|fase
+
+# 盒子
+toolbox:
+  isShow: true # true|fase
+  text: 盒子
+
+search_slogan:
+  isShow: true # true|fase
+  text: Can you find the bug of world ~
+
+link_slogan:
+  isShow: true # true|fase
+  text: 交换友链可以邮件 i@idc.wf
+
+# set backtop show or hide
+backtop:
+  home: false
+  archive: false
+  category: true
+  tag: true
+  post: true
+  link: false
+  about: false
+
+post:
+  header_align: CENTER # LEFT|CENTER
+  showToc: true # true|false
+  showComments: true
+
+# =========================================================
+# 个性化设置
+# =========================================================
+# Custom CSS style
+personal_style: /css/personal-style.css
+
+home_background_scheme: light # dark、light
+
+# custom font-family 暂时只支持这3种英文字体，你可以完全自定义字体(看文档)
+blog_name_font_familiy: calligraffittiregular
+# blog_name_font_familiy: Lobster-Regular
+# blog_name_font_familiy: PoiretOne-Regular
+
+init_page_content: HOME_NAV  # HOME_NAV | POST
+
+# =========================================================
+# 第三方服务
+# =========================================================
+# Stats
+google_analytics:
+baidu_analytics:
+
+# Comment service
+disqus_shortname: weshome
+# duoshuo_shortname: forsigner
+
+# =========================================================
+# 页面内容设置
+# =========================================================
+about:
+  - type: me
+    icon: icon-user
+    text_value:
+    - "Dray Chou."
+    - "喜欢看书，擅长编程，喜欢睡懒觉."
+    - "PHP开发工程师."
+  - type: Github
+    icon: icon-github
+    text_key: Github
+    text_value: "@draychou"
+    text_value_url: https://github.com/draychou
+  - type: mail
+    icon: icon-mail
+    text_key: Mail
+    text_value: "i@idc.wf"
+  - type: location
+    icon: icon-location
+    text_value: 魔都
+
+link:
+  - name: 方片子的博客
+    info: 方片子的博客
+    url: http://www.fangshanzi.com/
+    avatar: http://fangshanzi.com/wp-content/themes/magicroller/images/logo.png
+  - name: Locyoo Manor|部落格
+    info: Locyoo Manor|部落格
+    url: http://locyoo.com/blog/
+    avatar: http://locyoo.com/blog/wp-content/uploads/2015/04/cooltext117007009229767.png
+  - name: 方片快报
+    info: 方片快报
+    url: http://fpnews.cn/
+    avatar: http://fpnews.cn/fpnews.png
+
+project:
+  - type:
+    name: tgbot-php
+    url: https://github.com/DrayChou/tgbot-php
+    intro: 一个 PHP 写的 Telegram 机器人。
