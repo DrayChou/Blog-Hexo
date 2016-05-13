@@ -1,0 +1,34 @@
+language: node_js
+
+node_js:
+- '5.1'
+
+env:
+  global:
+  - secure: OLiEBl7kVXKlHwo68gaxYNqf7F8QxCoiOdeDhDM1lO+hoNRz4YGNnvI3v35sYjyiuvFrxsc2GwfWqegjLZ5tujU2zXFkK374mp1l6RfBHus6FEgHtIuUFvahWQdS3wUxOvYB9go/KVGgC1dDuLT8sRKXYBg5ce/sa7mQshWqla0kcWgpSqUw+o12PeH4d7+c2elg7r0ZQldVXtgRksSnss4ojGGpMV5yEuU0U1aGWPPv+1Un9oCAwwbGqEGUdOz4pZsGTQGFlw+xapnVuWs8kdo4jasLpkm6WlrJ2F+HEIuduaK+itAqh+WmD/7IbtLghPoXrYothxQepQszNHHGbI8jCvow65TxcTRzVDtXvSUGkpZmYGy4g1o5LJFOze3B3+mOhrYiVWvUcxwkVX20Q0qIgXHLT6esqgJBzxL0LdOak9QDQxjk8Myxvq4ozrIuISFz39ucQoefGjEKG9NSltNqaAXCwh3qNkgXiCw3s0rb/QciTwiFxB1WeJ4I07jf/PX/ZGDzk8YBSDEmehARW8csglaOXqRopIesswCWMKcMhvQVYR428DsU8LZkoPbjeWwafydb9xB+DqyT4TLed9ddOdFqIQRSU5AKVNEYG92XJfCr7c0VKeq+UhFEU1KPTAyt/J3DQC/mioDqVtOkmwuJxbCYTpJAnwdSJahwCC4=
+
+before_install:
+- export TZ=Asia/ShangHai
+
+install:
+- npm install
+
+script:
+# 初始化 GIT
+- git config --global user.name "$GIT_NAME"
+- git config --global user.email "$GIT_EMAIL"
+- git config --global push.default simple
+
+# 设置项目路径
+- rm -rf public
+- git clone --depth 50 --branch gh-pages https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG public
+
+# 生成
+- hexo generate
+
+# 发布出去
+- cd public
+- git add -A .
+- MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
+- git commit -m "Site updated:$MESSAGE"
+- git push origin gh-pages --quiet
