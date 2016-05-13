@@ -1,7 +1,3 @@
-[submodule "theme-fexo"]
-	path = themes/fexo
-	url = https://github.com/DrayChou/hexo-theme-fexo
-	branch = master
 [submodule "public"]
 	path = public
 	url = https://github.com/DrayChou/Blog-Hexo
