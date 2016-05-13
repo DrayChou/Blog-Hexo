@@ -11,6 +11,4 @@ tags:
 - hexo
 ---
 
-## 测试一下哦
-
-再测试一下
+## 使用Travis CI自动部署Hexo
