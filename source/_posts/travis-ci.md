@@ -1,5 +1,5 @@
 ---
-date: 2016-05-13 11:41:00
+date: 2016-05-13 20:05:00
 layout:  post
 title:  "使用Travis CI自动部署Hexo"
 tagline:
