@@ -1,5 +1,8 @@
 language: node_js
 
+node_js:
+- '5.1'
+
 env:
   global:
   - secure: H05xA1DPw3tUhR5nWAuOiDXAK3iFCsHBTyUJI6FDM8riV9WHpq1oAmtiASfXibYg/kKmPmcbm9YD6s8zcr7GEi9FhQ6irKdPK4AM7rlds6K4dx0JLs/tTGKUDgAtSbkSTt3iGdIBHhxM+1sZrkqHKpHG53iNzNunP9O9iEDWIQwNM8kM8v/ZCJoToomjOVqeyYVAdHMPCl3SgZo3f/yzZ37JLoUsSPWAXX5nmjAtnnjTiI0VkzP5mD2f+qaQgNvIpMkj7Pr2AMjISlIhzeJDfk2Cmfoy9kQXMHpkcv3rETC8+QcBopr3z+GoxCc136u/XlTQzBIM/0DDrchNjwD9QNgfYYGX4zqFKH2vBajmotktgLPwrR+rrstgC+6+5npJl01aB2xYpEa6vuJzwIc28cuUjeqt/hDEvnxym/aTQxTqt2090AY6QT4Xw2cPZARXMLbJFOSvDyfHGE2w7aN8nyc9jtX/XJXsX15Fv6WC8ugUd+2crLjMkcqvNt/+KtgCDVEfDSpJMX11zIVISfK3QV93JtFd62QohuqyT1Dj0HSmrdZLoG/ddGD3msE7E+c6V4wq/xpKKU0usYrK8h+KdeXzJenqAxymjPwMIbEo2k0QBOndN1j7CAf7IjvBkv8lQjv5yyO3Ou39Ub/L4pQA4HxEZYwIR3h4VKz4W+1eodY=
@@ -8,6 +11,7 @@ before_install:
 - export TZ=Asia/ShangHai
 
 install:
+- npm install
 - npm install hexo-cli -g
 
 script:
@@ -17,7 +21,8 @@ script:
 - git config --global push.default simple
 
 # 设置项目路径
-- git remote set-url origin --push --add https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG
+- rm -rf public
+- git clone --depth 1 --branch gh-pages https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG public
 
 # 清理生成
 - hexo clean
