@@ -1,22 +1,21 @@
 language: node_js
-node_js:
-- '5.1'
 env:
   global:
   - secure: long secure base64 string
-  - secure: XSd9+/9PFd5LJ9fSnLQ3od7+fYM4gBIsm+Kzd4YZe3n7a+1Tuf+MzSbAOMViNaVdGMPRi4RY38oVSXSKVYzwmtd26M0SYpqL7qENUDKgyCLTm21bxUXVZ8ikv6478/ifGqXmI7Hal/ycH9rMR3tNKxImZ/+9T8ttyNXDM3HIyvc0YIaR9BIot+u1xJDNQAhaecyzISGn6fhfBscr41ftMWI1I5okZGkUDM1n0gHy6oaiVamLKJo+sttzXTKagLlS4bQjJnmPs49bzj3sd8vAaqehSdyII122/dfJojMFD+cwbgQCCs/AS/RChK1mnpxeOhskv7qF5SmwKuu/tjjK7r2lm82qiUflEa266Zc19AfqVOe0guclXjevtxqcvGywnVbVv86CbcIEtDhXqaB4XPGBtIn+ivJLuA5MJ9T07/guX1xNgdVJwr1iYtuGHGS/h3zvb2VSindORnjlRJCAr8D2xRNbyH/0TCLj3q3KxGWev3CnV8btEyv2t5rNwtNCnlE2YbMdO/PLKDyzNYb3aZcoKiNwEmXjbHxLb3x8bnLSo//Be+Dn9cGv/2rG5JeKP9RE4yXjDZTg9PeLAnMwfF4rfWpqMpA5K9Kg0wOYsA0XakEzrXUTcpw7hl0DS4Yk6D8L7/VBMF1Y/0xlOCq9vX0dqsf0m+dUS+pzpV6zodE=
+  - secure: l1x3BUIrti5sAQxwQWb8VAQbTy3dxFYiEcd/TQW/jH1l7Kx847xs+o7O5hzU1nUmrP/5A9y64DnVHu3CC7WTf4OB7+vQECEyHZCKOyQ3fN2CIFJ/3glsaWYCdNWLUmyHeig+NdtW/XtsxFDoxwzB5ZpCXsB4wfc1ZJkQmuOjQ6Tw3UX3IMbmeX7v1Mal5xSMkaROLKV+wpM4t8948s9+qR8cnEZpGQDMkcPzN6agGpsLQlpY6/5dGlTnvO9a0W2CPAFsy9A+HTuoS55FMt36dlS91Rh+gL+hYO1+v1suCqzZrIVTdgbpNebTpnPrg2ZSkO9qq0wvv+1yYQ+WyoY41fH6779idWhXWVdilCL1sn+hPewkcW0T66UNTCcbX1wl2Zap7MxdBJ0e/D59AEzEiip5ozCOvzuy8mlCet91jN0eSc+H76eQI2Zr6GlKgBykrvijqj5lygmYkylj2/jSFy6lIqo8yYiJEWaGfJ2eYQH9lE0k9hCD8NvF0MNnZiyOcli5XTu+qhjeifARJaiBtiPlCDg42Eml5/PYxaM/tghHtmzlPYXDRxIKpRIxNdx1BvfuYssBMBeVJFboCwwappdeOajzWalc+ZeOcg9Ce40nuNZfETDT0YxaW3EqCBWAg1ruFM2CxVGA8OzVZjHQBytFTDF22hMQGbrQjXpi108=
 before_install:
 - export TZ=Asia/ShangHai
 install:
-- npm install
+- npm install hexo-cli -g
 script:
 - git config --global user.name "$GIT_NAME"
 - git config --global user.email "$GIT_EMAIL"
 - git config --global push.default simple
 - git clone --depth 1 --branch gh-pages https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG
   public
-- npm run generate
 - cd public
+- hexo clean
+- hexo generate
 - git add -A .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
