@@ -8,15 +8,27 @@ before_install:
 install:
 - npm install hexo-cli -g
 script:
+# 初始化 GIT
 - git config --global user.name "$GIT_NAME"
 - git config --global user.email "$GIT_EMAIL"
 - git config --global push.default simple
-- git clone --depth 1 --branch gh-pages https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG
-  public
+
+# 拉取项目代码
+- git git clone --depth=50 --branch=master https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG
+  hexo_blog
+- cd hexo_blog
+- git submodule update --init --recursive
 - cd public
+- git checkout gh-pages
+- cd ..
+
+# 清理生成
 - hexo clean
 - hexo generate
+
+# 发布出去
+- cd public
 - git add -A .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
-- git push --quiet
+- git push origin gh-pages --quiet
