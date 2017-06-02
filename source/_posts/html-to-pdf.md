@@ -17,7 +17,6 @@ tags:
 
     2. 示例代码
         1. python
-
 ```
     import pdfkit
 
@@ -25,9 +24,7 @@ tags:
     # pdfkit.from_file('test.html', 'out.pdf')
     # pdfkit.from_string('Hello!', 'out.pdf')
 ```
-
         2. php
-
 ```
     <?php
 
@@ -42,4 +39,3 @@ tags:
     $pdf = new Pdf($_GET['url']);
     $pdf->send();
 ```
-
