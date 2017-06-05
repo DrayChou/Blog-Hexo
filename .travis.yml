@@ -21,7 +21,7 @@ script:
 
 # 设置项目路径
 - rm -rf public
-- git clone --depth 50 --branch gh-pages "https://${GH_TOKEN}@github.com/{$GIT_NAME}/{$HEXO_BLOG}" public
+- git clone --depth 50 --branch gh-pages "https://${GH_TOKEN}@github.com/${GIT_NAME}/${HEXO_BLOG}" public
 
 # 生成
 - hexo generate
@@ -31,4 +31,4 @@ script:
 - git add -A .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
-- git push --force --quiet "https://${GH_TOKEN}@github.com/{$GIT_NAME}/{$HEXO_BLOG}" origin gh-pages
+- git push --force --quiet "https://${GH_TOKEN}@github.com/${GIT_NAME}/${HEXO_BLOG}" origin gh-pages
