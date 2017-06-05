@@ -31,4 +31,4 @@ script:
 - git add -A .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
-- git push --force --quiet "https://${GH_TOKEN}@github.com/$GIT_NAME/$HEXO_BLOG public" origin gh-pages
+- git push --force --quiet "https://${GH_TOKEN}@github.com/{$GIT_NAME}/{$HEXO_BLOG} public" origin gh-pages
