@@ -15,26 +15,10 @@ script:
 - git config --global user.email "$GIT_EMAIL"
 - git config --global push.default simple
 
-# 设置项目路径
-- rm -rf public
-- git clone --depth 50 --branch gh-pages "https://${GH_TOKEN}@${GH_REF}" public
-
 # 生成
 - hexo generate
 
-# 发布出去
-- cd public
-- git add -A .
-- MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
-- git commit -m "Site updated:$MESSAGE"
-- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages
-
-# 放到本 branch 下的 docs 目录里
-- cd ..
-- rm -rf docs
-- cp -Rf public docs
-
-# 把 docs 也发布出去
+# 把 docs 发布出去
 - git add -A .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
