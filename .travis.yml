@@ -23,7 +23,7 @@ script:
 - hexo generate
 
 # 放到本 branch 下的 docs 目录里
-- mv -rf public docs
+- mv -Rf public docs
 
 # 发布出去
 - cd public
