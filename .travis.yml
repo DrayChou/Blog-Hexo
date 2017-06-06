@@ -22,10 +22,6 @@ script:
 # 生成
 - hexo generate
 
-# 放到本 branch 下的 docs 目录里
-- rm -rf docs
-- cp -Rf public docs
-
 # 发布出去
 - cd public
 - git add -A .
@@ -33,8 +29,12 @@ script:
 - git commit -m "Site updated:$MESSAGE"
 - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages
 
-# 把 docs 也发布出去
+# 放到本 branch 下的 docs 目录里
 - cd ..
+- rm -rf docs
+- cp -Rf public docs
+
+# 把 docs 也发布出去
 - git add -A .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
