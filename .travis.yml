@@ -22,6 +22,9 @@ script:
 # 生成
 - hexo generate
 
+# 放到本 branch 下的 docs 目录里
+- mv -rf public docs
+
 # 发布出去
 - cd public
 - git add -A .
