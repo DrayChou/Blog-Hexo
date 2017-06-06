@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Notepad++去除代码行号的几种方法 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="notepad," />
+  
+
+  <meta name="description" content="问：在网页中复制代码时，常常遇到高亮程序自动给代码加上行号或字符“#”，如何格式化？如下：  
+#1 //去除首字符或行号
+#2 &amp;amp; lt; ? php#100 echo &amp;apos;再长点&amp;apos;;#............#2010 echo &amp;apos;无语了吧&amp;apos;;#2012 ? &amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notepad++去除代码行号的几种方法">
+<meta property="og:url" content="http://idc.wf/2011/02/18/notepad-to-remove-the-code-line-number-of-the-several-methods/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="问：在网页中复制代码时，常常遇到高亮程序自动给代码加上行号或字符“#”，如何格式化？如下：  
+#1 //去除首字符或行号
+#2 &amp;amp; lt; ? php#100 echo &amp;apos;再长点&amp;apos;;#............#2010 echo &amp;apos;无语了吧&amp;apos;;#2012 ? &amp;gt;">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.955Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notepad++去除代码行号的几种方法">
+<meta name="twitter:description" content="问：在网页中复制代码时，常常遇到高亮程序自动给代码加上行号或字符“#”，如何格式化？如下：  
+#1 //去除首字符或行号
+#2 &amp;amp; lt; ? php#100 echo &amp;apos;再长点&amp;apos;;#............#2010 echo &amp;apos;无语了吧&amp;apos;;#2012 ? &amp;gt;">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-notepad-to-remove-the-code-line-number-of-the-several-methods" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Notepad++去除代码行号的几种方法</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/18/notepad-to-remove-the-code-line-number-of-the-several-methods/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p><strong>问：</strong>在网页中复制代码时，常常遇到高亮程序自动给代码加上行号或字符“#”，如何格式化？如下：  </p>
+<pre><code>#1 //去除首字符或行号
+#2 &amp; lt; ? php#100 echo &apos;再长点&apos;;#............#2010 echo &apos;无语了吧&apos;;#2012 ? &gt;
+</code></pre><p><strong></strong><br><a id="more"></a></p>
+<p><strong>解1：</strong>手动删除，才2012行~~~不多不多.LOL</p>
+<p><strong>解2：</strong>打开 Notepad++，按住 Alt，鼠标点击拖出选择框，这个是<strong> 列选</strong> 方法，相当拉风；</p>
+<p><strong>解3：</strong>正则表达式（又是这个万能的东西）。</p>
+<pre><code>打开 Notepad++，Ctrl+H，[查找目标] 输入 下面对应正则表达式 [查找模式] 选择 正则表达式 ，之后 Alt+A，搞定！
+</code></pre><p>#+空格+行号  \S\s\d+<br>  <br>行号+空格      ^[0-9]+</p>
+<p>  <br>行号+.+空格   \s<em>\d</em>.\s</p>
+<p><strong>解4：</strong>使用 TextFX 工具</p>
+<pre><code>打开 Notepad++，[全选代码]–点击 工具栏中的 [TextFX] –[TextFX Tools]–[Delete Line Numbers or First word] ，OK！
+</code></pre><p>【补充给6楼<cite> kamal  </cite>同学】加行号的方法：[全选代码]–点击 工具栏中的 [TextFX] –[TextFX Tools]–[Insert Line Numbers] OK！</p>
+<p><strong>解5：</strong>编写 宏 命令</p>
+<pre><code>打开 Notepad++，Alt+O 选择宏，开始录制：（光标初始在文首）&lt;strong&gt;注：&lt;/strong&gt;全部键盘操作
+</code></pre><p><em><strong>宏流程</strong>：</em>[Home 键]—[Ctrl+Shift+方向键<em>右]—[Backspace]–[方向键</em>下]</p>
+<p><strong><em>释义：</em></strong>光标顶格—按单词字段选择–删除行首–下一行  //第二步根据情况操作N次。</p>
+<p>以上是NP++中我用过的方法，至于其他编辑器应该还有解法，欢迎分享！</p>
+<p>PS: 复制代码的时候，先观察下这个网站是不是有 [copy按钮] 可以避免复制到行号的！</p>
+<p>版权所有© HzlzH | 本文采用 <a href="http://www.hzlzh.com/#copyright" target="_blank" rel="external">BY-NC-SA</a> 进行授权</p>
+<p>  <br>转载需注明 转自: 《<a href="http://www.hzlzh.com/notepad-delete-line-number/" target="_blank" rel="external">Notepad++去除代码行号的几种方法</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/18/notepad-to-remove-the-code-line-number-of-the-several-methods/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

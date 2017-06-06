@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>ubuntu 安装 Ruby, Rails 运行环境 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="ruby," />
+  
+
+  <meta name="description" content="步骤0 － 安装系统需要的包
+Ubuntu 请安装
+$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autocon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu 安装 Ruby, Rails 运行环境">
+<meta property="og:url" content="http://idc.wf/2013/04/15/ubuntu-ruby/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="步骤0 － 安装系统需要的包
+Ubuntu 请安装
+$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autocon">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.972Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu 安装 Ruby, Rails 运行环境">
+<meta name="twitter:description" content="步骤0 － 安装系统需要的包
+Ubuntu 请安装
+$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autocon">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-ubuntu-ruby" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">ubuntu 安装 Ruby, Rails 运行环境</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2013.04.15</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2013/04/15/ubuntu-ruby/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>步骤0 － 安装系统需要的包</p>
+<p>Ubuntu 请安装</p>
+<pre><code>$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysql-ruby libmysqlclient-dev
+</code></pre><p>步骤1 － 安装 RVM</p>
+<p>RVM 是干什么的这里就不解释了，后面你将会慢慢搞明白。</p>
+<pre><code>$ curl -L https://get.rvm.io | bash -s stable
+</code></pre><p>等待一段时间后就可以成功安装好 RVM。</p>
+<p>然后，载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）</p>
+<pre><code>$ source ~/.rvm/scripts/rvm
+</code></pre><p>检查一下是否安装正确</p>
+<pre><code>$ rvm -v
+rvm 1.17.3 (stable) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]
+</code></pre><p>步骤2 － 用 RVM 安装 Ruby 环境</p>
+<pre><code># 替换 Ruby 下载地址到国内淘宝镜像服务器
+$ sed -i &apos;s!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!&apos; $rvm_path/config/db
+# 安装 readline 包
+$ rvm pkg install readline
+# 安装 Ruby 2.0.0
+$ rvm install 2.0.0 --with-readline-dir=$rvm_path/usr
+</code></pre><p>或者可以安装 1.8.7 版本，也可以是 1.9.3，只要将后面的版本号跟换一下就可以了<br>同样继续等待漫长的下载，编译过程，完成以后，Ruby, Ruby Gems 就安装好了。<br>步骤3 － 设置 Ruby 版本</p>
+<p>RVM 装好以后，首先修改 .bashrc，将</p>
+<pre><code>[[ -s &quot;$HOME/.rvm/scripts/rvm&quot; ]] &amp;&amp; . &quot;$HOME/.rvm/scripts/rvm&quot;  # This loads RVM
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+</code></pre><p>替换</p>
+<pre><code>PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+</code></pre><p>重启控制台，再执行下面的命令将指定版本的 Ruby 设置为系统默认版本</p>
+<pre><code>$ rvm 2.0.0 --default
+</code></pre><p>同样，也可以用其他版本号，前提是你有用 rvm install 安装过那个版本</p>
+<p>这个时候你可以测试是否正确</p>
+<pre><code>$ ruby -v
+ruby 2.0.0p0 (2013-02-24 revision 39474) [x86_64-darwin12.3.0]
+$ gem -v
+2.0.0
+$ gem source -r https://rubygems.org/
+$ gem source -a http://ruby.taobao.org
+</code></pre><p>步骤4 － 安装 Rails 环境</p>
+<p>上面 3 个步骤过后，Ruby 环境就安装好了，接下来安装 Rails</p>
+<pre><code>$ gem install bundler rails
+</code></pre><p>然后测试安装是否正确</p>
+<pre><code>$ bundle -v
+Bundler version 1.0
+$ rails -v
+Rails 3.2.13
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2013/04/15/ubuntu-ruby/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

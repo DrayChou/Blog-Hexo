@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>修改 vs2010 默认浏览器 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="VisualStudio," />
+  
+
+  <meta name="description" content="修改该目录里的配置文件
+C:\users\[登陆账户ID]\AppData\Local\Microsoft\VisualStudio\10.0\browsers.xml
+修改为
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&amp;lt;browserinfo&amp;gt;&amp;lt;browser&amp;gt;&amp;lt;name&amp;gt;Mozilla Firefox&amp;lt;/name&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改 vs2010 默认浏览器">
+<meta property="og:url" content="http://idc.wf/2011/12/06/xiu-gai-vs2010-mo-ren-liu-lan-qi/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="修改该目录里的配置文件
+C:\users\[登陆账户ID]\AppData\Local\Microsoft\VisualStudio\10.0\browsers.xml
+修改为
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&amp;lt;browserinfo&amp;gt;&amp;lt;browser&amp;gt;&amp;lt;name&amp;gt;Mozilla Firefox&amp;lt;/name&amp;gt;">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.977Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修改 vs2010 默认浏览器">
+<meta name="twitter:description" content="修改该目录里的配置文件
+C:\users\[登陆账户ID]\AppData\Local\Microsoft\VisualStudio\10.0\browsers.xml
+修改为
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;&amp;lt;browserinfo&amp;gt;&amp;lt;browser&amp;gt;&amp;lt;name&amp;gt;Mozilla Firefox&amp;lt;/name&amp;gt;">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-xiu-gai-vs2010-mo-ren-liu-lan-qi" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">修改 vs2010 默认浏览器</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.12.06</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/windows/">windows</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/12/06/xiu-gai-vs2010-mo-ren-liu-lan-qi/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>修改该目录里的配置文件</p>
+<pre><code>C:\users\[登陆账户ID]\AppData\Local\Microsoft\VisualStudio\10.0\browsers.xml
+</code></pre><p>修改为</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;&lt;browserinfo&gt;&lt;browser&gt;&lt;name&gt;Mozilla Firefox&lt;/name&gt;&lt;path&gt;&quot;C:\Program Files (x86)\Mozilla Firefox\firefox.exe&quot;&lt;/path&gt;&lt;resolution&gt;0&lt;/resolution&gt;&lt;isdefault&gt;True&lt;/isdefault&gt;&lt;/browser&gt;&lt;browser&gt;&lt;name&gt;Internet Explorer&lt;/name&gt;&lt;path&gt;&quot;C:\Program Files (x86)\Internet Explorer\iexplore.exe&quot;&lt;/path&gt;&lt;resolution&gt;0&lt;/resolution&gt;&lt;isdefault&gt;False&lt;/isdefault&gt;&lt;dde&gt;&lt;service&gt;IExplore&lt;/service&gt;&lt;topicopenurl&gt;WWW_OpenURL&lt;/topicopenurl&gt;&lt;itemopenurl&gt;&quot;%s&quot;,,0xffffffff,3,,,,&lt;/itemopenurl&gt;&lt;topicactivate&gt;WWW_Activate&lt;/topicactivate&gt;&lt;itemactivate&gt;0xffffffff,0&lt;/itemactivate&gt;&lt;/dde&gt;&lt;/browser&gt;&lt;/browserinfo&gt;
+</code></pre><p>然后保存为只读，Ok了</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/12/06/xiu-gai-vs2010-mo-ren-liu-lan-qi/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

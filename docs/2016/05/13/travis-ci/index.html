@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Travis CI自动部署Hexo | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="travis-ci,ci,hexo," />
+  
+
+  <meta name="description" content="前言之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。Gor 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。今天在查 CI 系统的时候发现了 Travis CI ,于是，一切都很开心了。
+关于 Travis CI这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。
+开启travis-ci首先去 Trav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Travis CI自动部署Hexo">
+<meta property="og:url" content="http://idc.wf/2016/05/13/travis-ci/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="前言之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。Gor 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。今天在查 CI 系统的时候发现了 Travis CI ,于是，一切都很开心了。
+关于 Travis CI这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。
+开启travis-ci首先去 Trav">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Travis CI自动部署Hexo">
+<meta name="twitter:description" content="前言之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。Gor 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。今天在查 CI 系统的时候发现了 Travis CI ,于是，一切都很开心了。
+关于 Travis CI这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。
+开启travis-ci首先去 Trav">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-Travis-CI"><span class="toc-text">关于 Travis CI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启travis-ci"><span class="toc-text">开启travis-ci</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密钥"><span class="toc-text">密钥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Travis-CI-的命令行工具"><span class="toc-text">Travis CI 的命令行工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行下面的命令安装命令行工具。"><span class="toc-text">执行下面的命令安装命令行工具。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成脚本"><span class="toc-text">生成脚本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置脚本"><span class="toc-text">设置脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行下面的命令添加执行操作"><span class="toc-text">执行下面的命令添加执行操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始执行"><span class="toc-text">开始执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附记"><span class="toc-text">附记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-travis-ci" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">使用Travis CI自动部署Hexo</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.05.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2016/05/13/travis-ci/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。<br><a href="https://github.com/wendal/gor" target="_blank" rel="external">Gor</a> 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。<br>今天在查 CI 系统的时候发现了 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> ,于是，一切都很开心了。</p>
+<h2 id="关于-Travis-CI"><a href="#关于-Travis-CI" class="headerlink" title="关于 Travis CI"></a>关于 Travis CI</h2><p>这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。</p>
+<h2 id="开启travis-ci"><a href="#开启travis-ci" class="headerlink" title="开启travis-ci"></a>开启travis-ci</h2><p>首先去 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 官网，点击右上角Sign in with GitHub通过github授权登录。然后去到个人信息页面，开启需要使用 travis 的项目，在我这里就是 DrayChou/Blog-Hexo 。</p>
+<h2 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h2><p>因为需要通过脚本提交到 Github ，所以需要先申请一个 token ，避免密码或者证书问题造成的麻烦。<br>Token 申请地址是 <a href="https://github.com/settings/tokens" target="_blank" rel="external">https://github.com/settings/tokens</a> 。<br>记得给予 public_repo 的权限，要不无法提交修改到 GitHub。<br>记得这个 token ，后面会用到。</p>
+<h2 id="Travis-CI-的命令行工具"><a href="#Travis-CI-的命令行工具" class="headerlink" title="Travis CI 的命令行工具"></a>Travis CI 的命令行工具</h2><h3 id="执行下面的命令安装命令行工具。"><a href="#执行下面的命令安装命令行工具。" class="headerlink" title="执行下面的命令安装命令行工具。"></a>执行下面的命令安装命令行工具。</h3><pre><code>gem install travis
+</code></pre><h3 id="生成脚本"><a href="#生成脚本" class="headerlink" title="生成脚本"></a>生成脚本</h3><p>切换到 blog 的目录下，执行下面的命令，记得输入 node 语言</p>
+<pre><code>$ travis init
+detected repository as DrayChou/Blog-Pugo
+Main programming language used: |HTML| node
+.travis.yml file created!
+enabled
+</code></pre><h2 id="设置脚本"><a href="#设置脚本" class="headerlink" title="设置脚本"></a>设置脚本</h2><p>编辑这个 .travis.yml ，按需添加对应的项。 env.global.secure 是发布的时候生成的数据，请无视。</p>
+<pre><code>language: node_js
+
+node_js:
+- &apos;5.1&apos;
+
+env:
+  global:
+  - secure: &quot;long secure base64 string&quot;
+
+before_install:
+- export TZ=Asia/ShangHai
+
+install:
+- npm install
+
+script:
+# 初始化 GIT
+- git config --global user.name &quot;$GIT_NAME&quot;
+- git config --global user.email &quot;$GIT_EMAIL&quot;
+- git config --global push.default simple
+
+# 设置项目路径
+- rm -rf public
+- git clone --depth 50 --branch gh-pages https://$GH_TOKEN@github.com/$GIT_NAME/$HEXO_BLOG public
+
+# 生成
+- hexo generate
+
+# 发布出去
+- cd public
+- git add -A .
+- MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
+- git commit -m &quot;Site updated:$MESSAGE&quot;
+- git push origin gh-pages --quiet
+</code></pre><h2 id="执行下面的命令添加执行操作"><a href="#执行下面的命令添加执行操作" class="headerlink" title="执行下面的命令添加执行操作"></a>执行下面的命令添加执行操作</h2><p>命令的参数请自行替换。</p>
+<pre><code>travis encrypt &apos;GIT_NAME=&quot;&lt;Personal GitHub Name&gt;&quot; GIT_EMAIL=&quot;&lt;Personal GitHub Email&gt;&quot; HEXO_BLOG=&quot;&lt;Personal Blog Repositories&gt;&quot; GH_TOKEN=&quot;&lt;Personal Access Token&gt;&quot;&apos; --add
+</code></pre><p>命令执行完毕之后会自动修改 .travis.yml 添加对应的 env.global.secure。<br>把这个文件提交到 Github。</p>
+<h2 id="开始执行"><a href="#开始执行" class="headerlink" title="开始执行"></a>开始执行</h2><p>Push 到 Github 之后， Github 就会通过之前定义的 hook 去调用 travis ,然后 travis 就会在后台开始按照脚本执行，可以在 <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci</a> 后台通过查看日志观察发布有没有问题，如果有问题再按照提示进行调试。</p>
+<h2 id="附记"><a href="#附记" class="headerlink" title="附记"></a>附记</h2><p><a href="http://ssk7833.github.io/blog/2016/01/21/using-TravisCI-to-deploy-on-GitHub-pages/" target="_blank" rel="external">注意：git push 時一定要加 –quiet，否則先前設定的 Personal Access Token 將會印出，這樣就失去加密意義了。</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://ssk7833.github.io/blog/2016/01/21/using-TravisCI-to-deploy-on-GitHub-pages/" target="_blank" rel="external">使用 Travis CI 自動部署 GitHub Pages</a></li>
+<li><a href="http://w3cboy.com/post/2016/03/travisci-hexo-deploy/" target="_blank" rel="external">使用travis-ci自动部署hexo博客</a></li>
+<li><a href="https://hexo.io/zh-tw/docs/commands.html#generate" target="_blank" rel="external">hexo 指令</a></li>
+</ol>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2016/05/13/travis-ci/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>php bmp格式图片转换成jpg格式程序 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="bmp," />
+  
+
+  <meta name="description" content="&amp;lt;?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+*/
+//php教程将bmp格式图片转换成jpg格式程序
+function imagebmp($img,$file=&amp;quot;&amp;quot;,$rle=0) {
+
+    $colorc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php bmp格式图片转换成jpg格式程序">
+<meta property="og:url" content="http://idc.wf/2011/02/18/php-bmp-format-image-into-jpg-format-program/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="&amp;lt;?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+*/
+//php教程将bmp格式图片转换成jpg格式程序
+function imagebmp($img,$file=&amp;quot;&amp;quot;,$rle=0) {
+
+    $colorc">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php bmp格式图片转换成jpg格式程序">
+<meta name="twitter:description" content="&amp;lt;?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+*/
+//php教程将bmp格式图片转换成jpg格式程序
+function imagebmp($img,$file=&amp;quot;&amp;quot;,$rle=0) {
+
+    $colorc">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-php-bmp-format-image-into-jpg-format-program" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">php bmp格式图片转换成jpg格式程序</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/18/php-bmp-format-image-into-jpg-format-program/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <div class="cnblogs_code">
+
+<pre><code>&lt;?php
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+*/
+//php教程将bmp格式图片转换成jpg格式程序
+function imagebmp($img,$file=&quot;&quot;,$rle=0) {
+
+    $colorcount=imagecolorstotal($img);
+    $transparent=imagecolortransparent($img);
+    $istransparent=$transparent!=-1;
+
+    if($istransparent) $colorcount--;
+    if($colorcount==0) {
+        $colorcount=0;
+        $bitcount=24;
+    };
+    if(($colorcount&gt;0)and($colorcount&lt;=2)) {
+        $colorcount=2;
+        $bitcount=1;
+    };
+    if(($colorcount&gt;2)and($colorcount&lt;=16)) {
+        $colorcount=16;
+        $bitcount=4;
+    };
+    if(($colorcount&gt;16)and($colorcount&lt;=256)) {
+        $colorcount=0;
+        $bitcount=8;
+    };
+
+    $width=imagesx($img);
+    $height=imagesy($img);
+    $zbytek=(4-($width/(8/$bitcount))%4)%4;
+    if($bitcount&lt;24) $palsize=pow(2,$bitcount)*4;
+    $size=(floor($width/(8/$bitcount))+$zbytek)*$height+54;
+    $size+=$palsize;
+    $offset=54+$palsize;
+    // bitmap file header
+    $ret = &apos;bm&apos;;                        // header (2b)
+    $ret .= int_to_dword($size);        // size of file (4b)
+    $ret .= int_to_dword(0);        // reserved (4b)
+    $ret .= int_to_dword($offset);        // byte location in the file which is first byte of image (4b)
+    // bitmap info header
+    $ret .= int_to_dword(40);        // size of bitmapinfoheader (4b)
+    $ret .= int_to_dword($width);        // width of bitmap (4b)
+    $ret .= int_to_dword($height);        // height of bitmap (4b)
+    $ret .= int_to_word(1);        // biplanes = 1 (2b)
+    $ret .= int_to_word($bitcount);        // bibitcount = {1 (mono) or 4 (16 clr ) or 8 (256 clr) or 24 (16 mil)} (2b)
+    $ret .= int_to_dword($rle);        // rle compression (4b)
+    $ret .= int_to_dword(0);        // width x height (4b)
+    $ret .= int_to_dword(0);        // bixpelspermeter (4b)
+    $ret .= int_to_dword(0);        // biypelspermeter (4b)
+    $ret .= int_to_dword(0);        // number of palettes used (4b)
+    $ret .= int_to_dword(0);        // number of important colour (4b)
+    // image data
+    $cc=$colorcount;
+    $sl1=strlen($ret);
+    if($cc==0) $cc=256;
+    if($bitcount&lt;24) {
+        $colortotal=imagecolorstotal($img);
+        if($istransparent) $colortotal--;
+        for($p=0;$p&lt;$colortotal;$p++) {
+            $color=imagecolorsforindex($img,$p);
+            $ret.=inttobyte($color[&quot;blue&quot;]);
+            $ret.=inttobyte($color[&quot;green&quot;]);
+            $ret.=inttobyte($color[&quot;red&quot;]);
+            $ret.=inttobyte(0); //reserved
+        };
+        $ct=$colortotal;
+        for($p=$colortotal;$p&lt;$cc;$p++) {
+            $ret.=inttobyte(0);
+            $ret.=inttobyte(0);
+            $ret.=inttobyte(0);
+            $ret.=inttobyte(0); //reserved
+        };
+    };
+
+    if($bitcount&lt;=8) {
+        for($y=$height-1;$y&gt;=0;$y--) {
+            $bwrite=&quot;&quot;;
+            for($x=0;$x&lt;$width;$x++) {
+                $color=imagecolorat($img,$x,$y);
+                $bwrite.=decbinx($color,$bitcount);
+                if(strlen($bwrite)==8) {
+                    $retd.=inttobyte(bindec($bwrite));
+                    $bwrite=&quot;&quot;;
+                };
+            };
+            if((strlen($bwrite)&lt;8)and(strlen($bwrite)!=0)) {
+                $sl=strlen($bwrite);
+                for($t=0;$t&lt;8-$sl;$t++)
+                    $sl.=&quot;0&quot;;
+                $retd.=inttobyte(bindec($bwrite));
+            };
+            for($z=0;$z&lt;$zbytek;$z++)
+                $retd.=inttobyte(0);
+        };
+    };
+    if(($rle==1)and($bitcount==8)) {
+        for($t=0;$t&lt;strlen($retd);$t+=4) {
+            if($t!=0)
+                if(($t)%$width==0)
+                    $ret.=chr(0).chr(0);
+            if(($t+5)%$width==0) {
+                $ret.=chr(0).chr(5).substr($retd,$t,5).chr(0);
+                $t+=1;
+            }
+            if(($t+6)%$width==0) {
+                $ret.=chr(0).chr(6).substr($retd,$t,6);
+                $t+=2;
+            }
+            else {
+                $ret.=chr(0).chr(4).substr($retd,$t,4);
+            };
+        };
+        $ret.=chr(0).chr(1);
+    }
+    else {
+        $ret.=$retd;
+    };
+
+    if($bitcount==24) {
+        for($z=0;$z&lt;$zbytek;$z++)
+            $dopl.=chr(0);
+        for($y=$height-1;$y&gt;=0;$y--) {
+            for($x=0;$x&lt;$width;$x++) {
+                $color=imagecolorsforindex($img,imagecolorat($img,$x,$y));
+                $ret.=chr($color[&quot;blue&quot;]).chr($color[&quot;green&quot;]).chr($color[&quot;red&quot;]);
+            }
+            $ret.=$dopl;
+        };
+    };
+    if($file!=&quot;&quot;) {
+        $r=($f=fopen($file,&quot;w&quot;));
+        $r=$r and fwrite($f,$ret);
+        $r=$r and fclose($f);
+        return $r;
+    }
+    else {
+        echo $ret;
+    };
+};
+
+/*
+*------------------------------------------------------------
+*                    imagecreatefrombmp
+*------------------------------------------------------------
+*            - reads image from a bmp file
+*
+*         parameters:  $file - target file to load
+*
+*            returns: image id
+*/
+function imagecreatefrombmp($file) {
+    global  $currentbit, $echomode;
+    $f=fopen($file,&quot;r&quot;);
+    $header=fread($f,2);
+    if($header==&quot;bm&quot;) {
+        $size=freaddword($f);
+        $reserved1=freadword($f);
+        $reserved2=freadword($f);
+        $firstbyteofimage=freaddword($f);
+        $sizebitmapinfoheader=freaddword($f);
+        $width=freaddword($f);
+        $height=freaddword($f);
+        $biplanes=freadword($f);
+        $bibitcount=freadword($f);
+        $rlecompression=freaddword($f);
+        $widthxheight=freaddword($f);
+        $bixpelspermeter=freaddword($f);
+        $biypelspermeter=freaddword($f);
+        $numberofpalettesused=freaddword($f);
+        $numberofimportantcolors=freaddword($f);
+        if($bibitcount&lt;24) {
+            $img=imagecreate($width,$height);
+            $colors=pow(2,$bibitcount);
+            for($p=0;$p&lt;$colors;$p++) {
+                $b=freadbyte($f);
+                $g=freadbyte($f);
+                $r=freadbyte($f);
+                $reserved=freadbyte($f);
+                $palette[]=imagecolorallocate($img,$r,$g,$b);
+            };
+
+            if($rlecompression==0) {
+                $zbytek=(4-ceil(($width/(8/$bibitcount)))%4)%4;
+                for($y=$height-1;$y&gt;=0;$y--) {
+                    $currentbit=0;
+                    for($x=0;$x&lt;$width;$x++) {
+                        $c=freadbits($f,$bibitcount);
+                        imagesetpixel($img,$x,$y,$palette[$c]);
+                    };
+                    if($currentbit!=0) {
+                        freadbyte($f);
+                    };
+                    for($g=0;$g&lt;$zbytek;$g++)
+                        freadbyte($f);
+                };
+            };
+        };
+
+        if($rlecompression==1) //$bi_rle8
+        {
+            $y=$height;
+            $pocetb=0;
+            while(true) {
+                $y--;
+                $prefix=freadbyte($f);
+                $suffix=freadbyte($f);
+                $pocetb+=2;
+                $echoit=false;
+                if($echoit)echo &quot;prefix: $prefix suffix: $suffix&lt;br&gt;&quot;;
+                if(($prefix==0)and($suffix==1)) break;
+                if(feof($f)) break;
+                while(!(($prefix==0)and($suffix==0))) {
+                    if($prefix==0) {
+                        $pocet=$suffix;
+                        $data.=fread($f,$pocet);
+                        $pocetb+=$pocet;
+                        if($pocetb%2==1) {
+                            freadbyte($f);
+                            $pocetb++;
+                        };
+                    };
+                    if($prefix&gt;0) {
+                        $pocet=$prefix;
+                        for($r=0;$r&lt;$pocet;$r++)
+                            $data.=chr($suffix);
+                    };
+                    $prefix=freadbyte($f);
+                    $suffix=freadbyte($f);
+                    $pocetb+=2;
+                    if($echoit) echo &quot;prefix: $prefix suffix: $suffix&lt;br&gt;&quot;;
+                };
+                for($x=0;$x&lt;strlen($data);$x++) {
+                    imagesetpixel($img,$x,$y,$palette[ord($data[$x])]);
+                };
+                $data=&quot;&quot;;
+            };
+        };
+
+        if($rlecompression==2) //$bi_rle4
+        {
+            $y=$height;
+            $pocetb=0;
+            /*while(!feof($f))
+ echo freadbyte($f).&quot;_&quot;.freadbyte($f).&quot;&lt;br&gt;&quot;;*/
+            while(true) {
+//break;
+                $y--;
+                $prefix=freadbyte($f);
+                $suffix=freadbyte($f);
+                $pocetb+=2;
+                $echoit=false;
+                if($echoit)echo &quot;prefix: $prefix suffix: $suffix&lt;br&gt;&quot;;
+                if(($prefix==0)and($suffix==1)) break;
+                if(feof($f)) break;
+                while(!(($prefix==0)and($suffix==0))) {
+                    if($prefix==0) {
+                        $pocet=$suffix;
+                        $currentbit=0;
+                        for($h=0;$h&lt;$pocet;$h++)
+                            $data.=chr(freadbits($f,4));
+                        if($currentbit!=0) freadbits($f,4);
+                        $pocetb+=ceil(($pocet/2));
+                        if($pocetb%2==1) {
+                            freadbyte($f);
+                            $pocetb++;
+                        };
+                    };
+                    if($prefix&gt;0) {
+                        $pocet=$prefix;
+                        $i=0;
+                        for($r=0;$r&lt;$pocet;$r++) {
+                            if($i%2==0) {
+                                $data.=chr($suffix%16);
+                            }
+                            else {
+                                $data.=chr(floor($suffix/16));
+                            };
+                            $i++;
+                        };
+                    };
+                    $prefix=freadbyte($f);
+                    $suffix=freadbyte($f);
+                    $pocetb+=2;
+                    if($echoit) echo &quot;prefix: $prefix suffix: $suffix&lt;br&gt;&quot;;
+                };
+                for($x=0;$x&lt;strlen($data);$x++) {
+                    imagesetpixel($img,$x,$y,$palette[ord($data[$x])]);
+                };
+                $data=&quot;&quot;;
+            };
+        };
+
+        if($bibitcount==24) {
+            $img=imagecreatetruecolor($width,$height);
+            $zbytek=$width%4;
+            for($y=$height-1;$y&gt;=0;$y--) {
+                for($x=0;$x&lt;$width;$x++) {
+                    $b=freadbyte($f);
+                    $g=freadbyte($f);
+                    $r=freadbyte($f);
+                    $color=imagecolorexact($img,$r,$g,$b);
+                    if($color==-1) $color=imagecolorallocate($img,$r,$g,$b);
+                    imagesetpixel($img,$x,$y,$color);
+                }
+                for($z=0;$z&lt;$zbytek;$z++)
+                    freadbyte($f);
+            };
+        };
+        return $img;
+    };
+
+    fclose($f);
+
+};
+
+/*
+* helping functions:
+*-------------------------
+*
+* freadbyte($file) - reads 1 byte from $file
+* freadword($file) - reads 2 bytes (1 word) from $file
+* freaddword($file) - reads 4 bytes (1 dword) from $file
+* freadlngint($file) - same as freaddword($file)
+* decbin8($d) - returns binary string of d zero filled to 8
+* retbits($byte,$start,$len) - returns bits $start-&gt;$start+$len from $byte
+* freadbits($file,$count) - reads next $count bits from $file
+* rgbtohex($r,$g,$b) - convert $r, $g, $b to hex
+* int_to_dword($n) - returns 4 byte representation of $n
+* int_to_word($n) - returns 2 byte representation of $n
+*/
+function freadbyte($f) {
+    return ord(fread($f,1));
+};
+function freadword($f) {
+    $b1=freadbyte($f);
+    $b2=freadbyte($f);
+    return $b2*256+$b1;
+};
+
+function freadlngint($f) {
+    return freaddword($f);
+};
+function freaddword($f) {
+    $b1=freadword($f);
+    $b2=freadword($f);
+    return $b2*65536+$b1;
+};
+
+function retbits($byte,$start,$len) {
+    $bin=decbin8($byte);
+    $r=bindec(substr($bin,$start,$len));
+    return $r;
+};
+
+$currentbit=0;
+function freadbits($f,$count) {
+    global $currentbit,$smode;
+    $byte=freadbyte($f);
+    $lastcbit=$currentbit;
+    $currentbit+=$count;
+    if($currentbit==8) {
+        $currentbit=0;
+    }
+    else {
+        fseek($f,ftell($f)-1);
+    };
+    return retbits($byte,$lastcbit,$count);
+};
+
+function rgbtohex($red,$green,$blue) {
+    $hred=dechex($red);
+    if(strlen($hred)==1) $hred=&quot;0$hred&quot;;
+    $hgreen=dechex($green);
+    if(strlen($hgreen)==1) $hgreen=&quot;0$hgreen&quot;;
+    $hblue=dechex($blue);
+    if(strlen($hblue)==1) $hblue=&quot;0$hblue&quot;;
+    return($hred.$hgreen.$hblue);
+};
+function int_to_dword($n) {
+    return chr($n &amp; 255).chr(($n &gt;&gt; 8) &amp; 255).chr(($n &gt;&gt; 16) &amp; 255).chr(($n &gt;&gt; 24) &amp; 255);
+}
+function int_to_word($n) {
+    return chr($n &amp; 255).chr(($n &gt;&gt; 8) &amp; 255);
+}
+
+function decbin8($d) {
+    return decbinx($d,8);
+};
+function decbinx($d,$n) {
+    $bin=decbin($d);
+    $sbin=strlen($bin);
+    for($j=0;$j&lt;$n-$sbin;$j++)
+        $bin=&quot;0$bin&quot;;
+    return $bin;
+};
+function inttobyte($n) {
+    return chr($n);
+};
+
+//实例方法
+//include_once(&apos;bmp.php&apos;);
+$image=imagecreatefrombmp(&apos;a.bmp&apos;);
+imagejpeg($image,&apos;a.jpeg&apos;);
+imagedestroy($image);
+</code></pre></div>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/18/php-bmp-format-image-into-jpg-format-program/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

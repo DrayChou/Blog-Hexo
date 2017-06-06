@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>firefox中用js提交表单 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="js," />
+  
+
+  <meta name="description" content="1.document.forms.from.submit();">
+<meta property="og:type" content="article">
+<meta property="og:title" content="firefox中用js提交表单">
+<meta property="og:url" content="http://idc.wf/2011/01/20/firefox-zhong-yong-js-ti-jiao-biao-dan/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="1.document.forms.from.submit();">
+<meta property="og:image" content="http://idc.wf/”123.gif”">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="firefox中用js提交表单">
+<meta name="twitter:description" content="1.document.forms.from.submit();">
+<meta name="twitter:image" content="http://idc.wf/”123.gif”">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">相关阅读</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-firefox-zhong-yong-js-ti-jiao-biao-dan" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">firefox中用js提交表单</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.01.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/01/20/firefox-zhong-yong-js-ti-jiao-biao-dan/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <div class="postcontent"><br>    <span class="Apple-style-span"><br>        1.document.forms.from.submit();<br>        <a id="more"></a><br>        <br><br>        document.form.sumbit();<br>        <br><br>        document.form.submit.click();<br>        <br><br>        this.form.submit();<br>        <br><br>        以上几种形式的js表单提交在firefox浏览器下是不起作用的<br>        <br><br>        2.必须遵循w3c标准：<br>        <br><br>        1).获得form时应使用getElementById()方法<br>        <br><br>        2).用.submit()方法提交表单<br>        <br><br>        3).button的name/id绝对不能命名为”submit”<br>        <br>4).form中所有的组件（按钮，文本框等）的name/id也不能命名为”submit”<br>    </span><br>    <span class="Apple-style-span"><br>        # 当提交按钮的name 或者 id为submit时候，用js 提交表单，表单名.submit()时候会报一个错误，提示对象不支持此属性或办法。<br>        <br><br>        解决方法是修改提交按钮的 name 或者 id 不要与 submit或者action同名即可。<br>        <br><br>        那么，请问为什么 当提交按钮的 name 或者 id为submit或者 action的时候 js提交表单会报错呢？这难道是 一个bug？<br>        <br>高手们请指教。。。。<br>    </span><br>    <span class="Apple-style-span"><br>        因为”表单名.submit()提交”这种写法本身就是不符合W3C标准的规定的，在IE下没有报错因为IE支持这种写法，但是如果在FF下就会报错，要写成”document.getElementById(‘form id’).submit()”的？<br>    </span><br>    <span class="Apple-style-span"><br>        <span class="Apple-style-span"><br>            我在项目中发现<br>            <input type="”submit”/"><br>            与<br>            <img src="”123.gif”" onclick="”submit();”"><br>            <br><br>            得出的效果截然不同， 谁能告诉我这两着有合不同<br>            <br>我又如何能用图片来替代原有的提交按钮<br>        </span><br>    </span><br>    <span class="Apple-style-span"><br>        是说这是一个按钮,它的是一个提交按钮.当点击它时,它会自动将它所在的表单进行提交.<br>    </span><br>    <h2 class="related_post_title">相关阅读</h2><br><br></div>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/01/20/firefox-zhong-yong-js-ti-jiao-biao-dan/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

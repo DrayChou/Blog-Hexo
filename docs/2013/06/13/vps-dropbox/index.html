@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>VPS上使用DropBox定时备份方案 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="vps," />
+  
+
+  <meta name="description" content="原文地址:http://www.deepvps.com/dropbox-backup.html
+这个备份方案是直接使用dropbox同步，如果想实时同步就一直守护dropbox进程，会占用一定资源。推荐小内存VPS的同学和deepvps一样使用cron定时备份。1.linux上安装dropbox
+32位linux
+wget -O dropbox.tar.gz http://www.dropbox.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VPS上使用DropBox定时备份方案">
+<meta property="og:url" content="http://idc.wf/2013/06/13/vps-dropbox/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="原文地址:http://www.deepvps.com/dropbox-backup.html
+这个备份方案是直接使用dropbox同步，如果想实时同步就一直守护dropbox进程，会占用一定资源。推荐小内存VPS的同学和deepvps一样使用cron定时备份。1.linux上安装dropbox
+32位linux
+wget -O dropbox.tar.gz http://www.dropbox.">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VPS上使用DropBox定时备份方案">
+<meta name="twitter:description" content="原文地址:http://www.deepvps.com/dropbox-backup.html
+这个备份方案是直接使用dropbox同步，如果想实时同步就一直守护dropbox进程，会占用一定资源。推荐小内存VPS的同学和deepvps一样使用cron定时备份。1.linux上安装dropbox
+32位linux
+wget -O dropbox.tar.gz http://www.dropbox.">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-vps-dropbox" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">VPS上使用DropBox定时备份方案</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2013.06.13</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2013/06/13/vps-dropbox/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>原文地址:<a href="http://www.deepvps.com/dropbox-backup.html" target="_blank" rel="external">http://www.deepvps.com/dropbox-backup.html</a></p>
+<p>这个备份方案是直接使用dropbox同步，如果想实时同步就一直守护dropbox进程，会占用一定资源。推荐小内存VPS的同学和deepvps一样使用cron定时备份。<br>1.linux上安装dropbox</p>
+<p>32位linux</p>
+<pre><code>wget -O dropbox.tar.gz http://www.dropbox.com/download?plat=lnx.x86
+</code></pre><p>64位linux</p>
+<pre><code>wget -O dropbox.tar.gz http://www.dropbox.com/download?plat=lnx.x86_64
+</code></pre><p>解压：</p>
+<pre><code>tar xzvf dropbox.tar.gz
+</code></pre><p>第一次运行生成host_id</p>
+<pre><code>~/.dropbox-dist/dropboxd &amp;
+</code></pre><p>生成id后，将host_id替换下面链接后面的字符在浏览器打开，输入你的帐号密码就绑定机器了．</p>
+<pre><code>https://www.dropbox.com/cli_link?host_id=XXXXXXXXXXXXXXXXXXX
+</code></pre><p>2.建立连接备份网站</p>
+<p>正式开始同步你的网站，通过ln软链接你所有要备份的目录，例如：</p>
+<pre><code>cd ~/Dropbox
+ln -s /home/wwwroot/html
+ln -s /home/wwwroot/htdocs
+．．．
+</code></pre><p>开始运行同步，美国的vps同步速度非常快的，1G的html文件，只花了几分钟全部同步完成</p>
+<pre><code>~/.dropbox-dist/dropboxd &amp;
+</code></pre><p>3.为了节省资源，可以不使用实时同步，只定时打开同步一天的文件再关掉以节省资源。</p>
+<p>先关掉同步：</p>
+<pre><code>killall dropbox
+</code></pre><p>编写定时同步脚本：</p>
+<pre><code>vi backup.sh
+</code></pre><p>代码如下：</p>
+<pre><code>#!/bin/sh
+start() {
+echo starting dropbox
+/root/.dropbox-dist/dropboxd &amp;
+}
+stop() {
+echo stoping dropbox
+pkill dropbox
+}
+case “$1″ in
+start)
+start
+;;
+stop)
+stop
+;;
+restart)
+stop
+start
+;;
+esac
+</code></pre><p>定时运行和关闭：</p>
+<pre><code>chmod +x backup.sh
+crontab -e
+</code></pre><p>每天4点开始同步，5点关闭同步．<br>其实一般每天更新数据不多不用打开这么长时间，我自己用的一天只打开10分钟，这个根据各人每天更新的数据量自己来设置。</p>
+<pre><code>0 4 * * * sh /root/backup.sh restart
+
+0 5 * * * sh /root/backup.sh stop
+</code></pre><p>4.干脆把我从网上找的备份数据库的脚本一并贡献出来，适合懒人使用</p>
+<pre><code>vi bakmysql.sh
+</code></pre><p>脚本如下：</p>
+<pre><code>#!/bin/bash
+DBName=修改为数据库名
+DBUser=修改为数据库用户名
+DBPasswd=修改为数据库密码
+BackupPath=/root/Dropbox/
+LogFile=/root/db.log
+DBPath=/usr/local/mysql/var/ #备份的数据库目录
+#BackupMethod=mysqldump
+#BackupMethod=mysqlhotcopy
+#BackupMethod=tar
+
+NewFile=”$BackupPath”db$(date +%y%m%d).tgz
+DumpFile=”$BackupPath”db$(date +%y%m%d)
+OldFile=”$BackupPath”db$(date +%y%m%d –date=’5 days ago’).tgz #自动删除5天前的备份
+echo “——————————————-” &gt;&gt; $LogFile
+echo $(date +”%y-%m-%d %H:%M:%S”) &gt;&gt; $LogFile
+echo “————————–” &gt;&gt; $LogFile
+#Delete Old File
+if [ -f $OldFile ]
+then
+rm -f $OldFile &gt;&gt; $LogFile 2&gt;&amp;1
+echo “[$OldFile]Delete Old File Success!” &gt;&gt; $LogFile
+else
+echo “[$OldFile]No Old Backup File!” &gt;&gt; $LogFile
+fi
+if [ -f $NewFile ]
+then
+echo “[$NewFile]The Backup File is exists,Can’t Backup!” &gt;&gt; $LogFile
+else
+case $BackupMethod in
+mysqldump)
+if [ -z $DBPasswd ]
+then
+mysqldump -u $DBUser –opt $DBName &gt; $DumpFile
+else
+mysqldump -u $DBUser -p$DBPasswd –opt $DBName &gt; $DumpFile
+fi
+tar czvf $NewFile $DumpFile &gt;&gt; $LogFile 2&gt;&amp;1
+echo “[$NewFile]Backup Success!” &gt;&gt; $LogFile
+rm -rf $DumpFile
+;;
+mysqlhotcopy)
+rm -rf $DumpFile
+mkdir $DumpFile
+if [ -z $DBPasswd ]
+then
+mysqlhotcopy -u $DBUser $DBName $DumpFile &gt;&gt; $LogFile 2&gt;&amp;1
+else
+mysqlhotcopy -u $DBUser -p $DBPasswd $DBName $DumpFile &gt;&gt;$LogFile 2&gt;&amp;1
+fi
+tar czvf $NewFile $DumpFile &gt;&gt; $LogFile 2&gt;&amp;1
+echo “[$NewFile]Backup Success!” &gt;&gt; $LogFile
+rm -rf $DumpFile
+;;
+*)
+service mysql stop &gt;/dev/null 2&gt;&amp;1
+tar czvf $NewFile $DBPath$DBName &gt;&gt; $LogFile 2&gt;&amp;1
+service mysql start &gt;/dev/null 2&gt;&amp;1
+echo “[$NewFile]Backup Success!” &gt;&gt; $LogFile
+;;
+esac
+fi
+echo “——————————————-” &gt;&gt; $LogFile
+</code></pre><p>5.删除卸载dropbox方法：</p>
+<pre><code>killall dropbox
+rm -rf .dropbox .dropbox-dist Dropbox dropbox.tar.gz dbmakefakelib.py dbreadconfig.py
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2013/06/13/vps-dropbox/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

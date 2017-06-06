@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>php 断点续传功能 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="download," />
+  
+
+  <meta name="description" content="断点续传指的是在上传时，将上传任务（一个文件或一个压缩包）人为的划分为几个部分，每一个部分采用一个线程进行上传，下面我们来看看php 断点续传功能的实现方法吧。
+&amp;lt;?php
+/**
+ * 作者 于恩水&amp;lt;yuenshui@126.com&amp;gt;
+ * 支持断点续传下载
+ * 实例代码：
+ *           $down = new SD_DownLoad();
+ *">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php 断点续传功能">
+<meta property="og:url" content="http://idc.wf/2011/02/18/http-functions-php/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="断点续传指的是在上传时，将上传任务（一个文件或一个压缩包）人为的划分为几个部分，每一个部分采用一个线程进行上传，下面我们来看看php 断点续传功能的实现方法吧。
+&amp;lt;?php
+/**
+ * 作者 于恩水&amp;lt;yuenshui@126.com&amp;gt;
+ * 支持断点续传下载
+ * 实例代码：
+ *           $down = new SD_DownLoad();
+ *">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php 断点续传功能">
+<meta name="twitter:description" content="断点续传指的是在上传时，将上传任务（一个文件或一个压缩包）人为的划分为几个部分，每一个部分采用一个线程进行上传，下面我们来看看php 断点续传功能的实现方法吧。
+&amp;lt;?php
+/**
+ * 作者 于恩水&amp;lt;yuenshui@126.com&amp;gt;
+ * 支持断点续传下载
+ * 实例代码：
+ *           $down = new SD_DownLoad();
+ *">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-http-functions-php" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">php 断点续传功能</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/18/http-functions-php/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>断点续传指的是在上传时，将上传任务（一个文件或一个压缩包）人为的划分为几个部分，每一个部分采用一个线程进行上传，下面我们来看看php 断点续传功能的实现方法吧。</p>
+<pre><code>&lt;?php
+/**
+ * 作者 于恩水&lt;yuenshui@126.com&gt;
+ * 支持断点续传下载
+ * 实例代码：
+ *           $down = new SD_DownLoad();
+ *          $down-&gt;Down(&apos;E:/iso/MS.Office2003SP1.CHS.iso&apos;);
+ **/
+ SD_DownLoad {
+
+    /**
+     * 下载的开始点
+     *
+     * @access private
+     * @var integer
+     */
+    private $mDownStart;
+
+    /**
+     * 文件大小
+     *
+     * @access private
+     * @var integer
+     */
+    private $mFileSize;
+
+    /**
+     * 文件句柄
+     *
+     * @access private
+     * @var integer
+     */
+    private $mFileHandle;
+
+    /**
+     * 文件全路径
+     *
+     * @access private
+     * @var string
+     */
+    private $mFilePath;
+
+    /**
+     * 文件下载时显示的文件名
+     *
+     * @access private
+     * @var string
+     */
+    private $mFileName;
+
+    /**
+     * 构造函数
+     *
+     * @access public
+     * @return void
+     **/
+    public function __construct() {
+    }
+
+    /**
+     * 下载
+     *
+     * @param string $pFilePath 文件全路径
+     * @param string pFileName 文件下载时显示的文件名，缺省为实际文件名
+     * @access public
+     * @return void
+     **/
+    public function Down($pFilePath, $pFileName = &apos;&apos;) {
+        $this-&gt;mFilePath = $pFilePath;
+        if(!$this-&gt;IniFile()) $this-&gt;SendError();
+        $this-&gt;mFileName = empty($pFileName) ? $this-&gt;GetFileName() : $pFileName;
+
+        $this-&gt;IniFile();
+        $this-&gt;SetStart();
+        $this-&gt;SetHeader();
+
+        $this-&gt;Send();
+    }
+
+    /**
+     * 初始化文件信息
+     *
+     * @access private
+     * @return boolean
+     **/
+    private function IniFile() {
+        if(!is_file($this-&gt;mFilePath)) return false;
+        $this-&gt;mFileHandle = fopen($this-&gt;mFilePath, &apos;rb&apos;);
+        $this-&gt;mFileSize = filesize($this-&gt;mFilePath);
+        return true;
+    }
+
+    /**
+     * 设置下载开始点
+     *
+     * @access private
+     * @return void
+     **/
+    private function SetStart() {
+        if (!empty($_SERVER[&apos;HTTP_RANGE&apos;]) &amp;&amp; preg_match(&quot;/^bytes=([d]?)-([d]?)$/i&quot;, $_SERVER[&apos;HTTP_RANGE&apos;], $match)) {
+            if(empty($match[1])) $this-&gt;mDownStart = $match[1];
+            fseek($this-&gt;mFileHandle, $this-&gt;mDownStart);
+        }
+        else {
+            $this-&gt;mDownStart = 0;
+        }
+    }
+
+    /**
+     * 设置http头
+     *
+     * @access private
+     * @return void
+     **/
+    private function SetHeader() {
+        @header(&quot;Cache-control: public&quot;);
+        @header(&quot;Pragma: public&quot;);
+        Header(&quot;Content-Length: &quot; . ($this-&gt;mFileSize - $this-&gt;mDownStart));
+        if ($this-&gt;mDownStart &gt; 0) {
+            @Header(&quot;HTTP/1.1 206 Partial Content&quot;);
+            Header(&quot;Content-Ranges: bytes&quot; . $this-&gt;mDownStart . &quot;-&quot; . ($this-&gt;mFileSize - 1) . &quot;/&quot; . $this-&gt;mFileSize);
+        }
+        else {
+            Header(&quot;Accept-Ranges: bytes&quot;);
+        }
+        @header(&quot;Content-Type: application/octet-stream&quot;);
+        @header(&quot;Content-Disposition: attachment;filename=&quot; . $this-&gt;mFileName);
+    }
+
+    /**
+     * 获取全路径里的文件名部分
+     *
+     * @access private
+     * @return string
+     **/
+    private function GetFileName() {
+        return basename ($this-&gt;mFilePath);
+    }
+
+    /**
+     * 发送数据
+     *
+     * @access private
+     * @return void
+     **/
+    private function Send() {
+        fpassthru($this-&gt;mFileHandle);
+    }
+
+    /**
+     * 发送错误
+     *
+     * @access public
+     * @return void
+     **/
+    public function SendError() {
+        @header(&quot;HTTP/1.0 404 Not Found&quot;);
+        @header(&quot;Status: 404 Not Found&quot;);
+        exit();
+    }
+}
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/18/http-functions-php/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>ubuntu 环境下 安装 java6-sdk | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="java," />
+  
+
+  <meta name="description" content="安装sun-java6
+
+添加partner源
+sudo add-apt-repository &amp;quot;deb http://archive.canonical.com/ubuntu maverick partner&amp;quot;
+(注：  如果系统提示没有add-apt-repository命令，则需要先安装python-software-properties，命令sudo  apt-get">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu 环境下 安装 java6-sdk">
+<meta property="og:url" content="http://idc.wf/2011/01/08/ubuntu--huan-jing-xia---an-zhuang--java6-sdk/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="安装sun-java6
+
+添加partner源
+sudo add-apt-repository &amp;quot;deb http://archive.canonical.com/ubuntu maverick partner&amp;quot;
+(注：  如果系统提示没有add-apt-repository命令，则需要先安装python-software-properties，命令sudo  apt-get">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.970Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu 环境下 安装 java6-sdk">
+<meta name="twitter:description" content="安装sun-java6
+
+添加partner源
+sudo add-apt-repository &amp;quot;deb http://archive.canonical.com/ubuntu maverick partner&amp;quot;
+(注：  如果系统提示没有add-apt-repository命令，则需要先安装python-software-properties，命令sudo  apt-get">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">安装sun-java6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">设为默认Java</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-ubuntu--huan-jing-xia---an-zhuang--java6-sdk" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">ubuntu 环境下 安装 java6-sdk</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.01.08</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/01/08/ubuntu--huan-jing-xia---an-zhuang--java6-sdk/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3><span class="mw-headline">安装sun-java6</span></h3>
+
+<p>添加partner源</p>
+<pre><code>sudo add-apt-repository &quot;deb http://archive.canonical.com/ubuntu maverick partner&quot;
+</code></pre><p>(注：  如果系统提示没有add-apt-repository命令，则需要先安装python-software-properties，命令sudo  apt-get install  python-software-properties。另外，有些版本的ubuntu即使安装了python-software-properties 也无add-apt-repository命令,此时需要手动添加此行”deb <a class="external free" title="http://archive.canonical.com/ubuntu" rel="external" href="http://archive.canonical.com/ubuntu" target="_blank">http://archive.canonical.com/ubuntu</a> maverick partner”到/etc/apt/sources.list文件中。)</p>
+<p>更新系统</p>
+<pre><code>sudo add-apt-repository &quot;deb http://archive.canonical.com/ubuntu maverick partner&quot;
+</code></pre><p>安装jre</p>
+<pre><code>sudo add-apt-repository &quot;deb http://archive.canonical.com/ubuntu maverick partner&quot;
+</code></pre><p>安装jdk</p>
+<pre><code>sudo add-apt-repository &quot;deb http://archive.canonical.com/ubuntu maverick partner&quot;
+</code></pre><p>查看版本信息</p>
+<pre><code>sudo add-apt-repository &quot;deb http://archive.canonical.com/ubuntu maverick partner&quot;
+</code></pre><h3><span class="mw-headline">设为默认Java</span></h3>
+
+<pre><code>sudo add-apt-repository &quot;deb http://archive.canonical.com/ubuntu maverick partner&quot;
+</code></pre><p>选择即可 </p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/01/08/ubuntu--huan-jing-xia---an-zhuang--java6-sdk/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

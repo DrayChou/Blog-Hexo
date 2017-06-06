@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mysql 数据库引入 memcached，支持 Nosql | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="mysql," />
+  
+
+  <meta name="description" content="mysql 也开始支持Nosql了，这样一来如果可以直接用sql语句进行检索查询的话无疑会把原先的Memcache等给排挤出去，如果效率方面又很高的话，那么memcache还活什么啊？
+嗯。。。期待。。。
+Oracle 前天在 2011 Mysql user conference and expo 大会上发布的 Mysql 5.6.2 测试版本，详情请看这里。
+该版本最值得关注的便是对 Nosql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql 数据库引入 memcached，支持 Nosql">
+<meta property="og:url" content="http://idc.wf/2011/04/14/mysql-database-into-memcached-support-nosql/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="mysql 也开始支持Nosql了，这样一来如果可以直接用sql语句进行检索查询的话无疑会把原先的Memcache等给排挤出去，如果效率方面又很高的话，那么memcache还活什么啊？
+嗯。。。期待。。。
+Oracle 前天在 2011 Mysql user conference and expo 大会上发布的 Mysql 5.6.2 测试版本，详情请看这里。
+该版本最值得关注的便是对 Nosql">
+<meta property="og:image" content="http://pic003.cnblogs.com/2011/66372/201104/2011041310182092.jpg">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.954Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql 数据库引入 memcached，支持 Nosql">
+<meta name="twitter:description" content="mysql 也开始支持Nosql了，这样一来如果可以直接用sql语句进行检索查询的话无疑会把原先的Memcache等给排挤出去，如果效率方面又很高的话，那么memcache还活什么啊？
+嗯。。。期待。。。
+Oracle 前天在 2011 Mysql user conference and expo 大会上发布的 Mysql 5.6.2 测试版本，详情请看这里。
+该版本最值得关注的便是对 Nosql">
+<meta name="twitter:image" content="http://pic003.cnblogs.com/2011/66372/201104/2011041310182092.jpg">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-mysql-database-into-memcached-support-nosql" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Mysql 数据库引入 memcached，支持 Nosql</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.04.14</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/04/14/mysql-database-into-memcached-support-nosql/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>mysql 也开始支持Nosql了，这样一来如果可以直接用sql语句进行检索查询的话无疑会把原先的Memcache等给排挤出去，如果效率方面又很高的话，那么memcache还活什么啊？</p>
+<p>嗯。。。期待。。。</p>
+<p>Oracle 前天在 <strong>2011 Mysql user conference and expo</strong> 大会上发布的 Mysql 5.6.2 测试版本，详情请看<a href="http://www.oschina.net/news/17118/mysql-5-6-2-dev" target="_blank" rel="external">这里</a>。</p>
+<p>该版本最值得关注的便是对 Nosql 技术的支持，尽管目前还是实验阶段，该技术使得 Mysql 内置 Nosql 技术，该技术可减少 memcached 的查询延迟。在单台机器中，Nosql 当前只适用一张 InnoDB 表，但未来将支持多个表。在 memcached 中的 key和value 分别对应表中的相应字段，同时可为 key定义多列的值。所有这些数据都存储在一张 InnoDB 表，可通过 sql 命令来进行检索和修改。目前集成 memcached 守护进程的版本只能用于 linux。</p>
+<p>来自 InnoDB 的<a href="http://blogs.innodb.com/wp/2011/04/get-started-with-innodb-memcached-daemon-plugin/" target="_blank">博客</a>向你介绍如何启用该功能</p>
+<p>下图是该技术的架构图：</p>
+<p><img src="http://pic003.cnblogs.com/2011/66372/201104/2011041310182092.jpg" alt="" width="627" height="468"></p>
+<p>来自:<a href="http://news.cnblogs.com/n/97243/" target="_blank" rel="external">http://news.cnblogs.com/n/97243/</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/04/14/mysql-database-into-memcached-support-nosql/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

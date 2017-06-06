@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>php模板引擎smarty缓存应用 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="smarty," />
+  
+
+  <meta name="description" content="1：smarty 缓存的配置  php代码  2:smarty缓存的使用和清除  php代码  
+$smarty-&amp;gt;display(‘cache.tpl‘, cacheid);  //创建带ID的缓存,cache.tpl  模板文件$smarty-&amp;gt;clearallcache(); //清除所有缓存$smarty-&amp;gt;clearcache(‘index.htm‘); //清除ind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php模板引擎smarty缓存应用">
+<meta property="og:url" content="http://idc.wf/2011/02/17/php-smarty-caching-application-template-engine/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="1：smarty 缓存的配置  php代码  2:smarty缓存的使用和清除  php代码  
+$smarty-&amp;gt;display(‘cache.tpl‘, cacheid);  //创建带ID的缓存,cache.tpl  模板文件$smarty-&amp;gt;clearallcache(); //清除所有缓存$smarty-&amp;gt;clearcache(‘index.htm‘); //清除ind">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.959Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php模板引擎smarty缓存应用">
+<meta name="twitter:description" content="1：smarty 缓存的配置  php代码  2:smarty缓存的使用和清除  php代码  
+$smarty-&amp;gt;display(‘cache.tpl‘, cacheid);  //创建带ID的缓存,cache.tpl  模板文件$smarty-&amp;gt;clearallcache(); //清除所有缓存$smarty-&amp;gt;clearcache(‘index.htm‘); //清除ind">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-php-smarty-caching-application-template-engine" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">php模板引擎smarty缓存应用</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.17</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/17/php-smarty-caching-application-template-engine/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>1：smarty 缓存的配置  php代码<a href="http://writeblog.csdn.net/#" target="_blank" rel="external"></a>  2:smarty缓存的使用和清除  php代码<a href="http://writeblog.csdn.net/#" target="_blank" rel="external"></a>  <div></div></p>
+<p>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">display</span>(‘<span style="color: #800000">cache</span>.<span style="color: #800000">tpl</span>‘, <span style="color: #800000">cache</span><em><span style="color: #800000">id</span>);  //<span style="color: #800000">创建带ID的缓存</span>,<span style="color: #800000">cache</span>.<span style="color: #800000">tpl</span>  <span style="color: #800000">模板文件</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span></em><span style="color: #800000">all</span><em><span style="color: #800000">cache</span>(); //<span style="color: #800000">清除所有缓存</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span></em><span style="color: #800000">cache</span>(‘<span style="color: #800000">index</span>.<span style="color: #800000">htm</span>‘); //<span style="color: #800000">清除index</span>.<span style="color: #800000">tpl的缓存</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span><em><span style="color: #800000">cache</span>(‘<span style="color: #800000">index</span>.<span style="color: #800000">htm</span>‘,<span style="color: #800000">cache</span></em><span style="color: #800000">id</span>); //<span style="color: #800000">清除指定id的缓存</span></p>
+<p><br><a id="more"></a></p>
+<p>3：smarty的局部缓存</p>
+<p>insert 函数默认是不缓存的。并且这个熟悉不能修改</p>
+<p>Html代码<a href="http://writeblog.csdn.net/#" target="_blank" rel="external"></a></p>
+<p>模板 index.htm  </p>
+<div><br><br><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">display</span>(‘<span style="color: #800000">cache</span>.<span style="color: #800000">tpl</span>‘, <span style="color: #800000">cache</span><em><span style="color: #800000">id</span>);  //<span style="color: #800000">创建带ID的缓存</span>,<span style="color: #800000">cache</span>.<span style="color: #800000">tpl</span>  <span style="color: #800000">模板文件</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span></em><span style="color: #800000">all</span><em><span style="color: #800000">cache</span>(); //<span style="color: #800000">清除所有缓存</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span></em><span style="color: #800000">cache</span>(‘<span style="color: #800000">index</span>.<span style="color: #800000">htm</span>‘); //<span style="color: #800000">清除index</span>.<span style="color: #800000">tpl的缓存</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span><em><span style="color: #800000">cache</span>(‘<span style="color: #800000">index</span>.<span style="color: #800000">htm</span>‘,<span style="color: #800000">cache</span></em><span style="color: #800000">id</span>); //<span style="color: #800000">清除指定id的缓存</span><br><br><br></div>
+
+<p>index.php  </p>
+<div><br><br><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">display</span>(‘<span style="color: #800000">cache</span>.<span style="color: #800000">tpl</span>‘, <span style="color: #800000">cache</span><em><span style="color: #800000">id</span>);  //<span style="color: #800000">创建带ID的缓存</span>,<span style="color: #800000">cache</span>.<span style="color: #800000">tpl</span>  <span style="color: #800000">模板文件</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span></em><span style="color: #800000">all</span><em><span style="color: #800000">cache</span>(); //<span style="color: #800000">清除所有缓存</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span></em><span style="color: #800000">cache</span>(‘<span style="color: #800000">index</span>.<span style="color: #800000">htm</span>‘); //<span style="color: #800000">清除index</span>.<span style="color: #800000">tpl的缓存</span><br>$<span style="color: #800000">smarty-</span>&gt;<span style="color: #800000">clear</span><em><span style="color: #800000">cache</span>(‘<span style="color: #800000">index</span>.<span style="color: #800000">htm</span>‘,<span style="color: #800000">cache</span></em><span style="color: #800000">id</span>); //<span style="color: #800000">清除指定id的缓存</span><br><br><br></div>
+
+<p><strong>转自：<a href="http://blog.csdn.net/webdesman/archive/2009/09/12/4541627.aspx" target="_blank" rel="external">http://blog.csdn.net/webdesman/archive/2009/09/12/4541627.aspx</a></strong></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/17/php-smarty-caching-application-template-engine/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

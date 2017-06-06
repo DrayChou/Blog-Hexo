@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>php,smarty 缓存操作 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="smarty," />
+  
+
+  <meta name="description" content="一、使用缓存   要开启smarty的缓存,只需将caching设为true,并指定cache_dir即可.    使用cache_lefetime指定缓存生存时间,单位为秒    要对相同页面生成多个不同的缓存,在display或fetch中加入第二参数cache_id,如$smarty-&amp;gt;display(‘index.tpl’,$my_cache_id);此特性可用于对不同的$_GET进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php,smarty 缓存操作">
+<meta property="og:url" content="http://idc.wf/2011/02/16/php-smarty-cache-operation/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="一、使用缓存   要开启smarty的缓存,只需将caching设为true,并指定cache_dir即可.    使用cache_lefetime指定缓存生存时间,单位为秒    要对相同页面生成多个不同的缓存,在display或fetch中加入第二参数cache_id,如$smarty-&amp;gt;display(‘index.tpl’,$my_cache_id);此特性可用于对不同的$_GET进">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.959Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php,smarty 缓存操作">
+<meta name="twitter:description" content="一、使用缓存   要开启smarty的缓存,只需将caching设为true,并指定cache_dir即可.    使用cache_lefetime指定缓存生存时间,单位为秒    要对相同页面生成多个不同的缓存,在display或fetch中加入第二参数cache_id,如$smarty-&amp;gt;display(‘index.tpl’,$my_cache_id);此特性可用于对不同的$_GET进">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-php-smarty-cache-operation" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">php,smarty 缓存操作</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/16/php-smarty-cache-operation/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>一、使用缓存   <br>要开启smarty的缓存,只需将caching设为true,并指定cache_dir即可.    <br>使用cache_lefetime指定缓存生存时间,单位为秒    <br>要对相同页面生成多个不同的缓存,在display或fetch中加入第二参数cache_id,如$smarty-&gt;display(‘index.tpl’,$my_cache_id);此特性可用于对不同的$_GET进行不同的缓存    <br>二、清除缓存  clear_all_cache();//清除所有缓存   <br>clear_cache(‘index.tpl’);//清除index.tpl的缓存    <br>clear_cache(‘index.tpl’,cache_id);//清除指定id的缓存  三、使用自定义缓存方式  设置cache_handler_func使用自定义的函数处理缓存   <br>如:    <br>$smarty-&gt;cache_handler_func = “myCache”;    <br>function myCache($action, &amp;$smarty_obj, &amp;$cache_content, $tpl_file=null, $cache_id=null, $compile_id=null){    <br>}    <br>该函数的一般是根椐$action来判断缓存当前操作:    <br>switch($action){    <br>case “read”://读取缓存内容    <br>case “write”://写入缓存    <br>case “clear”://清空    <br>}    <br>一般使用md5($tpl_file.$cache_id.$compile_id)作为唯一的cache_id    <br>如果需要,可使用gzcompress和gzuncompress来压缩和解压 <a id="more"></a>     <br>四、局部关闭缓存  要在某些区域使缓存失效(只对需要的缓存),有几种方法:   <br>inser:    <br>定义一个inser标签要使用的处理函数,函数名格式为:insert_xx(array $params, object &amp;$smarty)其中的xx是insert的name,也就是说,如果你定义的函数为insert_abc,则模板中使用方法为{insert name=’abc’}    <br>参数通过$params传入    <br>也可以做成insert插件,文件名命名为:insert.xx.php,函数命名为:smarty_insert_aa($params,&amp;$smarty),xx定义同上    <br>register_block:    <br>定义一个block:smarty_block_name($params,$content, &amp;$smarty){return $content;} //name表示区域名    <br>注册block:$smarty-&gt;register_block(‘name’, ‘smarty_block_name’, false); //第三参数false表示该区域不被缓存    <br>模板写法:{name}内容{/name}    <br>写成block插件:    <br>1)定义一件插件函数:block.cacheless.php,放在smarty的plugins目录    <br>block.cacheless.php的内容如下:  &lt;?php   <br>function smarty_block_cacheless($param, $content, &amp;$smarty) {    <br>   return $content;    <br>}    <br>?&gt;  2) 编写程序及模板   <br>示例程序:testCacheLess.php  &lt;?php   <br>include(‘smarty.class.php’);    <br>$smarty = new smarty;    <br>$smarty-&gt;caching=true;    <br>$smarty-&gt;cache_lifetime = 6;    <br>$smarty-&gt;display(‘cache.tpl’);    <br>?&gt;  所用的模板:cache.tpl  已经缓存的:{$smarty.now}<br>   <br>{cacheless}    <br>没有缓存的:{$smarty.now}    <br>{/cacheless}  关于模板中部分不被缓存的解决办法:  smarty提供了强大的缓存功能。但有时我们并不希望整篇文档都被缓存，而是有选择的缓存某一部分内容或某一部分内容不被缓存。例如你在页面上端使用一个带有广告条位置的模板，广告条可以包含任何HTML、图象、FLASH等混合信息. 因此这里不能使用一个静态的链接，同时我们也不希望该广告条被缓存. 这就需要在 insert 函数指定，同时需要一个函数取广告条的内容信息。smarty也提供了这种缓存控制能力。  我们可以使用{insert}使模板的一部分不被缓存  可以使用$smarty-&gt;register_function($params,&amp;$smarty)阻止插件从缓存中输出，  还可以使用$smarty-&gt;register_block($params,&amp;$smarty)使整篇页面中的某一块不被缓存。  下面我们真对一个简单需求，分别说明这三种控制缓存输出的方法。  需求：被缓存的文档中当前时间不被缓存，随每次刷新而变化。  1、使用insert函数使模板的一部分不被缓存  index.tpl:  {insert name=”get_current_time”}  index.php   <br>function insert_get_current_time(){    <br>return date(“Y-m-d H:m:s”);    <br>}  $smarty=new smarty();   <br>$smarty-&gt;caching = true;    <br>if(!$smarty-&gt;is_cached()){    <br>…….    <br>}    <br>$smarty-&gt;display(‘index.tpl’);  注解：  定义一个函数，函数名格式为：inser_name(array $params, object &amp;$smarty),  函数参数可选的，如果在模板的insert方法中需要加入其他属性，就会作为数组传递给用户定义的函数。  如：{insert name=’get_current_time’ local=’zh’}  在get_current_time函数中我们就可以通过$params[‘local’]来获得属性值。  如果在get_current_time函数中需要用到当前smarty对象的方法或属性，就可以通过第二个参数获得。  这时你会发现index.tpl已被缓存，但当前时间却随每次刷新在不断变化。  2、使用register_function阻止插件从缓存中输出  index.tpl:  {current_time}{/div}  index.php:   <br>function smarty_function_current_time($params, &amp;$smarty){    <br>return date(“Y-m-d H:m:s”);    <br>}  $smarty=new smarty();   <br>$smarty-&gt;caching = true;    <br>$smarty-&gt;register_function(‘current_time’,’smarty_function_current_time’,false);    <br>if(!$smarty-&gt;is_cached()){    <br>…….    <br>}    <br>$smarty-&gt;display(‘index.tpl’);  注解：  定义一个函数，函数名格式为：smarty_type_name($params, &amp;$smarty)  type为function  name为用户自定义标签名称，在这里是{current_time}  两个参数是必须的，即使在函数中没有使用也要写上。两个参数的功能同上。  转自：<a href="http://blog.csdn.net/onsrs/archive/2009/05/27/4220471.aspx" target="_blank" rel="external">http://blog.csdn.net/onsrs/archive/2009/05/27/4220471.aspx</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/16/php-smarty-cache-operation/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

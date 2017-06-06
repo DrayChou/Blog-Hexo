@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>IE中出现 &quot;Stack overflow at line&quot; 错误的解决方法 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="ie," />
+  
+
+  <meta name="description" content="出现该错误提示，主要有两种原因：
+
+使用系统的事件名称作为自定义函数名如：
+
+onclick / onsubmit … 都是系统保留的事件名称，不允许作为重定义函数名称。
+
+出现死循环 ：
+
+如：在图片对象定义了 onerror 事件的循环处理、
+
+这里并不是说 1.gif 不存在， 可能是由于网络阻塞原因造成， 这时会执行 onerror 事件,
+调用 /images/default.gif 去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IE中出现 "Stack overflow at line" 错误的解决方法">
+<meta property="og:url" content="http://idc.wf/2011/02/25/ie-there-stack-overflow-at-line-wrong-solution/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="出现该错误提示，主要有两种原因：
+
+使用系统的事件名称作为自定义函数名如：
+
+onclick / onsubmit … 都是系统保留的事件名称，不允许作为重定义函数名称。
+
+出现死循环 ：
+
+如：在图片对象定义了 onerror 事件的循环处理、
+
+这里并不是说 1.gif 不存在， 可能是由于网络阻塞原因造成， 这时会执行 onerror 事件,
+调用 /images/default.gif 去">
+<meta property="og:image" content="http://www.hoocar.com/1.gif">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IE中出现 "Stack overflow at line" 错误的解决方法">
+<meta name="twitter:description" content="出现该错误提示，主要有两种原因：
+
+使用系统的事件名称作为自定义函数名如：
+
+onclick / onsubmit … 都是系统保留的事件名称，不允许作为重定义函数名称。
+
+出现死循环 ：
+
+如：在图片对象定义了 onerror 事件的循环处理、
+
+这里并不是说 1.gif 不存在， 可能是由于网络阻塞原因造成， 这时会执行 onerror 事件,
+调用 /images/default.gif 去">
+<meta name="twitter:image" content="http://www.hoocar.com/1.gif">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-ie-there-stack-overflow-at-line-wrong-solution" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">IE中出现 &quot;Stack overflow at line&quot; 错误的解决方法</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.25</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/25/ie-there-stack-overflow-at-line-wrong-solution/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>出现该错误提示，主要有两种原因：</p>
+<ol>
+<li>使用系统的事件名称作为自定义函数名如：</li>
+</ol>
+<p>onclick / onsubmit … 都是系统保留的事件名称，不允许作为重定义函数名称。</p>
+<ol>
+<li>出现死循环 ：</li>
+</ol>
+<p>如：在图片对象定义了 onerror 事件的循环处理、</p>
+<p><img src="http://www.hoocar.com/1.gif" onerror="this.src='/image/default.gif'"></p>
+<p>这里并不是说 1.gif 不存在， 可能是由于网络阻塞原因造成， 这时会执行 onerror 事件,</p>
+<p>调用 /images/default.gif 去做当前图片的路径， 但如果当前 /image/default.gif 这个图片文件不存在，</p>
+<p>再或者由于网络原因， 下载’/image/default.gif’ 又出现错误， 这就出现了死循环。</p>
+<p>通过<a href="http://chenchendefeng.javaeye.com/blog/456247" target="_blank" rel="external">IE中出现 “Stack overflow at line” 错误的解决方法 - 小生学艺 - JavaEye技术网站</a>.</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/25/ie-there-stack-overflow-at-line-wrong-solution/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

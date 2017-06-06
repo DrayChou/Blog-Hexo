@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>在 ubuntu 11.10 下安装 Ruby on Rails | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="linux,ruby," />
+  
+
+  <meta name="description" content="安装常用到组件
+sudo apt-get install git curl
+
+安装 rvm
+ 1.配置
+bash &amp;lt; &amp;lt;(curl -s https://rvm.beginrescueend.com/install/rvm)
+ 2.修改控制台配置文件，将 rvm 添加到命令控制台
+gedit ~/.bashrc
+ 3.在 .bashrc 最后添加
+[[ -s &amp;quot;$HOME/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 ubuntu 11.10 下安装 Ruby on Rails">
+<meta property="og:url" content="http://idc.wf/2012/02/29/insert-ruby-on-rails-in-ubuntu-11-dot-10/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="安装常用到组件
+sudo apt-get install git curl
+
+安装 rvm
+ 1.配置
+bash &amp;lt; &amp;lt;(curl -s https://rvm.beginrescueend.com/install/rvm)
+ 2.修改控制台配置文件，将 rvm 添加到命令控制台
+gedit ~/.bashrc
+ 3.在 .bashrc 最后添加
+[[ -s &amp;quot;$HOME/">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 ubuntu 11.10 下安装 Ruby on Rails">
+<meta name="twitter:description" content="安装常用到组件
+sudo apt-get install git curl
+
+安装 rvm
+ 1.配置
+bash &amp;lt; &amp;lt;(curl -s https://rvm.beginrescueend.com/install/rvm)
+ 2.修改控制台配置文件，将 rvm 添加到命令控制台
+gedit ~/.bashrc
+ 3.在 .bashrc 最后添加
+[[ -s &amp;quot;$HOME/">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-insert-ruby-on-rails-in-ubuntu-11-dot-10" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">在 ubuntu 11.10 下安装 Ruby on Rails</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2012.02.29</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2012/02/29/insert-ruby-on-rails-in-ubuntu-11-dot-10/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <ol>
+<li><p>安装常用到组件</p>
+<pre><code>sudo apt-get install git curl
+</code></pre></li>
+<li><p>安装 rvm</p>
+<p> 1.配置</p>
+<pre><code>bash &lt; &lt;(curl -s https://rvm.beginrescueend.com/install/rvm)
+</code></pre><p> 2.修改控制台配置文件，将 rvm 添加到命令控制台</p>
+<pre><code>gedit ~/.bashrc
+</code></pre><p> 3.在 .bashrc 最后添加</p>
+<pre><code>[[ -s &quot;$HOME/.rvm/scripts/rvm&quot; ]] &amp;&amp; source &quot;$HOME/.rvm/scripts/rvm&quot; # Load RVM into a shell session *as a function*
+</code></pre><p> 4.更新控制台配置：</p>
+<pre><code>source ~/.bashrc
+</code></pre><p> 5.测试 rvm 是否正确安装</p>
+<pre><code>type rvm | head -1
+</code></pre><p> 如果显示出来 <code>rvm is a function</code> 或者 <code>rvm 是个函数</code> 那么就证明 rvm 安装成功</p>
+<p> 6.执行 rvm 命令，查看都需要安装那些组件</p>
+<pre><code>rvm requirements
+</code></pre><p> 然后安装提示的内容安装必须到一些组件。</p>
+</li>
+<li><p>安装 ruby</p>
+<pre><code>rvm install 1.9.2
+rvm use 1.9.2
+</code></pre><p> 调用 <code>ruby -v</code> 参加 ruby 是否安装成功</p>
+</li>
+<li><p>安装 rails</p>
+<pre><code>gem install rails
+</code></pre><p> 新建 ROR 项目</p>
+<pre><code>mkdir myapp
+cd  myapp/
+rails new demo
+cd demo
+rails server
+</code></pre></li>
+</ol>
+<p>至此，ubuntu 下的 ruby on rails 安装完毕，可以开始编程了。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2012/02/29/insert-ruby-on-rails-in-ubuntu-11-dot-10/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

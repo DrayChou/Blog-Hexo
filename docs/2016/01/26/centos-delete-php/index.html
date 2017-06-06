@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>centos-delete-php | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="linux,php,delete," />
+  
+
+  <meta name="description" content="可以编译删除的123make   uninstallmake   cleanrm -rf php   //php目录
+单独的可执行文件whereis xxx 找到软件安装目录，rm -rf 把这些目录都删除
+重新编译安装发找一个临时目录重新安装一遍。比如./configure –prefix=/tmp/to_remove &amp;amp;&amp;amp; make install然后遍历/tmp/to_rem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos-delete-php">
+<meta property="og:url" content="http://idc.wf/2016/01/26/centos-delete-php/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="可以编译删除的123make   uninstallmake   cleanrm -rf php   //php目录
+单独的可执行文件whereis xxx 找到软件安装目录，rm -rf 把这些目录都删除
+重新编译安装发找一个临时目录重新安装一遍。比如./configure –prefix=/tmp/to_remove &amp;amp;&amp;amp; make install然后遍历/tmp/to_rem">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.943Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="centos-delete-php">
+<meta name="twitter:description" content="可以编译删除的123make   uninstallmake   cleanrm -rf php   //php目录
+单独的可执行文件whereis xxx 找到软件安装目录，rm -rf 把这些目录都删除
+重新编译安装发找一个临时目录重新安装一遍。比如./configure –prefix=/tmp/to_remove &amp;amp;&amp;amp; make install然后遍历/tmp/to_rem">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#可以编译删除的"><span class="toc-text">可以编译删除的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单独的可执行文件"><span class="toc-text">单独的可执行文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新编译安装发"><span class="toc-text">重新编译安装发</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="删除已经安装的PHP-centos-delete-php" class="article article-type-删除已经安装的PHP" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">centos-delete-php</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.01.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2016/01/26/centos-delete-php/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="可以编译删除的"><a href="#可以编译删除的" class="headerlink" title="可以编译删除的"></a>可以编译删除的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">make   uninstall</div><div class="line">make   clean</div><div class="line">rm -rf php   //php目录</div></pre></td></tr></table></figure>
+<h3 id="单独的可执行文件"><a href="#单独的可执行文件" class="headerlink" title="单独的可执行文件"></a>单独的可执行文件</h3><p>whereis xxx 找到软件安装目录，rm -rf 把这些目录都删除</p>
+<h3 id="重新编译安装发"><a href="#重新编译安装发" class="headerlink" title="重新编译安装发"></a>重新编译安装发</h3><p>找一个临时目录重新安装一遍。比如./configure –prefix=/tmp/to_remove &amp;&amp; make install<br>然后遍历/tmp/to_remove里的文件，把你原来安装位置的文件都删除。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-删除已经安装的PHP">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2016/01/26/centos-delete-php/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

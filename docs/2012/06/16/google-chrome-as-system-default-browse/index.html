@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>设置 google chrome protable 为默认浏览器 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="chrome," />
+  
+
+  <meta name="description" content="以下是 win7 下设置 google chrome protable 为默认浏览器的 注册表文件
+1) chrome.reg:
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_macHINE\SOFTWARE\RegisteredApplications]
+&amp;quot;chrome Portable&amp;quot;=&amp;quot;Software\\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设置 google chrome protable 为默认浏览器">
+<meta property="og:url" content="http://idc.wf/2012/06/16/google-chrome-as-system-default-browse/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="以下是 win7 下设置 google chrome protable 为默认浏览器的 注册表文件
+1) chrome.reg:
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_macHINE\SOFTWARE\RegisteredApplications]
+&amp;quot;chrome Portable&amp;quot;=&amp;quot;Software\\">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设置 google chrome protable 为默认浏览器">
+<meta name="twitter:description" content="以下是 win7 下设置 google chrome protable 为默认浏览器的 注册表文件
+1) chrome.reg:
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_macHINE\SOFTWARE\RegisteredApplications]
+&amp;quot;chrome Portable&amp;quot;=&amp;quot;Software\\">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-google-chrome-as-system-default-browse" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">设置 google chrome protable 为默认浏览器</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2012.06.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2012/06/16/google-chrome-as-system-default-browse/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>以下是 win7 下设置 google chrome protable 为默认浏览器的 注册表文件</p>
+<p>1) chrome.reg:</p>
+<pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_macHINE\SOFTWARE\RegisteredApplications]
+&quot;chrome Portable&quot;=&quot;Software\\Clients\\StartMenuInternet\\GooglechromePortable\\Capabilities&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\Capabilities]
+&quot;ApplicationName&quot;=&quot;Google chrome Portable&quot;
+&quot;ApplicationDescription&quot;=&quot;Google chrome Portable is a web browser that runs web pages and applications with lightning speed. It&apos;s designed to be simple and stylish. It&apos;s packaged as a portable app, so you can take your browsing experience with you.&quot;
+&quot;ApplicationIcon&quot;=&quot;\&quot;D:\\Softwares\\Portable\\Extracted\\GooglechromePortable\\GooglechromePortable.exe\&quot;,0&quot;
+&quot;Hidden&quot;=dword:00000000
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\Capabilities\FileAssociations]
+&quot;.htm&quot;=&quot;GooglechromePortableHTML&quot;
+&quot;.html&quot;=&quot;GooglechromePortableHTML&quot;
+&quot;.shtml&quot;=&quot;GooglechromePortableHTML&quot;
+&quot;.xht&quot;=&quot;GooglechromePortableHTML&quot;
+&quot;.xhtml&quot;=&quot;GooglechromePortableHTML&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\Capabilities\StartMenu]
+&quot;StartMenuInternet&quot;=&quot;GooglechromePortable&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\Capabilities\URLAssociations]
+&quot;http&quot;=&quot;GooglechromePortableURL&quot;
+&quot;https&quot;=&quot;GooglechromePortableURL&quot;
+&quot;ftp&quot;=&quot;GooglechromePortableURL&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable]
+&quot;LocalizedString&quot;=&quot;Google chrome Portable&quot;
+&quot;&quot;=&quot;Google chrome Portable&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\DefaultIcon]
+&quot;&quot;=&quot;\&quot;D:\\Softwares\\Portable\\Extracted\\GooglechromePortable\\GooglechromePortable.exe\&quot;,0&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\shell\open\command]
+&quot;&quot;=&quot;\&quot;D:\\Softwares\\Portable\\Extracted\\GooglechromePortable\\GooglechromePortable.exe\&quot;&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Clients\StartMenuInternet\GooglechromePortable\shell\properties\command]
+&quot;&quot;=&quot;\&quot;D:\\Softwares\\Portable\\Extracted\\GooglechromePortable\\GooglechromePortable.exe\&quot; -preferences&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Classes\GooglechromePortableURL]
+&quot;&quot;=&quot;Google chrome Portable URL&quot;
+&quot;URL Protocol&quot;=&quot;&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Classes\GooglechromePortableURL\DefaultIcon]
+&quot;&quot;=hex(2):22,00,44,00,3A,00,5C,00,53,00,6F,00,66,00,74,00,77,00,61,00,72,00,\
+65,00,73,00,5C,00,50,00,6F,00,72,00,74,00,61,00,62,00,6C,00,65,00,5C,00,45,\
+00,78,00,74,00,72,00,61,00,63,00,74,00,65,00,64,00,5C,00,47,00,6F,00,6F,00,\
+67,00,6C,00,65,00,43,00,68,00,72,00,6F,00,6D,00,65,00,50,00,6F,00,72,00,74,\
+00,61,00,62,00,6C,00,65,00,5C,00,47,00,6F,00,6F,00,67,00,6C,00,65,00,43,00,\
+68,00,72,00,6F,00,6D,00,65,00,50,00,6F,00,72,00,74,00,61,00,62,00,6C,00,65,\
+00,2E,00,65,00,78,00,65,00,22,00,2C,00,30,00,00,00
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Classes\GooglechromePortableURL\shell\open\command]
+&quot;&quot;=hex(2):22,00,44,00,3A,00,5C,00,53,00,6F,00,66,00,74,00,77,00,61,00,72,00,\
+65,00,73,00,5C,00,50,00,6F,00,72,00,74,00,61,00,62,00,6C,00,65,00,5C,00,45,\
+00,78,00,74,00,72,00,61,00,63,00,74,00,65,00,64,00,5C,00,47,00,6F,00,6F,00,\
+67,00,6C,00,65,00,43,00,68,00,72,00,6F,00,6D,00,65,00,50,00,6F,00,72,00,74,\
+00,61,00,62,00,6C,00,65,00,5C,00,47,00,6F,00,6F,00,67,00,6C,00,65,00,43,00,\
+68,00,72,00,6F,00,6D,00,65,00,50,00,6F,00,72,00,74,00,61,00,62,00,6C,00,65,\
+00,2E,00,65,00,78,00,65,00,22,00,20,00,2D,00,75,00,72,00,6C,00,20,00,22,00,\
+25,00,31,00,22,00,00,00
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Classes\GooglechromePortableHTML]
+&quot;&quot;=&quot;Google chrome HTML&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Classes\GooglechromePortableHTML\DefaultIcon]
+&quot;&quot;=&quot;\&quot;D:\\Softwares\\Portable\\Extracted\\GooglechromePortable\\GooglechromePortable.exe\&quot;,0&quot;
+
+[HKEY_LOCAL_macHINE\SOFTWARE\Classes\GooglechromePortableHTML\shell\open\command]
+&quot;&quot;=&quot;\&quot;D:\\Softwares\\Portable\\Extracted\\GooglechromePortable\\GooglechromePortable.exe\&quot; -url \&quot;%1\&quot;&quot;
+</code></pre><p>2) Control Panel -&gt; Default Programs -&gt; Google chrome Portable -&gt; Set this program as default.</p>
+<p>Tá feita a cagada!</p>
+<p>原帖地址： <a href="http://portableapps.com/node/23082" target="_blank" rel="external">http://portableapps.com/node/23082</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2012/06/16/google-chrome-as-system-default-browse/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

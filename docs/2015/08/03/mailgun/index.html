@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>让域名邮箱支持通配符 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="mail,domain," />
+  
+
+  <meta name="description" content="目前手贱收了一个域名，想配置成支持泛域名解析的邮箱地址，即随便写名称都可以寄到的邮件。
+之前有用 QQ 企业邮箱做过一个泛解析的域名，规则是错误的邮箱地址都转发到一个固定地址，参见地址 什么是错误地址转发功能？。
+后来 Google Domails 推出后，推出了域名 EMAIL 服务，支持 * 通配符，于是开心了，参见地址About wildcard email forwarding。
+但是，新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让域名邮箱支持通配符">
+<meta property="og:url" content="http://idc.wf/2015/08/03/mailgun/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="目前手贱收了一个域名，想配置成支持泛域名解析的邮箱地址，即随便写名称都可以寄到的邮件。
+之前有用 QQ 企业邮箱做过一个泛解析的域名，规则是错误的邮箱地址都转发到一个固定地址，参见地址 什么是错误地址转发功能？。
+后来 Google Domails 推出后，推出了域名 EMAIL 服务，支持 * 通配符，于是开心了，参见地址About wildcard email forwarding。
+但是，新">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="让域名邮箱支持通配符">
+<meta name="twitter:description" content="目前手贱收了一个域名，想配置成支持泛域名解析的邮箱地址，即随便写名称都可以寄到的邮件。
+之前有用 QQ 企业邮箱做过一个泛解析的域名，规则是错误的邮箱地址都转发到一个固定地址，参见地址 什么是错误地址转发功能？。
+后来 Google Domails 推出后，推出了域名 EMAIL 服务，支持 * 通配符，于是开心了，参见地址About wildcard email forwarding。
+但是，新">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-mailgun" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">让域名邮箱支持通配符</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.08.03</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2015/08/03/mailgun/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>目前手贱收了一个域名，想配置成支持泛域名解析的邮箱地址，即随便写名称都可以寄到的邮件。</p>
+<p>之前有用 QQ 企业邮箱做过一个泛解析的域名，规则是错误的邮箱地址都转发到一个固定地址，参见地址 <a href="http://service.exmail.qq.com/cgi-bin/help?subtype=1&amp;&amp;id=23&amp;&amp;no=1000815" target="_blank" rel="external">什么是错误地址转发功能？</a>。</p>
+<p>后来 Google Domails 推出后，推出了域名 EMAIL 服务，支持 * 通配符，于是开心了，参见地址<a href="https://support.google.com/domains/answer/3251241?hl=en_US#wildcard" target="_blank" rel="external">About wildcard email forwarding</a>。</p>
+<p>但是，新入的域名 Google Domails 不支持这种后缀，于是在 @duyaoo 的推荐下，用了 <a href="https://mailgun.com/" target="_blank" rel="external">mailgun</a> 服务。</p>
+<p>这个服务本身是作为商业邮件API使用的，自用算是小 case 。</p>
+<p>按照教程设置玩 DNS 之后，添加一条 routes 规则，指定 什么地址的邮件发送到那个邮箱就可以了。</p>
+<p>以后做小项目的时候也可以用 mailgun 来做邮箱地址托管了，赞一个。</p>
+<p>注：</p>
+<pre><code>添加 mx 地址解析的时候 name 为 @
+re 域名注册地址：[internetbs.net](https://internetbs.net/)
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2015/08/03/mailgun/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

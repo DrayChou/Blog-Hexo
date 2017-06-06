@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Proxy Switchy! 可以打开https，打不开http的解决方法 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="proxy," />
+  
+
+  <meta name="description" content="之前的我Proxy Switchy!代理规则开启的时候，只能打开https的页面，比如https://www.google.com，但是打不开http的页面，比如：http://www.google.com。
+这让我很困惑！
+后来查了一些资料，自己做了一些测试发现了！
+因为我用的是ssh的方式proxy的，所以我应该使用 “SOCKS 代理” ，但是我之前选的是 “HTTP 代理”，而且选了 “对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Proxy Switchy! 可以打开https，打不开http的解决方法">
+<meta property="og:url" content="http://idc.wf/2011/04/26/proxy-switchy-can-open-the-https-not-open-http-solution/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="之前的我Proxy Switchy!代理规则开启的时候，只能打开https的页面，比如https://www.google.com，但是打不开http的页面，比如：http://www.google.com。
+这让我很困惑！
+后来查了一些资料，自己做了一些测试发现了！
+因为我用的是ssh的方式proxy的，所以我应该使用 “SOCKS 代理” ，但是我之前选的是 “HTTP 代理”，而且选了 “对">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.961Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Proxy Switchy! 可以打开https，打不开http的解决方法">
+<meta name="twitter:description" content="之前的我Proxy Switchy!代理规则开启的时候，只能打开https的页面，比如https://www.google.com，但是打不开http的页面，比如：http://www.google.com。
+这让我很困惑！
+后来查了一些资料，自己做了一些测试发现了！
+因为我用的是ssh的方式proxy的，所以我应该使用 “SOCKS 代理” ，但是我之前选的是 “HTTP 代理”，而且选了 “对">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-proxy-switchy-can-open-the-https-not-open-http-solution" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Proxy Switchy! 可以打开https，打不开http的解决方法</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.04.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/04/26/proxy-switchy-can-open-the-https-not-open-http-solution/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>之前的我Proxy Switchy!代理规则开启的时候，只能打开https的页面，比如<a href="https://www.google.com，但是打不开http的页面，比如：http://www.google.com。" target="_blank" rel="external">https://www.google.com，但是打不开http的页面，比如：http://www.google.com。</a></p>
+<p>这让我很困惑！</p>
+<p>后来查了一些资料，自己做了一些测试发现了！</p>
+<p>因为我用的是ssh的方式proxy的，所以我应该使用 “SOCKS 代理” ，但是我之前选的是 “HTTP 代理”，而且选了 “对所有协议均使用相同的代理服务器”，这样一来，我访问页面的时候，https还好说，突破性本来就强，但是http就被阻隔到本地了，而我的ssh是不不会proxy的，所以唉。。。。</p>
+<p>删掉其他的http,https,ftp代理服务器，只留一个“SOCKS 代理”就可以了，记得选 <label>SOCKS v5 </label></p>
+<p>留此文以做纪念！</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/04/26/proxy-switchy-can-open-the-https-not-open-http-solution/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

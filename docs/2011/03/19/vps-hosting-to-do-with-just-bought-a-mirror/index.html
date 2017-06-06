@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>用刚买的VPS主机做了一个镜像站 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="vps," />
+  
+
+  <meta name="description" content="前天在 vpsyou 买了一个虚拟主机VPS，但是因为在家里的连接速度不佳被我退了，昨天又买了遨游的虚拟主机，速度还可以。以下是安装过程：
+1.首先，交钱，拿到自己的VPS的IP
+2.用拿到的账户名+密码使用SSH登录VPS
+3.到http://lnmp.org/install.html按教程安装lnmp，也就是linux,nginx,mysql,php,标准的建站套装
+4.安装完毕，就可以通过访">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用刚买的VPS主机做了一个镜像站">
+<meta property="og:url" content="http://idc.wf/2011/03/19/vps-hosting-to-do-with-just-bought-a-mirror/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="前天在 vpsyou 买了一个虚拟主机VPS，但是因为在家里的连接速度不佳被我退了，昨天又买了遨游的虚拟主机，速度还可以。以下是安装过程：
+1.首先，交钱，拿到自己的VPS的IP
+2.用拿到的账户名+密码使用SSH登录VPS
+3.到http://lnmp.org/install.html按教程安装lnmp，也就是linux,nginx,mysql,php,标准的建站套装
+4.安装完毕，就可以通过访">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用刚买的VPS主机做了一个镜像站">
+<meta name="twitter:description" content="前天在 vpsyou 买了一个虚拟主机VPS，但是因为在家里的连接速度不佳被我退了，昨天又买了遨游的虚拟主机，速度还可以。以下是安装过程：
+1.首先，交钱，拿到自己的VPS的IP
+2.用拿到的账户名+密码使用SSH登录VPS
+3.到http://lnmp.org/install.html按教程安装lnmp，也就是linux,nginx,mysql,php,标准的建站套装
+4.安装完毕，就可以通过访">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-vps-hosting-to-do-with-just-bought-a-mirror" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">用刚买的VPS主机做了一个镜像站</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.03.19</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/03/19/vps-hosting-to-do-with-just-bought-a-mirror/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>前天在 vpsyou 买了一个虚拟主机VPS，但是因为在家里的连接速度不佳被我退了，昨天又买了遨游的虚拟主机，速度还可以。<br>以下是安装过程：</p>
+<p>1.首先，交钱，拿到自己的VPS的IP</p>
+<p>2.用拿到的账户名+密码使用SSH登录VPS</p>
+<p>3.到<a href="http://lnmp.org/" target="_blank" rel="external"></a><a href="http://lnmp.org/install.html" target="_blank" rel="external">http://lnmp.org/install.html</a>按教程安装lnmp，也就是linux,nginx,mysql,php,标准的建站套装</p>
+<p>4.安装完毕，就可以通过访问你的IP地址来查看效果了，如果能看到成功页面，那恭喜你</p>
+<p>5.在<a href="http://www.dot.tk/zh/index.html" target="_blank" rel="external">http://www.dot.tk/zh/index.html</a>申请一个免费域名，然后   <span style="font-size: 15px; line-height: 18px;">使用Dot TK的免费DNS服务器   绑定A记录的IP地址到你的VPS IP,等域名生效，就可以通过域名来进行访问了。</span></p>
+<p><span style="font-size: 15px; line-height: 18px;">6.打包之前的站，用wget下载到VPS，解压放到wwwroot目录，导入mysql数据</span></p>
+<p><span style="font-size: 15px; line-height: 18px;">完成安装</span></p>
+<p><span style="font-size: 15px; line-height: 18px;">示例：<a href="http://zh-x.tk/" target="_blank" rel="external">http://zh-x.tk/</a></span></p>
+<p><span style="font-size: 15px; line-height: 18px;">探针：<a href="http://zh-x.tk/tools/p.php" target="_blank" rel="external">http://zh-x.tk/tools/p.php</a></span></p>
+<p><span style="font-size: 15px; line-height: 18px;">ps:格式明天有空再搞，好困，4点了。</span></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/03/19/vps-hosting-to-do-with-just-bought-a-mirror/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

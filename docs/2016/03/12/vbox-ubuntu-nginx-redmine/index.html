@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>virtualbox ubuntu 下面安装 redmine | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="virtualbox,ubuntu,redmine," />
+  
+
+  <meta name="description" content="安装 ubuntu配置网络然后在 vb 中配置安装 ubuntu ，这里需要注意的是，把网络类型改为 桥接。
+配置静态IPsudo vi /etc/network/interfaces
+原有内容只有如下两行：
+auto lo
+iface lo inet loopback
+如果是动态获取IP地址，那么就不需要添加如下内容如果设置静态IP,向末尾追加以下内容：
+auto eth0
+iface eth0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="virtualbox ubuntu 下面安装 redmine">
+<meta property="og:url" content="http://idc.wf/2016/03/12/vbox-ubuntu-nginx-redmine/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="安装 ubuntu配置网络然后在 vb 中配置安装 ubuntu ，这里需要注意的是，把网络类型改为 桥接。
+配置静态IPsudo vi /etc/network/interfaces
+原有内容只有如下两行：
+auto lo
+iface lo inet loopback
+如果是动态获取IP地址，那么就不需要添加如下内容如果设置静态IP,向末尾追加以下内容：
+auto eth0
+iface eth0">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="virtualbox ubuntu 下面安装 redmine">
+<meta name="twitter:description" content="安装 ubuntu配置网络然后在 vb 中配置安装 ubuntu ，这里需要注意的是，把网络类型改为 桥接。
+配置静态IPsudo vi /etc/network/interfaces
+原有内容只有如下两行：
+auto lo
+iface lo inet loopback
+如果是动态获取IP地址，那么就不需要添加如下内容如果设置静态IP,向末尾追加以下内容：
+auto eth0
+iface eth0">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-ubuntu"><span class="toc-text">安装 ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置网络"><span class="toc-text">配置网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置静态IP"><span class="toc-text">配置静态IP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新源"><span class="toc-text">更新源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vbox-组件"><span class="toc-text">vbox 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置共享目录"><span class="toc-text">设置共享目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录权限"><span class="toc-text">目录权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-ssh"><span class="toc-text">配置 ssh</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-ssh-服务端"><span class="toc-text">安装 ssh 服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启服务"><span class="toc-text">开启服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-mysql"><span class="toc-text">配置 mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-mysql"><span class="toc-text">安装 mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数据库"><span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置远程访问权限"><span class="toc-text">设置远程访问权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打開-my-conf"><span class="toc-text">打開 my.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置服务器地址"><span class="toc-text">设置服务器地址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-ruby"><span class="toc-text">配置 ruby</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-rvm"><span class="toc-text">安装 rvm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-gem-source"><span class="toc-text">修改 gem source</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改-bundle-source"><span class="toc-text">修改 bundle source</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-Rails"><span class="toc-text">安裝 Rails</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把-Redmine-專案載下來，"><span class="toc-text">把 Redmine 專案載下來，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解壓縮"><span class="toc-text">解壓縮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#對-Rails-專案的一些處理"><span class="toc-text">對 Rails 專案的一些處理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rails-資料庫處理"><span class="toc-text">Rails 資料庫處理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-Passenger"><span class="toc-text">安裝 Passenger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Nginx-init-script"><span class="toc-text">安装 Nginx init script</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#開機自動啟動"><span class="toc-text">開機自動啟動</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#設定-nginx-conf"><span class="toc-text">設定 nginx.conf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#打開-nginx-conf"><span class="toc-text">打開 nginx.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加-redmine-的配置"><span class="toc-text">添加 redmine 的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重新啟動-Nginx"><span class="toc-text">重新啟動 Nginx</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-vbox-ubuntu-nginx-redmine" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">virtualbox ubuntu 下面安装 redmine</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.03.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2016/03/12/vbox-ubuntu-nginx-redmine/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="安装-ubuntu"><a href="#安装-ubuntu" class="headerlink" title="安装 ubuntu"></a>安装 ubuntu</h2><h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>然后在 vb 中配置安装 ubuntu ，这里需要注意的是，把网络类型改为 桥接。</p>
+<h3 id="配置静态IP"><a href="#配置静态IP" class="headerlink" title="配置静态IP"></a>配置静态IP</h3><pre><code>sudo vi /etc/network/interfaces
+</code></pre><p>原有内容只有如下两行：</p>
+<pre><code>auto lo
+iface lo inet loopback
+</code></pre><p>如果是动态获取IP地址，那么就不需要添加如下内容<br>如果设置静态IP,向末尾追加以下内容：</p>
+<pre><code>auto eth0
+iface eth0 inet static
+address 静态IP地址
+gateway 192.168.0.1
+netmask 255.255.255.0
+</code></pre><p>然后保存退出；</p>
+<h3 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h3><p>更新源： /etc/apt/sources.list<br>阿里更新源（14.04）</p>
+<pre><code>deb http://mirrors.aliyun.com/ubuntu/ trusty main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ trusty-security main multiverse restricted universe
+deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main multiverse restricted universe
+deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main multiverse restricted universe
+</code></pre><h3 id="vbox-组件"><a href="#vbox-组件" class="headerlink" title="vbox 组件"></a>vbox 组件</h3><pre><code>sudo apt-get install virtualbox-guest-dkms
+</code></pre><h3 id="设置共享目录"><a href="#设置共享目录" class="headerlink" title="设置共享目录"></a>设置共享目录</h3><pre><code>ln -s /media/sf_Downloads /srv/download
+</code></pre><h3 id="目录权限"><a href="#目录权限" class="headerlink" title="目录权限"></a>目录权限</h3><p>使用以下命令添加当前用户到 vboxsf 组，以免权限不足编辑共享目录，重启虚拟机生效。</p>
+<pre><code>sudo usermod -aG vboxsf $(whoami)
+sudo usermod -aG vboxsf www-data
+</code></pre><h2 id="配置-ssh"><a href="#配置-ssh" class="headerlink" title="配置 ssh"></a>配置 ssh</h2><h3 id="安装-ssh-服务端"><a href="#安装-ssh-服务端" class="headerlink" title="安装 ssh 服务端"></a>安装 ssh 服务端</h3><pre><code>sudo apt-get install openssh-server
+</code></pre><h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><pre><code>sudo server ssh restart
+</code></pre><h2 id="配置-mysql"><a href="#配置-mysql" class="headerlink" title="配置 mysql"></a>配置 mysql</h2><h3 id="安装-mysql"><a href="#安装-mysql" class="headerlink" title="安装 mysql"></a>安装 mysql</h3><pre><code>sudo apt-get install mysql-server
+</code></pre><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><pre><code>mysql -u root -p
+CREATE DATABASE redmine CHARACTER SET utf8;
+CREATE USER &apos;redmine&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;my_password&apos;;
+GRANT ALL PRIVILEGES ON redmine.* TO &apos;redmine&apos;@&apos;localhost&apos;;
+EXIT
+</code></pre><h3 id="设置远程访问权限"><a href="#设置远程访问权限" class="headerlink" title="设置远程访问权限"></a>设置远程访问权限</h3><pre><code>grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;password&apos; with grant option;
+flush privileges;
+</code></pre><h3 id="打開-my-conf"><a href="#打開-my-conf" class="headerlink" title="打開 my.conf"></a>打開 my.conf</h3><pre><code>sudo vim /etc/mysql/my.cnf
+</code></pre><h3 id="设置服务器地址"><a href="#设置服务器地址" class="headerlink" title="设置服务器地址"></a>设置服务器地址</h3><pre><code>bind-address            = 0.0.0.0
+</code></pre><h2 id="配置-ruby"><a href="#配置-ruby" class="headerlink" title="配置 ruby"></a>配置 ruby</h2><h3 id="安装-rvm"><a href="#安装-rvm" class="headerlink" title="安装 rvm"></a>安装 rvm</h3><p>輸入指令安裝 RVM，過程中可能會出現一些錯誤訊息，因為我沒有預先使用 apt-get 安裝需要的套件。不過不要緊，跟著系統會告訴哪些還沒裝好，並且會給你安裝的指令，跟著系統指示很快的就可以完成。</p>
+<pre><code>curl -L https://get.rvm.io | bash
+</code></pre><p>重新登入 vps，輸入 rvm -v 查看 rvm 是否有裝好。</p>
+<p>在 RVM 中安裝 Ruby</p>
+<pre><code>rvm install 2.2.3
+</code></pre><p>將 ruby 2.2.3 設定成預設的 Ruby 語言，這個動作很重要一定要做，因為預設的 Ruby 會是 Ubuntu 系統中預裝的版本，換成 RVM 的版本我們才好處理 Gem 之類的安裝問題</p>
+<pre><code>rvm use 2.2.3 --default
+</code></pre><p>檢查系統中的 ruby 是否使用 rvm 的 ruby</p>
+<p>輸入ruby -v檢查版本<br>輸入which ruby 檢查路徑，路徑裡面有 rvm 的才是正確</p>
+<h3 id="修改-gem-source"><a href="#修改-gem-source" class="headerlink" title="修改 gem source"></a>修改 gem source</h3><pre><code>gem sources -r https://rubygems.org/
+gem source -a https://ruby.taobao.org
+gem source -l   // 查看当前的source
+</code></pre><h3 id="修改-bundle-source"><a href="#修改-bundle-source" class="headerlink" title="修改 bundle source"></a>修改 bundle source</h3><pre><code>bundle config mirror.https://rubygems.org https://ruby.taobao.org
+</code></pre><h3 id="安裝-Rails"><a href="#安裝-Rails" class="headerlink" title="安裝 Rails"></a>安裝 Rails</h3><p>記得加上 –no-ri –no-rdoc ，意思是不要裝文件，因為我們上網查就好了。可以省下很多時間。</p>
+<pre><code>gem install rails --no-ri --no-rdoc
+</code></pre><h3 id="把-Redmine-專案載下來，"><a href="#把-Redmine-專案載下來，" class="headerlink" title="把 Redmine 專案載下來，"></a>把 Redmine 專案載下來，</h3><pre><code>wget http://www.redmine.org/releases/redmine-3.2.0.zip
+</code></pre><h3 id="解壓縮"><a href="#解壓縮" class="headerlink" title="解壓縮"></a>解壓縮</h3><pre><code>unzip redmine-3.2.0.zip
+</code></pre><p>現在你有一個 Redmine 的 Rails 專案了。</p>
+<h3 id="對-Rails-專案的一些處理"><a href="#對-Rails-專案的一些處理" class="headerlink" title="對 Rails 專案的一些處理"></a>對 Rails 專案的一些處理</h3><p>bundle 一下。可能會有一些 Ubuntu 的套件沒有裝會噴錯誤。不過都還滿簡單的。</p>
+<pre><code>bundle install
+</code></pre><p>缺少 imagemagick 的話可以下下面指令。</p>
+<pre><code>sudo apt-get install imagemagick
+sudo apt-get install libmagickwand-dev
+</code></pre><h3 id="Rails-資料庫處理"><a href="#Rails-資料庫處理" class="headerlink" title="Rails 資料庫處理"></a>Rails 資料庫處理</h3><pre><code>rake db:create
+rake db:migrate
+</code></pre><p>建之前要更新一下 config/database.yml 的內容，把 mysql 帳號密碼寫進去。</p>
+<h3 id="安裝-Passenger"><a href="#安裝-Passenger" class="headerlink" title="安裝 Passenger"></a>安裝 Passenger</h3><pre><code>gem install passenger --no-ri --no-rdoc
+</code></pre><p>使用 Passenger 安裝 nginx</p>
+<pre><code>rvmsudo passenger-install-nginx-module
+</code></pre><h3 id="安装-Nginx-init-script"><a href="#安装-Nginx-init-script" class="headerlink" title="安装 Nginx init script"></a>安装 Nginx init script</h3><pre><code>cd ~/
+git clone git://github.com/jnstq/rails-nginx-passenger-ubuntu.git
+sudo mv rails-nginx-passenger-ubuntu/nginx/nginx /etc/init.d/nginx
+sudo chmod +x /etc/init.d/nginx
+</code></pre><h3 id="開機自動啟動"><a href="#開機自動啟動" class="headerlink" title="開機自動啟動"></a>開機自動啟動</h3><pre><code>sudo update-rc.d nginx defaults
+</code></pre><h2 id="設定-nginx-conf"><a href="#設定-nginx-conf" class="headerlink" title="設定 nginx.conf"></a>設定 nginx.conf</h2><h3 id="打開-nginx-conf"><a href="#打開-nginx-conf" class="headerlink" title="打開 nginx.conf"></a>打開 nginx.conf</h3><pre><code>sudo vim /opt/nginx/conf/nginx.conf
+</code></pre><h3 id="添加-redmine-的配置"><a href="#添加-redmine-的配置" class="headerlink" title="添加 redmine 的配置"></a>添加 redmine 的配置</h3><pre><code>server {
+    listen       80;
+    server_name  redmine.zhouw; # 请替换成你网站的域名
+    rails_env    production;
+    root         /srv/www/redmine/public;
+    passenger_enabled on;
+
+    location ~ ^(/assets) {
+        access_log        off;
+        # 设置 assets 下面的浏览器缓存时间为最大值（由于 Rails Assets Pipline 的文件名是根据文件修改产生的 MD5 digest 文件名，所以此处可以放心开启）
+        expires           max;
+    }
+}
+</code></pre><h3 id="重新啟動-Nginx"><a href="#重新啟動-Nginx" class="headerlink" title="重新啟動 Nginx"></a>重新啟動 Nginx</h3><pre><code>sudo /etc/init.d/nginx start
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2016/03/12/vbox-ubuntu-nginx-redmine/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

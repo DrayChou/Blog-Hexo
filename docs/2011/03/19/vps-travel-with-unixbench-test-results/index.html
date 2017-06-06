@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>用UnixBench测试是遨游VPS结果 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="vps," />
+  
+
+  <meta name="description" content="#  #    #  #  #    #          #####   ######  #    #   ####   #    #      #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #       #    #  # #  #  #    ##            #####   ###">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用UnixBench测试是遨游VPS结果">
+<meta property="og:url" content="http://idc.wf/2011/03/19/vps-travel-with-unixbench-test-results/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="#  #    #  #  #    #          #####   ######  #    #   ####   #    #      #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #       #    #  # #  #  #    ##            #####   ###">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用UnixBench测试是遨游VPS结果">
+<meta name="twitter:description" content="#  #    #  #  #    #          #####   ######  #    #   ####   #    #      #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #       #    #  # #  #  #    ##            #####   ###">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Version-5-1-2-Based-on-the-Byte-Magazine-Unix-Benchmark-Multi-CPU-version-Version-5-revisions-by-Ian-Smith-Sunnyvale-CA-USA-December-22-2007-johantheghost-at-yahoo-period-com-1-x-Dhrystone-2-using-register-variables-1-2-3-4-5-6-7-8-9-10-1-x-Double-Precision-Whetstone-1-2-3-4-5-6-7-8-9-10-1-x-Execl-Throughput-1-2-3-1-x-File-Copy-1024-bufsize-2000-maxblocks-1-2-3-1-x-File-Copy-256-bufsize-500-maxblocks-1-2-3-1-x-File-Copy-4096-bufsize-8000-maxblocks-1-2-3-1-x-Pipe-Throughput-1-2-3-4-5-6-7-8-9-10-1-x-Pipe-based-Context-Switching-1-2-3-4-5-6-7-8-9-10-1-x-Process-Creation-1-2-3-1-x-System-Call-Overhead-1-2-3-4-5-6-7-8-9-10-1-x-Shell-Scripts-1-concurrent-1-2-3-1-x-Shell-Scripts-8-concurrent-1-2-3-BYTE-UNIX-Benchmarks-Version-5-1-2-System-MyVPS1098-GNU-linux-os-GNU-linux-–-2-6-18-194-32-1-el5xen-–-1-SMP-Wed-Jan-5-19-32-33-EST-2011-machine-i686-i386-Language-en-US-utf8-charmap-”UTF-8”-collate-”UTF-8”-CPU-0-Intel-R-Core-TM-i3-CPU-540-3-07GHz-7674-2-bogomips-Hyper-Threading-MMX-Physical-Address-Ext-17-45-56-up-1-32-3-users-load-average-0-93-0-85-0-54-runlevel-3-————————————————————————-Benchmark-Run-Sat-Mar-19-2011-17-45-57-18-14-25-1-CPU-in-system-running-1-parallel-copy-of-tests-Dhrystone-2-using-register-variables-12805110-0-lps-10-0-s-7-samples-Double-Precision-Whetstone-2713-2-MWIPS-10-0-s-7-samples-Execl-Throughput-2705-1-lps-30-0-s-2-samples-File-Copy-1024-bufsize-2000-maxblocks-534348-0-KBps-30-0-s-2-samples-File-Copy-256-bufsize-500-maxblocks-150244-5-KBps-30-0-s-2-samples-File-Copy-4096-bufsize-8000-maxblocks-1168488-0-KBps-30-0-s-2-samples-Pipe-Throughput-842648-2-lps-10-3-s-7-samples-Pipe-based-Context-Switching-127343-8-lps-10-1-s-7-samples-Process-Creation-5105-5-lps-30-0-s-2-samples-Shell-Scripts-1-concurrent-4463-6-lpm-60-0-s-2-samples-Shell-Scripts-8-concurrent-616-9-lpm-60-1-s-2-samples-System-Call-Overhead-667586-6-lps-10-0-s-7-samples-System-Benchmarks-Index-Values-BASELINE-RESULT-INDEX-Dhrystone-2-using-register-variables-116700-0-12805110-0-1097-3-Double-Precision-Whetstone-55-0-2713-2-493-3-Execl-Throughput-43-0-2705-1-629-1-File-Copy-1024-bufsize-2000-maxblocks-3960-0-534348-0-1349-4-File-Copy-256-bufsize-500-maxblocks-1655-0-150244-5-907-8-File-Copy-4096-bufsize-8000-maxblocks-5800-0-1168488-0-2014-6-Pipe-Throughput-12440-0-842648-2-677-4-Pipe-based-Context-Switching-4000-0-127343-8-318-4-Process-Creation-126-0-5105-5-405-2-Shell-Scripts-1-concurrent-42-4-4463-6-1052-7-Shell-Scripts-8-concurrent-6-0-616-9-1028-2-System-Call-Overhead-15000-0-667586-6-445-1-System-Benchmarks-Index-Score-756-9-Script-description-and-score-comparison-http-www-ctohome-com-FuWuQi-c5-172-html-给力一键测试脚本："><span class="toc-text">#  #    #  #  #    #          #####   ######  #    #   ####   #    #      #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #       #    #  # #  #  #    ##            #####   #####   # #  #  #       ######       #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #       #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #        ####   #    #  #  #    #          #####   ######  #    #   ####   #    #    Version 5.1.2                      Based on the Byte Magazine Unix Benchmark      Multi-CPU version                  Version 5 revisions by Ian Smith,                                         Sunnyvale, CA, USA       December 22, 2007                  johantheghost at yahoo period com   1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10   1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10   1 x Execl Throughput  1 2 3   1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3   1 x File Copy 256 bufsize 500 maxblocks  1 2 3   1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3   1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10   1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10   1 x Process Creation  1 2 3   1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10   1 x Shell Scripts (1 concurrent)  1 2 3   1 x Shell Scripts (8 concurrent)  1 2 3   ========================================================================      BYTE UNIX Benchmarks (Version 5.1.2)      System: MyVPS1098: GNU/linux      os: GNU/linux – 2.6.18-194.32.1.el5xen – #1 SMP Wed Jan 5 19:32:33 EST 2011       machine: i686 (i386)       Language: en_US.utf8 (charmap=”UTF-8”, collate=”UTF-8”)       CPU 0: Intel(R) Core(TM) i3 CPU 540 @ 3.07GHz (7674.2 bogomips)              Hyper-Threading, MMX, Physical Address Ext       17:45:56 up  1:32,  3 users,  load average: 0.93, 0.85, 0.54; runlevel 3   ————————————————————————   Benchmark Run: Sat Mar 19 2011 17:45:57 - 18:14:25    1 CPU in system; running 1 parallel copy of tests   Dhrystone 2 using register variables       12805110.0 lps   (10.0 s, 7 samples)   Double-Precision Whetstone                     2713.2 MWIPS (10.0 s, 7 samples)    Execl Throughput                               2705.1 lps   (30.0 s, 2 samples)    File Copy 1024 bufsize 2000 maxblocks        534348.0 KBps  (30.0 s, 2 samples)    File Copy 256 bufsize 500 maxblocks          150244.5 KBps  (30.0 s, 2 samples)    File Copy 4096 bufsize 8000 maxblocks       1168488.0 KBps  (30.0 s, 2 samples)    Pipe Throughput                              842648.2 lps   (10.3 s, 7 samples)    Pipe-based Context Switching                 127343.8 lps   (10.1 s, 7 samples)    Process Creation                               5105.5 lps   (30.0 s, 2 samples)    Shell Scripts (1 concurrent)                   4463.6 lpm   (60.0 s, 2 samples)    Shell Scripts (8 concurrent)                    616.9 lpm   (60.1 s, 2 samples)    System Call Overhead                         667586.6 lps   (10.0 s, 7 samples)   System Benchmarks Index Values               BASELINE       RESULT    INDEX   Dhrystone 2 using register variables         116700.0   12805110.0   1097.3    Double-Precision Whetstone                       55.0       2713.2    493.3    Execl Throughput                                 43.0       2705.1    629.1    File Copy 1024 bufsize 2000 maxblocks          3960.0     534348.0   1349.4    File Copy 256 bufsize 500 maxblocks            1655.0     150244.5    907.8    File Copy 4096 bufsize 8000 maxblocks          5800.0    1168488.0   2014.6    Pipe Throughput                               12440.0     842648.2    677.4    Pipe-based Context Switching                   4000.0     127343.8    318.4    Process Creation                                126.0       5105.5    405.2    Shell Scripts (1 concurrent)                     42.4       4463.6   1052.7    Shell Scripts (8 concurrent)                      6.0        616.9   1028.2    System Call Overhead                          15000.0     667586.6    445.1                                                                       ========    System Benchmarks Index Score                                         756.9   ======= Script description and score comparison: =======   http://www.ctohome.com/FuWuQi/c5/172.html     给力一键测试脚本：</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-vps-travel-with-unixbench-test-results" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">用UnixBench测试是遨游VPS结果</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.03.19</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/03/19/vps-travel-with-unixbench-test-results/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="Version-5-1-2-Based-on-the-Byte-Magazine-Unix-Benchmark-Multi-CPU-version-Version-5-revisions-by-Ian-Smith-Sunnyvale-CA-USA-December-22-2007-johantheghost-at-yahoo-period-com-1-x-Dhrystone-2-using-register-variables-1-2-3-4-5-6-7-8-9-10-1-x-Double-Precision-Whetstone-1-2-3-4-5-6-7-8-9-10-1-x-Execl-Throughput-1-2-3-1-x-File-Copy-1024-bufsize-2000-maxblocks-1-2-3-1-x-File-Copy-256-bufsize-500-maxblocks-1-2-3-1-x-File-Copy-4096-bufsize-8000-maxblocks-1-2-3-1-x-Pipe-Throughput-1-2-3-4-5-6-7-8-9-10-1-x-Pipe-based-Context-Switching-1-2-3-4-5-6-7-8-9-10-1-x-Process-Creation-1-2-3-1-x-System-Call-Overhead-1-2-3-4-5-6-7-8-9-10-1-x-Shell-Scripts-1-concurrent-1-2-3-1-x-Shell-Scripts-8-concurrent-1-2-3-BYTE-UNIX-Benchmarks-Version-5-1-2-System-MyVPS1098-GNU-linux-os-GNU-linux-–-2-6-18-194-32-1-el5xen-–-1-SMP-Wed-Jan-5-19-32-33-EST-2011-machine-i686-i386-Language-en-US-utf8-charmap-”UTF-8”-collate-”UTF-8”-CPU-0-Intel-R-Core-TM-i3-CPU-540-3-07GHz-7674-2-bogomips-Hyper-Threading-MMX-Physical-Address-Ext-17-45-56-up-1-32-3-users-load-average-0-93-0-85-0-54-runlevel-3-————————————————————————-Benchmark-Run-Sat-Mar-19-2011-17-45-57-18-14-25-1-CPU-in-system-running-1-parallel-copy-of-tests-Dhrystone-2-using-register-variables-12805110-0-lps-10-0-s-7-samples-Double-Precision-Whetstone-2713-2-MWIPS-10-0-s-7-samples-Execl-Throughput-2705-1-lps-30-0-s-2-samples-File-Copy-1024-bufsize-2000-maxblocks-534348-0-KBps-30-0-s-2-samples-File-Copy-256-bufsize-500-maxblocks-150244-5-KBps-30-0-s-2-samples-File-Copy-4096-bufsize-8000-maxblocks-1168488-0-KBps-30-0-s-2-samples-Pipe-Throughput-842648-2-lps-10-3-s-7-samples-Pipe-based-Context-Switching-127343-8-lps-10-1-s-7-samples-Process-Creation-5105-5-lps-30-0-s-2-samples-Shell-Scripts-1-concurrent-4463-6-lpm-60-0-s-2-samples-Shell-Scripts-8-concurrent-616-9-lpm-60-1-s-2-samples-System-Call-Overhead-667586-6-lps-10-0-s-7-samples-System-Benchmarks-Index-Values-BASELINE-RESULT-INDEX-Dhrystone-2-using-register-variables-116700-0-12805110-0-1097-3-Double-Precision-Whetstone-55-0-2713-2-493-3-Execl-Throughput-43-0-2705-1-629-1-File-Copy-1024-bufsize-2000-maxblocks-3960-0-534348-0-1349-4-File-Copy-256-bufsize-500-maxblocks-1655-0-150244-5-907-8-File-Copy-4096-bufsize-8000-maxblocks-5800-0-1168488-0-2014-6-Pipe-Throughput-12440-0-842648-2-677-4-Pipe-based-Context-Switching-4000-0-127343-8-318-4-Process-Creation-126-0-5105-5-405-2-Shell-Scripts-1-concurrent-42-4-4463-6-1052-7-Shell-Scripts-8-concurrent-6-0-616-9-1028-2-System-Call-Overhead-15000-0-667586-6-445-1-System-Benchmarks-Index-Score-756-9-Script-description-and-score-comparison-http-www-ctohome-com-FuWuQi-c5-172-html-给力一键测试脚本："><a href="#Version-5-1-2-Based-on-the-Byte-Magazine-Unix-Benchmark-Multi-CPU-version-Version-5-revisions-by-Ian-Smith-Sunnyvale-CA-USA-December-22-2007-johantheghost-at-yahoo-period-com-1-x-Dhrystone-2-using-register-variables-1-2-3-4-5-6-7-8-9-10-1-x-Double-Precision-Whetstone-1-2-3-4-5-6-7-8-9-10-1-x-Execl-Throughput-1-2-3-1-x-File-Copy-1024-bufsize-2000-maxblocks-1-2-3-1-x-File-Copy-256-bufsize-500-maxblocks-1-2-3-1-x-File-Copy-4096-bufsize-8000-maxblocks-1-2-3-1-x-Pipe-Throughput-1-2-3-4-5-6-7-8-9-10-1-x-Pipe-based-Context-Switching-1-2-3-4-5-6-7-8-9-10-1-x-Process-Creation-1-2-3-1-x-System-Call-Overhead-1-2-3-4-5-6-7-8-9-10-1-x-Shell-Scripts-1-concurrent-1-2-3-1-x-Shell-Scripts-8-concurrent-1-2-3-BYTE-UNIX-Benchmarks-Version-5-1-2-System-MyVPS1098-GNU-linux-os-GNU-linux-–-2-6-18-194-32-1-el5xen-–-1-SMP-Wed-Jan-5-19-32-33-EST-2011-machine-i686-i386-Language-en-US-utf8-charmap-”UTF-8”-collate-”UTF-8”-CPU-0-Intel-R-Core-TM-i3-CPU-540-3-07GHz-7674-2-bogomips-Hyper-Threading-MMX-Physical-Address-Ext-17-45-56-up-1-32-3-users-load-average-0-93-0-85-0-54-runlevel-3-————————————————————————-Benchmark-Run-Sat-Mar-19-2011-17-45-57-18-14-25-1-CPU-in-system-running-1-parallel-copy-of-tests-Dhrystone-2-using-register-variables-12805110-0-lps-10-0-s-7-samples-Double-Precision-Whetstone-2713-2-MWIPS-10-0-s-7-samples-Execl-Throughput-2705-1-lps-30-0-s-2-samples-File-Copy-1024-bufsize-2000-maxblocks-534348-0-KBps-30-0-s-2-samples-File-Copy-256-bufsize-500-maxblocks-150244-5-KBps-30-0-s-2-samples-File-Copy-4096-bufsize-8000-maxblocks-1168488-0-KBps-30-0-s-2-samples-Pipe-Throughput-842648-2-lps-10-3-s-7-samples-Pipe-based-Context-Switching-127343-8-lps-10-1-s-7-samples-Process-Creation-5105-5-lps-30-0-s-2-samples-Shell-Scripts-1-concurrent-4463-6-lpm-60-0-s-2-samples-Shell-Scripts-8-concurrent-616-9-lpm-60-1-s-2-samples-System-Call-Overhead-667586-6-lps-10-0-s-7-samples-System-Benchmarks-Index-Values-BASELINE-RESULT-INDEX-Dhrystone-2-using-register-variables-116700-0-12805110-0-1097-3-Double-Precision-Whetstone-55-0-2713-2-493-3-Execl-Throughput-43-0-2705-1-629-1-File-Copy-1024-bufsize-2000-maxblocks-3960-0-534348-0-1349-4-File-Copy-256-bufsize-500-maxblocks-1655-0-150244-5-907-8-File-Copy-4096-bufsize-8000-maxblocks-5800-0-1168488-0-2014-6-Pipe-Throughput-12440-0-842648-2-677-4-Pipe-based-Context-Switching-4000-0-127343-8-318-4-Process-Creation-126-0-5105-5-405-2-Shell-Scripts-1-concurrent-42-4-4463-6-1052-7-Shell-Scripts-8-concurrent-6-0-616-9-1028-2-System-Call-Overhead-15000-0-667586-6-445-1-System-Benchmarks-Index-Score-756-9-Script-description-and-score-comparison-http-www-ctohome-com-FuWuQi-c5-172-html-给力一键测试脚本：" class="headerlink" title="#  #    #  #  #    #          #####   ######  #    #   ####   #    #      #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #       #    #  # #  #  #    ##            #####   #####   # #  #  #       ######       #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #       #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #        ####   #    #  #  #    #          #####   ######  #    #   ####   #    #    Version 5.1.2                      Based on the Byte Magazine Unix Benchmark      Multi-CPU version                  Version 5 revisions by Ian Smith,                                         Sunnyvale, CA, USA       December 22, 2007                  johantheghost at yahoo period com   1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10   1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10   1 x Execl Throughput  1 2 3   1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3   1 x File Copy 256 bufsize 500 maxblocks  1 2 3   1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3   1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10   1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10   1 x Process Creation  1 2 3   1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10   1 x Shell Scripts (1 concurrent)  1 2 3   1 x Shell Scripts (8 concurrent)  1 2 3   ========================================================================      BYTE UNIX Benchmarks (Version 5.1.2)      System: MyVPS1098: GNU/linux      os: GNU/linux – 2.6.18-194.32.1.el5xen – #1 SMP Wed Jan 5 19:32:33 EST 2011       machine: i686 (i386)       Language: en_US.utf8 (charmap=”UTF-8”, collate=”UTF-8”)       CPU 0: Intel(R) Core(TM) i3 CPU 540 @ 3.07GHz (7674.2 bogomips)              Hyper-Threading, MMX, Physical Address Ext       17:45:56 up  1:32,  3 users,  load average: 0.93, 0.85, 0.54; runlevel 3   ————————————————————————   Benchmark Run: Sat Mar 19 2011 17:45:57 - 18:14:25    1 CPU in system; running 1 parallel copy of tests   Dhrystone 2 using register variables       12805110.0 lps   (10.0 s, 7 samples)   Double-Precision Whetstone                     2713.2 MWIPS (10.0 s, 7 samples)    Execl Throughput                               2705.1 lps   (30.0 s, 2 samples)    File Copy 1024 bufsize 2000 maxblocks        534348.0 KBps  (30.0 s, 2 samples)    File Copy 256 bufsize 500 maxblocks          150244.5 KBps  (30.0 s, 2 samples)    File Copy 4096 bufsize 8000 maxblocks       1168488.0 KBps  (30.0 s, 2 samples)    Pipe Throughput                              842648.2 lps   (10.3 s, 7 samples)    Pipe-based Context Switching                 127343.8 lps   (10.1 s, 7 samples)    Process Creation                               5105.5 lps   (30.0 s, 2 samples)    Shell Scripts (1 concurrent)                   4463.6 lpm   (60.0 s, 2 samples)    Shell Scripts (8 concurrent)                    616.9 lpm   (60.1 s, 2 samples)    System Call Overhead                         667586.6 lps   (10.0 s, 7 samples)   System Benchmarks Index Values               BASELINE       RESULT    INDEX   Dhrystone 2 using register variables         116700.0   12805110.0   1097.3    Double-Precision Whetstone                       55.0       2713.2    493.3    Execl Throughput                                 43.0       2705.1    629.1    File Copy 1024 bufsize 2000 maxblocks          3960.0     534348.0   1349.4    File Copy 256 bufsize 500 maxblocks            1655.0     150244.5    907.8    File Copy 4096 bufsize 8000 maxblocks          5800.0    1168488.0   2014.6    Pipe Throughput                               12440.0     842648.2    677.4    Pipe-based Context Switching                   4000.0     127343.8    318.4    Process Creation                                126.0       5105.5    405.2    Shell Scripts (1 concurrent)                     42.4       4463.6   1052.7    Shell Scripts (8 concurrent)                      6.0        616.9   1028.2    System Call Overhead                          15000.0     667586.6    445.1                                                                       ========    System Benchmarks Index Score                                         756.9   ======= Script description and score comparison: =======   http://www.ctohome.com/FuWuQi/c5/172.html     给力一键测试脚本："></a>#  #    #  #  #    #          #####   ######  #    #   ####   #    #   <br>   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #    <br>   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######    <br>   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #    <br>   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #    <br>    ####   #    #  #  #    #          #####   ######  #    #   ####   #    # <a id="more"></a>   Version 5.1.2                      Based on the Byte Magazine Unix Benchmark      Multi-CPU version                  Version 5 revisions by Ian Smith,   <br>                                      Sunnyvale, CA, USA    <br>   December 22, 2007                  johantheghost at yahoo period com   1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10   1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10   1 x Execl Throughput  1 2 3   1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3   1 x File Copy 256 bufsize 500 maxblocks  1 2 3   1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3   1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10   1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10   1 x Process Creation  1 2 3   1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10   1 x Shell Scripts (1 concurrent)  1 2 3   1 x Shell Scripts (8 concurrent)  1 2 3   ========================================================================   <br>   BYTE UNIX Benchmarks (Version 5.1.2)      System: MyVPS1098: GNU/linux   <br>   os: GNU/linux – 2.6.18-194.32.1.el5xen – #1 SMP Wed Jan 5 19:32:33 EST 2011    <br>   machine: i686 (i386)    <br>   Language: en_US.utf8 (charmap=”UTF-8”, collate=”UTF-8”)    <br>   CPU 0: Intel(R) Core(TM) i3 CPU 540 @ 3.07GHz (7674.2 bogomips)    <br>          Hyper-Threading, MMX, Physical Address Ext    <br>   17:45:56 up  1:32,  3 users,  load average: 0.93, 0.85, 0.54; runlevel 3   ————————————————————————   <br>Benchmark Run: Sat Mar 19 2011 17:45:57 - 18:14:25    <br>1 CPU in system; running 1 parallel copy of tests   Dhrystone 2 using register variables       12805110.0 lps   (10.0 s, 7 samples)   <br>Double-Precision Whetstone                     2713.2 MWIPS (10.0 s, 7 samples)    <br>Execl Throughput                               2705.1 lps   (30.0 s, 2 samples)    <br>File Copy 1024 bufsize 2000 maxblocks        534348.0 KBps  (30.0 s, 2 samples)    <br>File Copy 256 bufsize 500 maxblocks          150244.5 KBps  (30.0 s, 2 samples)    <br>File Copy 4096 bufsize 8000 maxblocks       1168488.0 KBps  (30.0 s, 2 samples)    <br>Pipe Throughput                              842648.2 lps   (10.3 s, 7 samples)    <br>Pipe-based Context Switching                 127343.8 lps   (10.1 s, 7 samples)    <br>Process Creation                               5105.5 lps   (30.0 s, 2 samples)    <br>Shell Scripts (1 concurrent)                   4463.6 lpm   (60.0 s, 2 samples)    <br>Shell Scripts (8 concurrent)                    616.9 lpm   (60.1 s, 2 samples)    <br>System Call Overhead                         667586.6 lps   (10.0 s, 7 samples)   System Benchmarks Index Values               BASELINE       RESULT    INDEX   <br>Dhrystone 2 using register variables         116700.0   12805110.0   1097.3    <br>Double-Precision Whetstone                       55.0       2713.2    493.3    <br>Execl Throughput                                 43.0       2705.1    629.1    <br>File Copy 1024 bufsize 2000 maxblocks          3960.0     534348.0   1349.4    <br>File Copy 256 bufsize 500 maxblocks            1655.0     150244.5    907.8    <br>File Copy 4096 bufsize 8000 maxblocks          5800.0    1168488.0   2014.6    <br>Pipe Throughput                               12440.0     842648.2    677.4    <br>Pipe-based Context Switching                   4000.0     127343.8    318.4    <br>Process Creation                                126.0       5105.5    405.2    <br>Shell Scripts (1 concurrent)                     42.4       4463.6   1052.7    <br>Shell Scripts (8 concurrent)                      6.0        616.9   1028.2    <br>System Call Overhead                          15000.0     667586.6    445.1    <br>                                                                   ========    <br>System Benchmarks Index Score                                         756.9   ======= Script description and score comparison: =======   <a href="http://www.ctohome.com/FuWuQi/c5/172.html" target="_blank" rel="external">http://www.ctohome.com/FuWuQi/c5/172.html</a>     给力一键测试脚本：</h1><p>wget http:<span style="color: #008000">//www.CTOHome.com/linux-vps-pack/unixbench.sh;sh ./unixbench.sh;</span></p>
+<p>教程：<a href="http://www.deepvps.com/vpsunixbench.html" target="_blank" rel="external">http://www.deepvps.com/vpsunixbench.html</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/03/19/vps-travel-with-unixbench-test-results/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

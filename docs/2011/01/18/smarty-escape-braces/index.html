@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>smarty 花括号转义 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="smarty," />
+  
+
+  <meta name="description" content="使用 smarty 模板的时候，通常都是用 ‘{’ 和 ‘}’ 作为定界符（delimiter）。
+有时，我们需要在 html 代码里输出大括号，如果在模板里直接写出来，会被 smarty 的解析器认为是定界符，然后会报错：
+smarty error : syntax error: unrecognized tag无法识别的标签！
+如何解决呢？有 2 种办法：
+1：内置变量
+ldelim, rde">
+<meta property="og:type" content="article">
+<meta property="og:title" content="smarty 花括号转义">
+<meta property="og:url" content="http://idc.wf/2011/01/18/smarty-escape-braces/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="使用 smarty 模板的时候，通常都是用 ‘{’ 和 ‘}’ 作为定界符（delimiter）。
+有时，我们需要在 html 代码里输出大括号，如果在模板里直接写出来，会被 smarty 的解析器认为是定界符，然后会报错：
+smarty error : syntax error: unrecognized tag无法识别的标签！
+如何解决呢？有 2 种办法：
+1：内置变量
+ldelim, rde">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="smarty 花括号转义">
+<meta name="twitter:description" content="使用 smarty 模板的时候，通常都是用 ‘{’ 和 ‘}’ 作为定界符（delimiter）。
+有时，我们需要在 html 代码里输出大括号，如果在模板里直接写出来，会被 smarty 的解析器认为是定界符，然后会报错：
+smarty error : syntax error: unrecognized tag无法识别的标签！
+如何解决呢？有 2 种办法：
+1：内置变量
+ldelim, rde">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-smarty-escape-braces" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">smarty 花括号转义</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.01.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/01/18/smarty-escape-braces/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>使用 smarty 模板的时候，通常都是用 ‘{’ 和 ‘}’ 作为定界符（delimiter）。</p>
+<p>有时，我们需要在 html 代码里输出大括号，如果在模板里直接写出来，会被 smarty 的解析器认为是定界符，然后会报错：</p>
+<p>smarty error : syntax error: unrecognized tag<br>无法识别的标签！</p>
+<p>如何解决呢？有 2 种办法：</p>
+<p>1：内置变量</p>
+<p>ldelim, rdelim<br>ldelim and rdelim are used for displaying the literal delimiter, in our case “{” or “}”. The template engine always tries to interpret delimiters, so this is the way around that.<br>ldelim 和 rdelim 用于输出分隔符，也就是大括号 ‘{’ 和 ‘}’。如果只是输出很少的几个大括号，请使用此方法。</p>
+<p>2： 文本转义</p>
+<p>我们经常会在 html 里写 javascript 函数，就不可避免地写大量的大括号，这个时候上面的解决方法就不适用了，smarty 提供了一个转义一段代码的标签：</p>
+<p>  {literal}…{/literal}</p>
+<pre><code>{literal}
+    &lt;script type=&quot;”text/javascript”&quot;&gt;
+    function sayHello() {alert(‘Hello World!’)}
+    &lt;/script&gt;
+{/literal}
+</code></pre><p>这样，就可以在里面随意写各种符号，不必担心 smarty 引擎会错误解析了！</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/01/18/smarty-escape-braces/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>动弹一下 - 我的第一个 Chrome 应用 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="js,chrome,oschina," />
+  
+
+  <meta name="description" content="之前不小心买了 Google 的开发者凭证，于是晋级为了开发者。但是，我完全不知道要拿来做什么。最近比较关注的 oschina 开放了他的 api ，然后他们的 tweet[动弹] 我也有在用，发现还没有它的 Chrome 应用。于是，做点啥吧，就当练手了，不能白瞎了咱的开发者身份。
+项目地址：
+github:https://github.com/DrayChou/oschina_tweet
+os">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动弹一下 - 我的第一个 Chrome 应用">
+<meta property="og:url" content="http://idc.wf/2014/03/06/oschina_tweet/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="之前不小心买了 Google 的开发者凭证，于是晋级为了开发者。但是，我完全不知道要拿来做什么。最近比较关注的 oschina 开放了他的 api ，然后他们的 tweet[动弹] 我也有在用，发现还没有它的 Chrome 应用。于是，做点啥吧，就当练手了，不能白瞎了咱的开发者身份。
+项目地址：
+github:https://github.com/DrayChou/oschina_tweet
+os">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="动弹一下 - 我的第一个 Chrome 应用">
+<meta name="twitter:description" content="之前不小心买了 Google 的开发者凭证，于是晋级为了开发者。但是，我完全不知道要拿来做什么。最近比较关注的 oschina 开放了他的 api ，然后他们的 tweet[动弹] 我也有在用，发现还没有它的 Chrome 应用。于是，做点啥吧，就当练手了，不能白瞎了咱的开发者身份。
+项目地址：
+github:https://github.com/DrayChou/oschina_tweet
+os">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目地址："><span class="toc-text">项目地址：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目介绍"><span class="toc-text">项目介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目笔记"><span class="toc-text">项目笔记</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-oschina_tweet" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">动弹一下 - 我的第一个 Chrome 应用</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2014.03.06</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2014/03/06/oschina_tweet/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>之前不小心买了 Google 的开发者凭证，于是晋级为了开发者。但是，我完全不知道要拿来做什么。<br>最近比较关注的 oschina 开放了他的 api ，然后他们的 tweet[动弹] 我也有在用，发现还没有它的 Chrome 应用。于是，做点啥吧，就当练手了，不能白瞎了咱的开发者身份。</p>
+<h2 id="项目地址："><a href="#项目地址：" class="headerlink" title="项目地址："></a>项目地址：</h2><ul>
+<li>github:<a href="https://github.com/DrayChou/oschina_tweet" target="_blank" rel="external">https://github.com/DrayChou/oschina_tweet</a></li>
+<li>oschina:<a href="http://git.oschina.net/drayc/oschina_tweet" target="_blank" rel="external">http://git.oschina.net/drayc/oschina_tweet</a></li>
+<li>应用地址：<a href="http://goo.gl/gsK4x3" target="_blank" rel="external">http://goo.gl/gsK4x3</a></li>
+</ul>
+<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>项目目前实现了下面四个功能。</p>
+<ul>
+<li>最新动弹</li>
+<li>热门动弹</li>
+<li>我的动弹</li>
+<li>动弹一下</li>
+</ul>
+<p>其他的功能，在我发现 tweet 完全没有好友概念之后，就算了。反正拿出来的肯定是最新的，好友关系可有可无。<br>另：界面实在很简陋，等我有空再细细雕琢。</p>
+<h2 id="项目笔记"><a href="#项目笔记" class="headerlink" title="项目笔记"></a>项目笔记</h2><ul>
+<li>阅读了大量文档，明白了开发 chrome 应用的技术。</li>
+<li>原来 javascript mvc 看起来也很爽。</li>
+<li>熟练了 javascript 面向对象的编程方法</li>
+<li>设计也不容易啊，不能光可以用就行。</li>
+</ul>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2014/03/06/oschina_tweet/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

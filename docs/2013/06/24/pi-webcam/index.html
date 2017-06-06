@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>樹莓派加裝攝像頭 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="pi," />
+  
+
+  <meta name="description" content="樹莓派買回來好久，一直也沒什麼地方用得上。這次折騰下攝像頭監控的東東。首先，找一個樹莓派支持的攝像頭。我的是很久以前用過的一個，像素質量已經很差了。幾乎看不清東西，先將就用一下吧。
+首先，插上攝像頭，執行下面命令查看是否已識別：
+ls /dev
+看看有沒有列出來 video1 這樣的設備，有的話就是支持的，沒有的話請自行查找驅動了。
+上網查了下，大概有3種方法是比較常用的。
+
+fswebcam
+s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="樹莓派加裝攝像頭">
+<meta property="og:url" content="http://idc.wf/2013/06/24/pi-webcam/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="樹莓派買回來好久，一直也沒什麼地方用得上。這次折騰下攝像頭監控的東東。首先，找一個樹莓派支持的攝像頭。我的是很久以前用過的一個，像素質量已經很差了。幾乎看不清東西，先將就用一下吧。
+首先，插上攝像頭，執行下面命令查看是否已識別：
+ls /dev
+看看有沒有列出來 video1 這樣的設備，有的話就是支持的，沒有的話請自行查找驅動了。
+上網查了下，大概有3種方法是比較常用的。
+
+fswebcam
+s">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.960Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="樹莓派加裝攝像頭">
+<meta name="twitter:description" content="樹莓派買回來好久，一直也沒什麼地方用得上。這次折騰下攝像頭監控的東東。首先，找一個樹莓派支持的攝像頭。我的是很久以前用過的一個，像素質量已經很差了。幾乎看不清東西，先將就用一下吧。
+首先，插上攝像頭，執行下面命令查看是否已識別：
+ls /dev
+看看有沒有列出來 video1 這樣的設備，有的話就是支持的，沒有的話請自行查找驅動了。
+上網查了下，大概有3種方法是比較常用的。
+
+fswebcam
+s">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-pi-webcam" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">樹莓派加裝攝像頭</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2013.06.24</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/linux/">linux</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2013/06/24/pi-webcam/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>樹莓派買回來好久，一直也沒什麼地方用得上。這次折騰下攝像頭監控的東東。<br>首先，找一個樹莓派支持的攝像頭。我的是很久以前用過的一個，像素質量已經很差了。幾乎看不清東西，先將就用一下吧。</p>
+<p>首先，插上攝像頭，執行下面命令查看是否已識別：</p>
+<pre><code>ls /dev
+</code></pre><p>看看有沒有列出來 video1 這樣的設備，有的話就是支持的，沒有的話請自行查找驅動了。</p>
+<p>上網查了下，大概有3種方法是比較常用的。</p>
+<ol>
+<li><p>fswebcam</p>
+<pre><code>sudo apt-get install fswebcam
+sudo fswebcam -d /dev/video0 -r 320x240 --bottom-banner --title &quot;RaspberryPi&quot; --no-timestamp /home/pi/yeelink.jpg
+</code></pre></li>
+<li><p>motion</p>
+<pre><code>sudo apt-get install motion
+sudo vi /etc/motion/motion.conf
+</code></pre><p> 找到”control_localhost on “和”webcam_localhost on“这两行，改为以下两行后，保存退出</p>
+<pre><code>control_localhost off
+webcam_localhost off
+</code></pre><p> 运行motion软件，输入</p>
+<pre><code>motion -n
+</code></pre><p> 在pc上用IE浏览器打开，下面網址進行監控設置<br> 配置网页：<a href="http://192.168.1.114:8080" target="_blank" rel="external">http://192.168.1.114:8080</a><br> 觀察网页：<a href="http://192.168.1.114:8081" target="_blank" rel="external">http://192.168.1.114:8081</a></p>
+</li>
+<li><p>mplayer</p>
+<pre><code>sudo apt-get install mplayer
+sudo mplayer  tv://
+</code></pre></li>
+</ol>
+<p>裝好之後就是在遠程查看了。motion 有網頁端，在局域網可以觀看，另外的兩個就可以配合 crontab 和 btsync 或者 dropbox 來進行遠程觀察。或者直接放到開放平臺Yeelink上共享出來。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2013/06/24/pi-webcam/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

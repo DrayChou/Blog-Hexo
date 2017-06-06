@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>php 超大文件下载类 支持2g以上文件 支持断点续传 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="file," />
+  
+
+  <meta name="description" content="&amp;lt;?php
+**
+ * &amp;lt;SPAN class=t_tag onclick=tagshow(event) href=&amp;quot;tag.php?name=%CE%C4%BC%FE&amp;quot;&amp;gt;文件&amp;lt;/SPAN&amp;gt;传输，支持断点续传。
+ * 2g以上超大文件也有效
+ * @author MoXie
+ */
+class Transfer {
+    **
+     * 缓冲">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php 超大文件下载类 支持2g以上文件 支持断点续传">
+<meta property="og:url" content="http://idc.wf/2011/02/18/php-file-download-large-file-support-class-supports-http-over-2g/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="&amp;lt;?php
+**
+ * &amp;lt;SPAN class=t_tag onclick=tagshow(event) href=&amp;quot;tag.php?name=%CE%C4%BC%FE&amp;quot;&amp;gt;文件&amp;lt;/SPAN&amp;gt;传输，支持断点续传。
+ * 2g以上超大文件也有效
+ * @author MoXie
+ */
+class Transfer {
+    **
+     * 缓冲">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.957Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="php 超大文件下载类 支持2g以上文件 支持断点续传">
+<meta name="twitter:description" content="&amp;lt;?php
+**
+ * &amp;lt;SPAN class=t_tag onclick=tagshow(event) href=&amp;quot;tag.php?name=%CE%C4%BC%FE&amp;quot;&amp;gt;文件&amp;lt;/SPAN&amp;gt;传输，支持断点续传。
+ * 2g以上超大文件也有效
+ * @author MoXie
+ */
+class Transfer {
+    **
+     * 缓冲">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-php-file-download-large-file-support-class-supports-http-over-2g" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">php 超大文件下载类 支持2g以上文件 支持断点续传</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/18/php-file-download-large-file-support-class-supports-http-over-2g/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <pre><code>&lt;?php
+**
+ * &lt;SPAN class=t_tag onclick=tagshow(event) href=&quot;tag.php?name=%CE%C4%BC%FE&quot;&gt;文件&lt;/SPAN&gt;传输，支持断点续传。
+ * 2g以上超大文件也有效
+ * @author MoXie
+ */
+class Transfer {
+    **
+     * 缓冲单元
+     */
+    const BUFF_SIZE = 5120; / 1024 * 5
+    **
+     * 文件地址
+     * @var &lt;String&gt;
+     */
+    private $filePath;
+    **
+     * 文件大小
+     * @var &lt;String&gt; php超大数字 &lt;SPAN class=t_tag onclick=tagshow(event) href=&quot;tag.php?name=%D7%D6%B7%FB&quot;&gt;字符&lt;/SPAN&gt;串形式描述
+     */
+    private $fileSize;
+    **
+     * 文件类型
+     * @var &lt;String&gt;
+     */
+    private $mimeType;
+    **
+     * 请求区域（范围）
+     * @var &lt;String&gt;
+     */
+    private $range;
+    **
+     * 是否写入日志
+     * @var &lt;Boolean&gt;
+     */
+    private $isLog = false;
+    **
+     *
+     * @param &lt;String&gt; $filePath 文件路径
+     * @param &lt;String&gt; $mimeType  文件类型
+     * @param &lt;String&gt; $range 请求区域（范围）
+     */
+    function __construct($filePath, $mimeType = null , $range = null) {
+        $this-&gt;filePath = $filePath;
+        $this-&gt;fileSize = sprintf(&apos;%u&apos;,filesize($filePath));
+        $this-&gt;mimeType = ($mimeType != null)?$mimeType:&quot;application/octet-stream&quot;; /  bin
+        $this-&gt;range = trim($range);
+    }
+    **
+     *  获取文件区域
+     * @return &lt;Map&gt; {&apos;start&apos;:long,&apos;end&apos;:long} or null
+     */
+    private function getRange() {
+        **
+         *  Range: bytes=-128
+         *  Range: bytes=-128
+         *  Range: bytes=28-175,382-399,510-541,644-744,977-980
+         *  Range: bytes=28-175n380
+         *  type 1
+         *  RANGE: bytes=1000-9999
+         *  RANGE: bytes=2000-9999
+         *  type 2
+         *  RANGE: bytes=1000-1999
+         *  RANGE: bytes=2000-2999
+         *  RANGE: bytes=3000-3999
+         */
+        if (!empty($this-&gt;range)) {
+            $range = preg_replace(&apos;/[s|,].*/&apos;,&apos;&apos;,$this-&gt;range);
+            $range = explode(&apos;-&apos;,substr($range,6));
+            if (count($range) &lt; 2 ) {
+                $range[1] = $this-&gt;fileSize; / Range: bytes=-100
+            }
+            $range = array_combine(array(&apos;start&apos;,&apos;end&apos;),$range);
+            if (empty($range[&apos;start&apos;])) {
+                $range[&apos;start&apos;] = 0;
+            }
+            if (!isset ($range[&apos;end&apos;]) || empty($range[&apos;end&apos;])) {
+                $range[&apos;end&apos;] = $this-&gt;fileSize;
+            }
+            return $range;
+        }
+        return null;
+    }
+    **
+     * 向客户端发送文件
+     */
+    public function send() {
+        $fileHande = fopen($this-&gt;filePath, &apos;rb&apos;);
+        if ($fileHande) {
+            / setting
+            ob_end_clean();/ clean cache
+            ob_start();
+            ini_set(&apos;output_buffering&apos;, &apos;Off&apos;);
+            ini_set(&apos;zlib.output_compression&apos;, &apos;Off&apos;);
+            $magicQuotes = get_magic_quotes_gpc();
+            set_magic_quotes_runtime(0);
+            / init
+            $lastModified = gmdate(&apos;D, d M Y H:i:s&apos;, filemtime($this-&gt;filePath)).&apos; GMT&apos;;
+            $etag = sprintf(&apos;w/&quot;%s:%s&quot;&apos;,md5($lastModified),$this-&gt;fileSize);
+            $ranges = $this-&gt;getRange();
+            / headers
+            header(sprintf(&apos;Last-Modified: %s&apos;,$lastModified));
+            header(sprintf(&apos;ETag: %s&apos;,$etag));
+            header(sprintf(&apos;Content-Type: %s&apos;,$this-&gt;mimeType));
+            $disposition = &apos;attachment&apos;;
+            if (strpos($this-&gt;mimeType,&apos;image/&apos;) !== FALSE) {
+                $disposition = &apos;inline&apos;;
+            }
+            header(sprintf(&apos;Content-Disposition: %s; filename=&quot;%s&quot;&apos;,$disposition,basename($this-&gt;filePath)));
+
+            if ($ranges != null) {
+                if ($this-&gt;isLog) {
+                    $this-&gt;log(json_encode($ranges).&apos; &apos;.$_SERVER[&apos;HTTP_RANGE&apos;]);
+                }
+                header(&apos;HTTP/1.1 206 Partial Content&apos;);
+                header(&apos;Accept-Ranges: bytes&apos;);
+                header(sprintf(&apos;Content-Length: %u&apos;,$ranges[&apos;end&apos;] - $ranges[&apos;start&apos;]));
+                header(sprintf(&apos;Content-Range: bytes %s-%s/%s&apos;, $ranges[&apos;start&apos;], $ranges[&apos;end&apos;],$this-&gt;fileSize));
+                /
+                fseek($fileHande, sprintf(&apos;%u&apos;,$ranges[&apos;start&apos;]));
+            }else {
+                header(&quot;HTTP/1.1 200 OK&quot;);
+                header(sprintf(&apos;Content-Length: %s&apos;,$this-&gt;fileSize));
+            }
+            / read file
+            $lastSize = 0;
+            while(!feof($fileHande) &amp;&amp; !connection_aborted()) {
+                $lastSize = sprintf(&quot;%u&quot;, bcsub($this-&gt;fileSize,sprintf(&quot;%u&quot;,ftell($fileHande))));
+                if (bccomp($lastSize,self::BUFF_SIZE) &gt; 0) {
+                    $lastSize = self::BUFF_SIZE;
+                }
+                echo fread($fileHande, $lastSize);
+                flush();
+                ob_flush();
+            }
+            set_magic_quotes_runtime($magicQuotes);
+            ob_end_flush();
+        }
+        if ($fileHande != null) {
+            fclose($fileHande);
+        }
+    }
+    **
+     * 设置记录
+     * @param &lt;Boolean&gt; $isLog  是否记录
+     */
+    public function setIsLog($isLog = true) {
+        $this-&gt;isLog = $isLog;
+    }
+    **
+     * 记录
+     * @param &lt;String&gt; $msg  记录信息
+     */
+    private function log($msg) {
+        try {
+            $handle = fopen(&apos;transfer_log.txt&apos;, &apos;a&apos;);
+            fwrite($handle, sprintf(&apos;%s : %s&apos;.&quot;&lt;SPAN class=t_tag onclick=tagshow(event) href=\&quot;tag.php?name=php\&quot;&gt;php&lt;/SPAN&gt;_EOL&quot;,date(&apos;Y-m-d H:i:s&apos;),$msg));
+            fclose($handle);
+        }catch(Exception $e) {
+            / null;
+        }
+    }
+}
+date_default_timezone_set(&apos;Asia/Shanghai&apos;);
+error_reporting(E_STRICT);
+function errorHandler($errno, $errstr, $errfile, $errline) {
+    echo &apos;&lt;p&gt;error:&apos;,$errstr,&apos;&lt;/p&gt;&apos;;
+    exit();
+}
+set_error_handler(&apos;errorHandler&apos;);
+define(&apos;IS_DEbug&apos;,true);
+
+/
+/
+$filePath = &apos;/Movie/The.Hurt.Locker.2008.x264.AC3-WAF.mkv&apos;;
+$mimeType = &apos;audio/x-matroska&apos;;
+$range = isset($_SERVER[&apos;HTTP_RANGE&apos;])?$_SERVER[&apos;HTTP_RANGE&apos;]:null;
+if (IS_DEbug) {
+    /    $range = &quot;bytes=1000-1999n2000&quot;;
+    /    $range = &quot;bytes=1000-1999,2000&quot;;
+    /    $range = &quot;bytes=1000-1999,-2000&quot;;
+    /    $range = &quot;bytes=1000-1999,2000-2999&quot;;
+}
+set_time_limit(0);
+$transfer = new Transfer($filePath,$mimeType,$range);
+if (IS_DEbug) {
+    $transfer-&gt;setIsLog(true);
+}
+$transfer-&gt;send();
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/18/php-file-download-large-file-support-class-supports-http-over-2g/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

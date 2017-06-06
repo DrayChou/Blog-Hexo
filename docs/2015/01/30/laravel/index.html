@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>laravel 部署 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="laravel," />
+  
+
+  <meta name="description" content="看最近 laravel 好像蛮流行的，部署一个玩玩。
+基础环境composer$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+这个就是传说中的 php 的包管理器了，之前没怎么用过。
+PEARDownload PEAR
+curl -O http://pear.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel 部署">
+<meta property="og:url" content="http://idc.wf/2015/01/30/laravel/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="看最近 laravel 好像蛮流行的，部署一个玩玩。
+基础环境composer$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+这个就是传说中的 php 的包管理器了，之前没怎么用过。
+PEARDownload PEAR
+curl -O http://pear.">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="laravel 部署">
+<meta name="twitter:description" content="看最近 laravel 好像蛮流行的，部署一个玩玩。
+基础环境composer$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+这个就是传说中的 php 的包管理器了，之前没怎么用过。
+PEARDownload PEAR
+curl -O http://pear.">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础环境"><span class="toc-text">基础环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#composer"><span class="toc-text">composer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PEAR"><span class="toc-text">PEAR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-text">json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mcrypt"><span class="toc-text">mcrypt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Laravel"><span class="toc-text">安装 Laravel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置路由"><span class="toc-text">配置路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置版本控制"><span class="toc-text">配置版本控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见错误"><span class="toc-text">常见错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Error-in-exception-handler"><span class="toc-text">Error in exception handler</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-laravel" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">laravel 部署</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2015.01.30</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2015/01/30/laravel/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>看最近 laravel 好像蛮流行的，部署一个玩玩。</p>
+<h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><h3 id="composer"><a href="#composer" class="headerlink" title="composer"></a>composer</h3><pre><code>$ curl -sS https://getcomposer.org/installer | php
+$ mv composer.phar /usr/local/bin/composer
+</code></pre><p>这个就是传说中的 php 的包管理器了，之前没怎么用过。</p>
+<h3 id="PEAR"><a href="#PEAR" class="headerlink" title="PEAR"></a>PEAR</h3><p>Download PEAR</p>
+<pre><code>curl -O http://pear.php.net/go-pear.phar
+sudo php -d detect_unicode=0 go-pear.phar
+</code></pre><p>Configure and Install PEAR</p>
+<p>You should now be at a prompt to configure PEAR.</p>
+<p>Type 1 and press return .<br>Enter:</p>
+<pre><code>/usr/local/pear
+</code></pre><p>Type 4 and press return .</p>
+<p>Enter:</p>
+<pre><code>/usr/local/bin
+</code></pre><p>Press return</p>
+<p>Verify PEAR</p>
+<p>You should be able to type:</p>
+<pre><code>pear version
+</code></pre><h3 id="json"><a href="#json" class="headerlink" title="json"></a>json</h3><pre><code>apt-get install php5-json
+</code></pre><h3 id="mcrypt"><a href="#mcrypt" class="headerlink" title="mcrypt"></a>mcrypt</h3><pre><code>sudo rm /etc/php5/mods-available/mcrypt.ini
+sudo apt-get purge php5-mcrypt
+sudo apt-get install mcrypt
+sudo apt-get install php5-mcrypt
+sudo php5enmod mcrypt
+sudo service php5-fpm restart
+</code></pre><h2 id="安装-Laravel"><a href="#安装-Laravel" class="headerlink" title="安装 Laravel"></a>安装 Laravel</h2><p>首先，通过 Composer 下载 Laravel 安装器。</p>
+<pre><code>composer global require &quot;laravel/installer=~1.1&quot;
+</code></pre><p>请确保把 ~/.composer/vendor/bin 路径添加到 PATH 环境变量里, 这样laravel 可执行文件才能被命令行找到, 以后您就可以在命令行下直接使用 laravel 命令.<br>安装成功后, 可以使用命令 laravel new 在您指定的目录下创建一份全新安装的 Laravel。例如，laravel new blog 将会在当前目录下创建一个叫 blog 的目录, 此目录里面存放着全新安装的 Laravel 以及其依赖的工具包。这种安装方法比通过 Composer 安装要快许多。</p>
+<h2 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h2><pre><code>location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+</code></pre><p>这样访问地址就更好看了。</p>
+<h2 id="配置版本控制"><a href="#配置版本控制" class="headerlink" title="配置版本控制"></a>配置版本控制</h2><p>进到 Laravel目录，执行 git init 初始化 git 项目，然后执行下面的命令链接到远程仓库：</p>
+<pre><code>git remote add origin git@123.com
+git checkout master -f
+git pull
+git add .
+git commit -m &apos;update&apos;
+git push
+</code></pre><p>于是，可以远程修改了。</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><h3 id="Error-in-exception-handler"><a href="#Error-in-exception-handler" class="headerlink" title="Error in exception handler"></a>Error in exception handler</h3><p>出现如题错误 先开启laravel的调试模式:<br>app/config/app.php 文件中</p>
+<pre><code>&apos;debug&apos; =&gt; flase,修改成 &apos;debug&apos; =&gt; true,
+</code></pre><p>开启调试模式后就能非常清楚的知道出错的原因了,app/storage 目录的权限问题,运行apache服务器的默认用户是www-data所以解决如下</p>
+<pre><code>sudo chown -R www-data:www-data app/storage
+</code></pre><p>原因是文件夹目录没有写权限。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2015/01/30/laravel/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

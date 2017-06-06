@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>跨浏览器实现float:center | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="float," />
+  
+
+  <meta name="description" content="我们都知道float:left和float:right，但是否想过float:center呢？居中浮动。。。  
+&amp;lt;div id=&amp;quot;&amp;lt;span style=&amp;quot;color: #8b0000&amp;quot;&amp;gt;macji&amp;lt;/span&amp;gt;&amp;quot;&amp;gt;
+    &amp;lt;ul &amp;lt;span style=&amp;quot;color: #0000ff&amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨浏览器实现float:center">
+<meta property="og:url" content="http://idc.wf/2011/02/16/to-achieve-cross-browser-float-center/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="我们都知道float:left和float:right，但是否想过float:center呢？居中浮动。。。  
+&amp;lt;div id=&amp;quot;&amp;lt;span style=&amp;quot;color: #8b0000&amp;quot;&amp;gt;macji&amp;lt;/span&amp;gt;&amp;quot;&amp;gt;
+    &amp;lt;ul &amp;lt;span style=&amp;quot;color: #0000ff&amp;quot;">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.968Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨浏览器实现float:center">
+<meta name="twitter:description" content="我们都知道float:left和float:right，但是否想过float:center呢？居中浮动。。。  
+&amp;lt;div id=&amp;quot;&amp;lt;span style=&amp;quot;color: #8b0000&amp;quot;&amp;gt;macji&amp;lt;/span&amp;gt;&amp;quot;&amp;gt;
+    &amp;lt;ul &amp;lt;span style=&amp;quot;color: #0000ff&amp;quot;">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-to-achieve-cross-browser-float-center" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">跨浏览器实现float:center</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/16/to-achieve-cross-browser-float-center/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>我们都知道float:left和float:right，但是否想过float:center呢？居中浮动。。。  <div></div></p>
+<pre><code>&lt;div id=&quot;&lt;span style=&quot;color: #8b0000&quot;&gt;macji&lt;/span&gt;&quot;&gt;
+    &lt;ul &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt;=&quot;&lt;span style=&quot;color: #8b0000&quot;&gt;macji-skin&lt;/span&gt;&quot;&gt;
+        &lt;li&gt;列表一&lt;/li&gt;
+        &lt;li&gt;列表二&lt;/li&gt;
+        &lt;li&gt;列表三&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;&lt;br&gt;
+</code></pre><p></p>
+<p>我们希望实现li是浮动的，并且居中的（li个数不固定，ul宽度未知）。可以设置ul的text-align:center,再设置li的display，可以实现居中，但这样不是我们的初衷，我们需要实现float:center。<br><a id="more"></a></p>
+<p>这里我们得先重温一下position:relative，它将依据left，right，top，bottom等属性在正常文档流中偏移位置。那我们可以让ul为position:relative;left:50%，然后再让li像左浮动，在让它position:relative;right:50%（或者left:-50%），那么li就像向中间浮动一样居中了。废话不多说，先试试。</p>
+<div><br><br><br>    <div id="<span style=" color:="" #8b0000"="">macji"><br>        <ul <span="" style="color: #0000ff">class=”<span style="color: #8b0000">macji-skin</span>“&gt;<br>            <li>列表一</li><br>            <li>列表二</li><br>            <li>列表三</li><br>        </ul><br>    </div><br><br><br><br></div>
+
+<p><strong><a href="http://www.blueidea.com/articleimg/2008/08/6130/float-center.htm" target="_blank" rel="external"><strong>查看演示</strong></a></strong></p>
+<p>扩展阅读：<br>  <br><a href="http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support" target="_blank" rel="external">http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support</a></p>
+<p>原文：<br>  <br><a href="http://www.macji.com/blog/article/to-achieve-cross-browser-css-float-center/to-achieve-cross-browser-css-float-center/" target="_blank" rel="external">http://www.macji.com/blog/article/to-achieve-cross-browser-css-float-center/to-achieve-cross-browser-css-float-center/</a></p>
+<p>链接：<a href="http://www.blueidea.com/tech/web/2008/6130.asp" target="_blank" rel="external">http://www.blueidea.com/tech/web/2008/6130.asp</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/16/to-achieve-cross-browser-float-center/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>sql DISTINCT去掉重复的数据统计方法 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="sql," />
+  
+
+  <meta name="description" content="sql DISTINCT去掉重复的数据统计方法(2009-01-13 15:05:43)转载 标签：sqldistinct杂谈     分类：sqlSELECT指令让我们能够读取表格中一个或数个栏位的所有资料。这将把所有的资料都抓出，无论资料值有无重复。在资料处理中，我们会经常碰到需要找出表格内的不同资料值的情况。换句话说，我们需要知道这个表格/栏位内有哪些不同的值，而每个值出现的次数并不重要。这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql DISTINCT去掉重复的数据统计方法">
+<meta property="og:url" content="http://idc.wf/2011/01/20/sql-distinct-qu-diao-zhong-fu-de-shu-ju-tong-ji-fang-fa/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="sql DISTINCT去掉重复的数据统计方法(2009-01-13 15:05:43)转载 标签：sqldistinct杂谈     分类：sqlSELECT指令让我们能够读取表格中一个或数个栏位的所有资料。这将把所有的资料都抓出，无论资料值有无重复。在资料处理中，我们会经常碰到需要找出表格内的不同资料值的情况。换句话说，我们需要知道这个表格/栏位内有哪些不同的值，而每个值出现的次数并不重要。这">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sql DISTINCT去掉重复的数据统计方法">
+<meta name="twitter:description" content="sql DISTINCT去掉重复的数据统计方法(2009-01-13 15:05:43)转载 标签：sqldistinct杂谈     分类：sqlSELECT指令让我们能够读取表格中一个或数个栏位的所有资料。这将把所有的资料都抓出，无论资料值有无重复。在资料处理中，我们会经常碰到需要找出表格内的不同资料值的情况。换句话说，我们需要知道这个表格/栏位内有哪些不同的值，而每个值出现的次数并不重要。这">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-sql-distinct-qu-diao-zhong-fu-de-shu-ju-tong-ji-fang-fa" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">sql DISTINCT去掉重复的数据统计方法</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.01.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/01/20/sql-distinct-qu-diao-zhong-fu-de-shu-ju-tong-ji-fang-fa/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>sql DISTINCT去掉重复的数据统计方法(2009-01-13 15:05:43)转载 标签：sqldistinct杂谈     分类：sql<br><br><br>SELECT指令让我们能够读取表格中一个或数个栏位的所有资料。这将把所有的资料都抓出，无论资料值有无重复。在资料处理中，我们会经常碰到需要找出表格内的不同资料值的情况。换句话说，我们需要知道这个表格/栏位内有哪些不同的值，而每个值出现的次数并不重要。这要如何达成呢？在sql中，这是很容易做到的。我们只要在SELECT后加上一个DISTINCT就可以了。 DISTINCT的语法如下：<br><br><br>SELECT DISTINCT “栏位名”<br><br><br>FROM “表格名”<br><br><br>举例来说，若要在以下的表格，Store_Information，找出所有不同的店名时，Store_Information 表格<br><br><br>store_name<br><br><br>Sales<br><br><br>Date<br><br><br>1<br><br><br>$1500<br><br><br>Jan-05-1999<br><br><br>2<br><br><br>$250<br><br><br>Jan-07-1999<br><br><br>1<br><br><br>$300<br><br><br>Jan-08-1999<br><br><br>3<br><br><br>$700<br><br><br>Jan-08-1999<br><br><br>我們就鍵入，</p>
+<pre><code>SELECT DISTINCT store_name FROM Store_Information
+</code></pre><p>結果:<br><br><br>1<br><br><br>2<br><br><br>3<br><br><br>DISTINCT 关键字可从 SELECT 语句的结果中除去重复的行。如果没有指定 DISTINCT，那么将返回所有行，包括重复的行。</p>
+<pre><code>select count(distinct t.destaddr) from nbyd_send t where t.input_time &gt; to_date(&apos;2007-2-1&apos;,&apos;yyyy-mm-dd&apos;) and t.input_time &lt; to_date(&apos;2007-3-1&apos;,&apos;yyyy-mm-dd&apos;)
+</code></pre><p>可以统计出一个月中的用户数量。<br><br><br>关于如何快速得知里面每一个号码重复的个数问题的解答:<br><br><br>利用分组函数的sql语句</p>
+<pre><code>select t.tel,count(*) from nbyd_deliver t group by t.tel ;
+</code></pre><p>group by 解决重复数据的个数统计<br><br></p>
+<p>适用于各种关系型数据库,如oracle,sql Server<br><br></p>
+<p>查询重复的数据</p>
+<pre><code>select * from (select v.xh,count(v.xh) num from sms.vehicle v group by v.xh) where num&gt;1;--169
+select v.xh,count(v.xh) num from sms.vehicle v group by v.xh having count(v.xh)=2;
+</code></pre><p>删除重复的数据</p>
+<pre><code>create table mayong as (select distinct* from sms.vehicle);
+delete from sms.vehicle ;
+insert into sms.vehicle select * from mayong;
+</code></pre><p>在oracle中，有个隐藏了自动rowid，里面给每条记录一个唯一的rowid，我们如果想保留最新的一条记录，我们就可以利用这个字段，保留重复数据中rowid最大的一条记录就可以了。<br><br></p>
+<p>下面是查询重复数据的一个例子：</p>
+<pre><code>select a.rowid,a.* from 表名 a
+where a.rowid !=
+(
+select max(b.rowid) from 表名 b
+where a.字段1 = b.字段1 and
+a.字段2 = b.字段2
+)
+</code></pre><p>下面我就来讲解一下，上面括号中的语句是查询出重复数据中rowid最大的一条记录。<br><br></p>
+<p>而外面就是查询出除了rowid最大之外的其他重复的数据了。<br><br><br>由此，我们要删除重复数据，只保留最新的一条数据，就可以这样写了：</p>
+<pre><code>delete from 表名 a
+where a.rowid !=
+(
+select max(b.rowid) from 表名 b
+where a.字段1 = b.字段1 and
+a.字段2 = b.字段2
+)
+</code></pre><p>随便说一下，上面语句的执行效率是很低的，可以考虑建立临时表，讲需要判断重复的字段、rowid插入临时表中，然后删除的时候在进行比较。</p>
+<pre><code>create table 临时表 as
+select a.字段1,a.字段2,MAX(a.ROWID) dataid from 正式表 a GROUP BY a.字段1,a.字段2;
+delete from 表名 a
+where a.rowid !=
+(
+select b.dataid from 临时表 b
+where a.字段1 = b.字段1 and
+a.字段2 = b.字段2
+);
+commit;
+</code></pre><p>二、对于完全重复记录的删除<br><br></p>
+<p>对于表中两行记录完全一样的情况，可以用下面语句获取到去掉重复数据后的记录：</p>
+<pre><code>select distinct * from 表名
+可以将查询的记录放到临时表中，然后再将原来的表记录删除，最后将临时表的数据导回原来的表中。如下：
+CREATE TABLE 临时表 AS (select distinct * from 表名);
+drop table 正式表;
+insert into 正式表 (select * from 临时表);
+drop table 临时表;
+</code></pre><p>如果想删除一个表的重复数据，可以先建一个临时表，将去掉重复数据后的数据导入到临时表，然后在从临时表将数据导入正式表中，如下：<br><br></p>
+<pre><code>INSERT INTO t_table_bak
+select distinct * from t_table;
+</code></pre>
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/01/20/sql-distinct-qu-diao-zhong-fu-de-shu-ju-tong-ji-fang-fa/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

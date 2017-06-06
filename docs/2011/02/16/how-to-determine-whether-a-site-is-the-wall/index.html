@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何判断一个网站是否被墙 | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="gfw," />
+  
+
+  <meta name="description" content="大家都知道GFW 平日作恶多端，一旦有网站不能访问，很多人都把矛头直指它了…. 虽然一般都是它干的，但实际上也不排除一些人别有用心…. 那么下面就来简单判断一下吧…  方法是用windows的tracert（打开命令提示符，输入tracert 域名）命令追踪路由，也可以直接用http://tool.chinaz.com/Tracert/， 这个能显示ip所在地理位置，比windows自带的好。一般">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何判断一个网站是否被墙">
+<meta property="og:url" content="http://idc.wf/2011/02/16/how-to-determine-whether-a-site-is-the-wall/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="大家都知道GFW 平日作恶多端，一旦有网站不能访问，很多人都把矛头直指它了…. 虽然一般都是它干的，但实际上也不排除一些人别有用心…. 那么下面就来简单判断一下吧…  方法是用windows的tracert（打开命令提示符，输入tracert 域名）命令追踪路由，也可以直接用http://tool.chinaz.com/Tracert/， 这个能显示ip所在地理位置，比windows自带的好。一般">
+<meta property="og:image" content="http://hiphotos.baidu.com/9422e/pic/item/156160f299c151890a46e0da.jpg">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何判断一个网站是否被墙">
+<meta name="twitter:description" content="大家都知道GFW 平日作恶多端，一旦有网站不能访问，很多人都把矛头直指它了…. 虽然一般都是它干的，但实际上也不排除一些人别有用心…. 那么下面就来简单判断一下吧…  方法是用windows的tracert（打开命令提示符，输入tracert 域名）命令追踪路由，也可以直接用http://tool.chinaz.com/Tracert/， 这个能显示ip所在地理位置，比windows自带的好。一般">
+<meta name="twitter:image" content="http://hiphotos.baidu.com/9422e/pic/item/156160f299c151890a46e0da.jpg">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-how-to-determine-whether-a-site-is-the-wall" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">如何判断一个网站是否被墙</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.02.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/02/16/how-to-determine-whether-a-site-is-the-wall/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>大家都知道GFW 平日作恶多端，一旦有网站不能访问，很多人都把矛头直指它了…. 虽然一般都是它干的，但实际上也不排除一些人别有用心…. 那么下面就来简单判断一下吧…  方法是用windows的tracert（<strong>打开命令提示符，输入tracert 域名</strong>）命令追踪路由，也可以直接用<a href="http://tool.chinaz.com/Tracert/" target="_blank" rel="external">http://tool.chinaz.com/Tracert/</a>， 这个能显示ip所在地理位置，比windows自带的好。一般来说，无论是被GFW屏蔽的还是网站封IP的，我们总是能查到这个网站的IP地址，比如 Facebook，因为域名指向的ip是域名注册机构的dns服务器保留的，一般不会被封，所以，使用tracert命令就可以追踪路由了。 <a id="more"></a>    如果网站被GFW封掉了，那么就是在中国国际出口被阻挡了，路由过不去，只能走其他地方，比如，我们追踪Facebook的路由，因为在大陆国际出口被阻 挡，所以不可能从出口结点（如北京，上海，广州等地）直接到达美国，而是在出口结点处断开或者尝试绕道，这样就基本可以判定是被k了。 如图所示：  <img height="307" src="http://hiphotos.baidu.com/9422e/pic/item/156160f299c151890a46e0da.jpg" width="430">  <strong>我们可以看到，在第四处超时了。至于原因就是上面所说的。大陆国际出口被阻挡，所以不可能从出口结点直接到达美国</strong>..  如果是网站封大陆IP，比如美国的一个网站封了大陆ip，tracert命令追踪，tracert命令发现被追踪网站在美国，肯定从国际出口出去，走美国 线路，但是在最后一跳超时，因为网站封了你的IP，但是前面多少跳都是可以访问的，能看到前面有美国的路由线路…  我没找到封大陆ip的网站，大个比方把，<strong>比如xxx.com 封了大陆ip，你用tracert命令追踪的时候，发现前面的都是正常的，等到最后一次，就会发现超时了… 这样也基本肯定这个网站是封了大陆ip…</strong>  from:<a href="http://www.heavenalex.com/?p=476" target="_blank" rel="external">http://www.heavenalex.com/?p=476</a></p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/02/16/how-to-determine-whether-a-site-is-the-wall/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

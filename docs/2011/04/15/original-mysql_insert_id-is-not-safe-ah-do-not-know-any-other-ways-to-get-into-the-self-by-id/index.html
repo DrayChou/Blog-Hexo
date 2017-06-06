@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>原来mysql_insert_id()也不安全啊，不知道有没有其他方法可以用来得到插入的自增ID | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="mysql," />
+  
+
+  <meta name="description" content="今天我负责的一个项目出了问题，插入数据之后调用mysql_insert_id()拿取插入的自增ID的时候一直返回0，试了一下在本地是可以拿到的，但是放到线上就不可以了。
+无奈，只好插入完毕之后再通过插入的值来查询一遍得到insert_id。
+后来发现，mysql_insert_id() 带上数据量连接ID之后成功率倒是上升了很多，但是高并发下还是有可能会出现得到mysql_insert_id()返">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原来mysql_insert_id()也不安全啊，不知道有没有其他方法可以用来得到插入的自增ID">
+<meta property="og:url" content="http://idc.wf/2011/04/15/original-mysql_insert_id-is-not-safe-ah-do-not-know-any-other-ways-to-get-into-the-self-by-id/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="今天我负责的一个项目出了问题，插入数据之后调用mysql_insert_id()拿取插入的自增ID的时候一直返回0，试了一下在本地是可以拿到的，但是放到线上就不可以了。
+无奈，只好插入完毕之后再通过插入的值来查询一遍得到insert_id。
+后来发现，mysql_insert_id() 带上数据量连接ID之后成功率倒是上升了很多，但是高并发下还是有可能会出现得到mysql_insert_id()返">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原来mysql_insert_id()也不安全啊，不知道有没有其他方法可以用来得到插入的自增ID">
+<meta name="twitter:description" content="今天我负责的一个项目出了问题，插入数据之后调用mysql_insert_id()拿取插入的自增ID的时候一直返回0，试了一下在本地是可以拿到的，但是放到线上就不可以了。
+无奈，只好插入完毕之后再通过插入的值来查询一遍得到insert_id。
+后来发现，mysql_insert_id() 带上数据量连接ID之后成功率倒是上升了很多，但是高并发下还是有可能会出现得到mysql_insert_id()返">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-original-mysql_insert_id-is-not-safe-ah-do-not-know-any-other-ways-to-get-into-the-self-by-id" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">原来mysql_insert_id()也不安全啊，不知道有没有其他方法可以用来得到插入的自增ID</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.04.15</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/web/">web</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/04/15/original-mysql_insert_id-is-not-safe-ah-do-not-know-any-other-ways-to-get-into-the-self-by-id/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>今天我负责的一个项目出了问题，插入数据之后调用mysql_insert_id()拿取插入的自增ID的时候一直返回0，试了一下在本地是可以拿到的，但是放到线上就不可以了。</p>
+<p>无奈，只好插入完毕之后再通过插入的值来查询一遍得到insert_id。</p>
+<p>后来发现，mysql_insert_id() 带上数据量连接ID之后成功率倒是上升了很多，但是高并发下还是有可能会出现得到mysql_insert_id()返回0的现象。</p>
+<p>不知道有没有其他方法可以用来得到插入的自增ID。</p>
+<p>记。。。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/04/15/original-mysql_insert_id-is-not-safe-ah-do-not-know-any-other-ways-to-get-into-the-self-by-id/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-home">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Windows 下的 Nodejs | Dray&#39;s Home</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="nodejs," />
+  
+
+  <meta name="description" content="为什么搞这个？
+公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行    我又想在空闲的时候做点东西    所以坑爹的我只能自己研究在windows下运行nodejs了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 下的 Nodejs">
+<meta property="og:url" content="http://idc.wf/2011/12/26/under-windows-nodejs/index.html">
+<meta property="og:site_name" content="Dray's Home">
+<meta property="og:description" content="为什么搞这个？
+公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行    我又想在空闲的时候做点东西    所以坑爹的我只能自己研究在windows下运行nodejs了">
+<meta property="og:updated_time" content="2017-03-09T08:13:10.974Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows 下的 Nodejs">
+<meta name="twitter:description" content="为什么搞这个？
+公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行    我又想在空闲的时候做点东西    所以坑爹的我只能自己研究在windows下运行nodejs了">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=32204ee7" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="http://feeds.feedburner.com/WesHome"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">为什么搞这个？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">怎么执行？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">所有 windows 都可以执行吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">都有什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">怎么用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">这套环境可以用来生产吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">这些都是你写的吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">有文档可以参考吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">有问题了问谁？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">项目【下载】地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">引用到的项目地址</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-under-windows-nodejs" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Windows 下的 Nodejs</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2011.12.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Dray</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/category/windows/">windows</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://idc.wf/2011/12/26/under-windows-nodejs/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p></p><h2>为什么搞这个？</h2><p></p>
+<ol><br><li>公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行</li><br>    <li>我又想在空闲的时候做点东西</li><br>    <li>所以坑爹的我只能自己研究在windows下运行nodejs了<a id="more"></a><br></li><br></ol><br><h2>怎么执行？</h2><br><ol><br><li>下载并解压到一个目录</li><br>    <li>进入目录双击 Start.bat 执行</li><br>    <li>在命令行下执行<br><br>node ex_project\jade\app.jse\app.js</li><br></ol><br>你会看到<br><br>    E:\nodejs4win&gt;node ex_project\jade\app.js Express server listening on port 3000 in development mode<br><br>这样的结果，那么打开浏览器输入：<br><br>    E:\nodejs4win&gt;node ex_project\jade\app.js Express server listening on port 3000 in development mode<br><br>OK，这样一个 nodejs + express + jade 的项目就跑起来了<br><h2>所有 windows 都可以执行吗？</h2><br><ol><br><li>在 Windows Xp 下可以直接执行，不需要权限</li><br>    <li>在 Windows 7 下本地执行的话不需要 windows 权限，局域网内执行的话，需要开放局域网访问的权限。</li><br></ol><br><h2>都有什么？</h2><br><ol><br><li>nodejs.exe – windows 版 nodejs</li><br>    <li>npm – nodejs 的模板库管理工具，但windows下很多库都不能直接安装使用</li><br>    <li>express – mvc framework<br><ol><br><li>jade – template</li><br>    <li>dot – template</li><br>    <li>ejs – template</li><br>    <li>Tenjin – template</li><br>    <li>jst – template ，有错误，还未修复</li><br></ol><br></li><br>    <li>dirty – 因为windows 下数据库还不支持，所以只能采用一些其他的工具替换了。这个是目前我找到的最好的工具了。</li><br>    <li>n2Mvc – 国人开发的一个独立的轻型的mvc架构</li><br></ol><br><h2>怎么用？</h2><br><ol><br><li>刚接触nodejs的建议先从project 目录下的代码看起，从最简单的hello_world，到n2mvc，可以让你对Nodejs有一个初步的了解</li><br>    <li>然后可以在express的模板中选一套主攻吧</li><br></ol><br><h2>这套环境可以用来生产吗？</h2><br>你开玩笑呢？哥，这个只是让你折腾玩的，想到生产环境还是用linux吧，虽然我现在是做.net的，但我还是觉得windows不适合做服务器。<br><h2>这些都是你写的吗？</h2><br>不是，我只是把他们拼在一起。我会在后面给出他们的项目地址。<br><h2>有文档可以参考吗？</h2><br><ol><br><li>nodejs官方文档：<br><a href="http://nodejs.org/docs/latest/api/process.html#process.platform" target="_blank" rel="external">http://nodejs.org/docs/latest/api/process.html#process.platform</a></li><br>    <li>国内社区的翻译版（未完成）：<a href="http://cnodejs.org/cman/all.html" target="_blank" rel="external">http://cnodejs.org/cman/all.html</a></li><br>    <li>nodecn 翻译的文档（未完成）：<a href="http://www.nodecn.org/all.html" target="_blank" rel="external">http://www.nodecn.org/all.html</a></li><br>    <li>Express JS 中文入门指引手册：<a href="http://www.csser.com/tools/express-js/express-guide-reference-zh-CN.html" target="_blank" rel="external">http://www.csser.com/tools/express-js/express-guide-reference-zh-CN.html</a></li><br></ol><br><h2>有问题了问谁？</h2><br><ol><br><li>可以去cnodejs.org社区提问</li><br>    <li>可以去各项目主页发 Issues</li><br>    <li>也可以直接在我的项目主页留言等，我会尽量解答</li><br></ol><br><h2>项目【下载】地址</h2><br><a href="https://github.com/DrayChou/nodejs4win" target="_blank" rel="external">https://github.com/DrayChou/nodejs4win</a><br><h2>引用到的项目地址</h2><br><ol><br><li>nodejs : <a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a></li><br>    <li>express : <a href="https://github.com/visionmedia/express" target="_blank" rel="external">https://github.com/visionmedia/express</a></li><br>    <li>dirty : <a href="https://github.com/felixge/node-dirty" target="_blank" rel="external">https://github.com/felixge/node-dirty</a></li><br>    <li>n2Mvc : <a href="https://github.com/QLeelulu/n2Mvc" target="_blank" rel="external">https://github.com/QLeelulu/n2Mvc</a></li><br>    <li>jade : <a href="https://github.com/visionmedia/jade" target="_blank" rel="external">https://github.com/visionmedia/jade</a></li><br>    <li>dot : <a href="https://github.com/olado/doT" target="_blank" rel="external">https://github.com/olado/doT</a></li><br>    <li>nTenjin : <a href="https://github.com/QLeelulu/nTenjin" target="_blank" rel="external">https://github.com/QLeelulu/nTenjin</a></li><br>    <li>ejs : <a href="https://github.com/visionmedia/ejs" target="_blank" rel="external">https://github.com/visionmedia/ejs</a></li><br>    <li>jst : <a href="https://github.com/shaunlee/node-jst" target="_blank" rel="external">https://github.com/shaunlee/node-jst</a></li><br></ol>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="http://feeds.feedburner.com/WesHome"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'weshome';
+    
+    var disqus_url = 'http://idc.wf/2011/12/26/under-windows-nodejs/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//weshome.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235687', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
