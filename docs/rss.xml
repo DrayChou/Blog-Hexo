@@ -694,6 +694,53 @@ git push
   </entry>
   
   <entry>
+    <title>python 版本 shadowsocks</title>
+    <link href="http://idc.wf/2015/01/14/pip-ss/"/>
+    <id>http://idc.wf/2015/01/14/pip-ss/</id>
+    <published>2015-01-13T16:00:00.000Z</published>
+    <updated>2017-03-09T08:13:10.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。<br>这次重新使用 python 版本的 ss。</p>
+<p>首先，安装</p>
+<pre><code>apt-get update
+apt-get install python-pip python-m2crypto supervisor
+pip install shadowsocks
+</code></pre><p>执行</p>
+<pre><code>service supervisor start
+supervisorctl reload
+</code></pre><p>如果遇到问题，可以检查日志：</p>
+<pre><code>supervisorctl tail -f shadowsocks stderr
+</code></pre><p>如果修改了 shadowsocks 配置 /etc/shadowsocks.json， 可以重启 shadowsocks：</p>
+<pre><code>supervisorctl restart shadowsocks
+</code></pre><p>如果修改了 Supervisor 的配置文件 /etc/supervisor/*， 可以更新 supervisor 配置：</p>
+<pre><code>supervisorctl update
+</code></pre><p>Shadowsocks 的服务单独启动方法：</p>
+<pre><code>ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /etc/shadowsocks.json -d stop
+</code></pre><p>结束。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。&lt;br&gt;这次重新使用 python 版本的 ss。&lt;/p&gt;
+&lt;p&gt;首先，安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get update
+apt-get install python-pi
+    
+    </summary>
+    
+      <category term="web" scheme="http://idc.wf/category/web/"/>
+    
+    
+      <category term="shadowsocks" scheme="http://idc.wf/tags/shadowsocks/"/>
+    
+      <category term="supervisor" scheme="http://idc.wf/tags/supervisor/"/>
+    
+      <category term="fqrouter" scheme="http://idc.wf/tags/fqrouter/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac 常用应用列表</title>
     <link href="http://idc.wf/2015/01/14/mac-apps/"/>
     <id>http://idc.wf/2015/01/14/mac-apps/</id>
@@ -743,53 +790,6 @@ git push
       <category term="app" scheme="http://idc.wf/tags/app/"/>
     
       <category term="mac" scheme="http://idc.wf/tags/mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python 版本 shadowsocks</title>
-    <link href="http://idc.wf/2015/01/14/pip-ss/"/>
-    <id>http://idc.wf/2015/01/14/pip-ss/</id>
-    <published>2015-01-13T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.961Z</updated>
-    
-    <content type="html"><![CDATA[<p>因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。<br>这次重新使用 python 版本的 ss。</p>
-<p>首先，安装</p>
-<pre><code>apt-get update
-apt-get install python-pip python-m2crypto supervisor
-pip install shadowsocks
-</code></pre><p>执行</p>
-<pre><code>service supervisor start
-supervisorctl reload
-</code></pre><p>如果遇到问题，可以检查日志：</p>
-<pre><code>supervisorctl tail -f shadowsocks stderr
-</code></pre><p>如果修改了 shadowsocks 配置 /etc/shadowsocks.json， 可以重启 shadowsocks：</p>
-<pre><code>supervisorctl restart shadowsocks
-</code></pre><p>如果修改了 Supervisor 的配置文件 /etc/supervisor/*， 可以更新 supervisor 配置：</p>
-<pre><code>supervisorctl update
-</code></pre><p>Shadowsocks 的服务单独启动方法：</p>
-<pre><code>ssserver -c /etc/shadowsocks.json -d start
-ssserver -c /etc/shadowsocks.json -d stop
-</code></pre><p>结束。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。&lt;br&gt;这次重新使用 python 版本的 ss。&lt;/p&gt;
-&lt;p&gt;首先，安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get update
-apt-get install python-pi
-    
-    </summary>
-    
-      <category term="web" scheme="http://idc.wf/category/web/"/>
-    
-    
-      <category term="shadowsocks" scheme="http://idc.wf/tags/shadowsocks/"/>
-    
-      <category term="supervisor" scheme="http://idc.wf/tags/supervisor/"/>
-    
-      <category term="fqrouter" scheme="http://idc.wf/tags/fqrouter/"/>
     
   </entry>
   

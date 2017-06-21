@@ -47,9 +47,10 @@ menu:
   home: /
   archives: /archives/
   # categories: /categories/
+  # categories: /category/
   # tags: /tags/
-  #sitemap: /sitemap.xml
-  #commonweal: /404.html
+  sitemap: /sitemap.xml
+  # commonweal: /404.html
   about: /about/
 
 
