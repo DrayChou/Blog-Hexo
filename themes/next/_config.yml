@@ -46,8 +46,8 @@ index_with_subtitle: false
 menu:
   home: /
   archives: /archives/
-  categories: /categories/
-  tags: /tags/
+  # categories: /categories/
+  # tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
   about: /about/
