@@ -1,5 +1,5 @@
 ---
-layout: page
+type: categories
 title: categories
 comments: false
 date: 2017-06-21 13:30:50

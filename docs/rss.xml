@@ -694,53 +694,6 @@ git push
   </entry>
   
   <entry>
-    <title>python 版本 shadowsocks</title>
-    <link href="http://idc.wf/2015/01/14/pip-ss/"/>
-    <id>http://idc.wf/2015/01/14/pip-ss/</id>
-    <published>2015-01-13T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.961Z</updated>
-    
-    <content type="html"><![CDATA[<p>因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。<br>这次重新使用 python 版本的 ss。</p>
-<p>首先，安装</p>
-<pre><code>apt-get update
-apt-get install python-pip python-m2crypto supervisor
-pip install shadowsocks
-</code></pre><p>执行</p>
-<pre><code>service supervisor start
-supervisorctl reload
-</code></pre><p>如果遇到问题，可以检查日志：</p>
-<pre><code>supervisorctl tail -f shadowsocks stderr
-</code></pre><p>如果修改了 shadowsocks 配置 /etc/shadowsocks.json， 可以重启 shadowsocks：</p>
-<pre><code>supervisorctl restart shadowsocks
-</code></pre><p>如果修改了 Supervisor 的配置文件 /etc/supervisor/*， 可以更新 supervisor 配置：</p>
-<pre><code>supervisorctl update
-</code></pre><p>Shadowsocks 的服务单独启动方法：</p>
-<pre><code>ssserver -c /etc/shadowsocks.json -d start
-ssserver -c /etc/shadowsocks.json -d stop
-</code></pre><p>结束。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。&lt;br&gt;这次重新使用 python 版本的 ss。&lt;/p&gt;
-&lt;p&gt;首先，安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get update
-apt-get install python-pi
-    
-    </summary>
-    
-      <category term="web" scheme="http://idc.wf/category/web/"/>
-    
-    
-      <category term="shadowsocks" scheme="http://idc.wf/tags/shadowsocks/"/>
-    
-      <category term="supervisor" scheme="http://idc.wf/tags/supervisor/"/>
-    
-      <category term="fqrouter" scheme="http://idc.wf/tags/fqrouter/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Mac 常用应用列表</title>
     <link href="http://idc.wf/2015/01/14/mac-apps/"/>
     <id>http://idc.wf/2015/01/14/mac-apps/</id>
@@ -790,6 +743,53 @@ apt-get install python-pi
       <category term="app" scheme="http://idc.wf/tags/app/"/>
     
       <category term="mac" scheme="http://idc.wf/tags/mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python 版本 shadowsocks</title>
+    <link href="http://idc.wf/2015/01/14/pip-ss/"/>
+    <id>http://idc.wf/2015/01/14/pip-ss/</id>
+    <published>2015-01-13T16:00:00.000Z</published>
+    <updated>2017-03-09T08:13:10.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。<br>这次重新使用 python 版本的 ss。</p>
+<p>首先，安装</p>
+<pre><code>apt-get update
+apt-get install python-pip python-m2crypto supervisor
+pip install shadowsocks
+</code></pre><p>执行</p>
+<pre><code>service supervisor start
+supervisorctl reload
+</code></pre><p>如果遇到问题，可以检查日志：</p>
+<pre><code>supervisorctl tail -f shadowsocks stderr
+</code></pre><p>如果修改了 shadowsocks 配置 /etc/shadowsocks.json， 可以重启 shadowsocks：</p>
+<pre><code>supervisorctl restart shadowsocks
+</code></pre><p>如果修改了 Supervisor 的配置文件 /etc/supervisor/*， 可以更新 supervisor 配置：</p>
+<pre><code>supervisorctl update
+</code></pre><p>Shadowsocks 的服务单独启动方法：</p>
+<pre><code>ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /etc/shadowsocks.json -d stop
+</code></pre><p>结束。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。&lt;br&gt;这次重新使用 python 版本的 ss。&lt;/p&gt;
+&lt;p&gt;首先，安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get update
+apt-get install python-pi
+    
+    </summary>
+    
+      <category term="web" scheme="http://idc.wf/category/web/"/>
+    
+    
+      <category term="shadowsocks" scheme="http://idc.wf/tags/shadowsocks/"/>
+    
+      <category term="supervisor" scheme="http://idc.wf/tags/supervisor/"/>
+    
+      <category term="fqrouter" scheme="http://idc.wf/tags/fqrouter/"/>
     
   </entry>
   
@@ -884,40 +884,6 @@ listen = cow://aes-128-cfb:password@0.0.0.0:8388
   </entry>
   
   <entry>
-    <title>ubuntu 安装命令行自动补全</title>
-    <link href="http://idc.wf/2014/05/15/ubuntu-bash-completion/"/>
-    <id>http://idc.wf/2014/05/15/ubuntu-bash-completion/</id>
-    <published>2014-05-14T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.971Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ubuntu-安装命令行自动补全"><a href="#ubuntu-安装命令行自动补全" class="headerlink" title="ubuntu 安装命令行自动补全"></a>ubuntu 安装命令行自动补全</h3><pre><code>~# apt-get install bash-completion
-~# source /etc/bash_completion
-</code></pre><p>编辑/etc/bash.bashrc，在最后加入如下代码</p>
-<pre><code>[plain]
-if [ -f /etc/bash_completion ]; then  
-    /etc/bash_completion  
-fi  
-</code></pre><p>重新登录</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;ubuntu-安装命令行自动补全&quot;&gt;&lt;a href=&quot;#ubuntu-安装命令行自动补全&quot; class=&quot;headerlink&quot; title=&quot;ubuntu 安装命令行自动补全&quot;&gt;&lt;/a&gt;ubuntu 安装命令行自动补全&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;~# apt
-    
-    </summary>
-    
-      <category term="linux" scheme="http://idc.wf/category/linux/"/>
-    
-    
-      <category term="linux" scheme="http://idc.wf/tags/linux/"/>
-    
-      <category term="bash" scheme="http://idc.wf/tags/bash/"/>
-    
-      <category term="completion" scheme="http://idc.wf/tags/completion/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Centos 常用命令备录</title>
     <link href="http://idc.wf/2014/05/15/centos-commands/"/>
     <id>http://idc.wf/2014/05/15/centos-commands/</id>
@@ -974,57 +940,74 @@ fi
   </entry>
   
   <entry>
-    <title>记一次 wsdl 服务的调用</title>
-    <link href="http://idc.wf/2014/04/11/php-soap-and-net-soap/"/>
-    <id>http://idc.wf/2014/04/11/php-soap-and-net-soap/</id>
-    <published>2014-04-10T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.960Z</updated>
+    <title>ubuntu 安装命令行自动补全</title>
+    <link href="http://idc.wf/2014/05/15/ubuntu-bash-completion/"/>
+    <id>http://idc.wf/2014/05/15/ubuntu-bash-completion/</id>
+    <published>2014-05-14T16:00:00.000Z</published>
+    <updated>2017-03-09T08:13:10.971Z</updated>
     
-    <content type="html"><![CDATA[<p>公司业务要用到某 wsdl 的服务，使用 php5 自带的 soapclient 进行链接，屡次连不上，然后换 nusoap 包进行测试，还是不行，最后找到修改官方包 namespace 的方法才通过，记录下经验吧。</p>
-<h3 id="soapclient"><a href="#soapclient" class="headerlink" title="soapclient"></a>soapclient</h3><ol>
-<li>官方推荐的调用对方函数的方法 _soapCall 函数调用如果失败，完全不输出任何信息。</li>
-<li>这个包无法查看对方返回的 http 状态。</li>
-<li>封装好的数据对方无法解析，直接报解析错误，需要继承并修改官方包，代码如下:</li>
-</ol>
-<hr>
-<pre><code>class MSSoapClient extends SoapClient {
-    function __doRequest($request, $location, $action, $version) {
-        $namespace = &quot;http://adc.ecinterface/&quot;;
-
-        $request = preg_replace(&apos;/        $request = preg_replace(&apos;/        $request = str_replace(array(&apos;/ns1:&apos;, &apos;xmlns:ns1=&quot;&apos; . $namespace . &apos;&quot;&apos;), array(&apos;/&apos;, &apos;&apos;), $request);
-
-        // parent call
-        return parent::__doRequest($request, $location, $action, $version);
-    }
-}
-</code></pre><hr>
-<h3 id="nusoap"><a href="#nusoap" class="headerlink" title="nusoap"></a>nusoap</h3><ol>
-<li>发出去的数据因为不是系统级的封装，所以数据前会带上不少的噪音，对方完全无法识别。</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li>对于不了解的还是要多祭拜谷歌大神。</li>
-<li>还是要多试。</li>
-</ol>
-<h3 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h3><p><a href="http://stackoverflow.com/questions/2456924/php-and-soap-change-envelope" target="_blank" rel="external">http://stackoverflow.com/questions/2456924/php-and-soap-change-envelope</a></p>
+    <content type="html"><![CDATA[<h3 id="ubuntu-安装命令行自动补全"><a href="#ubuntu-安装命令行自动补全" class="headerlink" title="ubuntu 安装命令行自动补全"></a>ubuntu 安装命令行自动补全</h3><pre><code>~# apt-get install bash-completion
+~# source /etc/bash_completion
+</code></pre><p>编辑/etc/bash.bashrc，在最后加入如下代码</p>
+<pre><code>[plain]
+if [ -f /etc/bash_completion ]; then  
+    /etc/bash_completion  
+fi  
+</code></pre><p>重新登录</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;公司业务要用到某 wsdl 的服务，使用 php5 自带的 soapclient 进行链接，屡次连不上，然后换 nusoap 包进行测试，还是不行，最后找到修改官方包 namespace 的方法才通过，记录下经验吧。&lt;/p&gt;
-&lt;h3 id=&quot;soapclient&quot;&gt;&lt;a h
+      &lt;h3 id=&quot;ubuntu-安装命令行自动补全&quot;&gt;&lt;a href=&quot;#ubuntu-安装命令行自动补全&quot; class=&quot;headerlink&quot; title=&quot;ubuntu 安装命令行自动补全&quot;&gt;&lt;/a&gt;ubuntu 安装命令行自动补全&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;~# apt
+    
+    </summary>
+    
+      <category term="linux" scheme="http://idc.wf/category/linux/"/>
+    
+    
+      <category term="linux" scheme="http://idc.wf/tags/linux/"/>
+    
+      <category term="bash" scheme="http://idc.wf/tags/bash/"/>
+    
+      <category term="completion" scheme="http://idc.wf/tags/completion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于通过 PushBullet API 推送信息的设想</title>
+    <link href="http://idc.wf/2014/04/11/pushbullet-api/"/>
+    <id>http://idc.wf/2014/04/11/pushbullet-api/</id>
+    <published>2014-04-10T16:00:00.000Z</published>
+    <updated>2017-03-09T08:13:10.961Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。<br>但是 twidere 目前不支持推送，要实现推送必须有自己的服务器，自己的 google 注册应用，略麻烦了点，于是想到了 PushBullet ,如果她有 API 多好，查了下，果然有，然后一个“坑”出现了。</p>
+<h3 id="PushBullet"><a href="#PushBullet" class="headerlink" title="PushBullet"></a>PushBullet</h3><p>PushBullet API 的官方介绍地址在这里 <a href="https://www.pushbullet.com/api" target="_blank" rel="external">戳我</a> ,她的 API 太简单了，简直是我见过的最简单的 API 了。通篇上下只有2个接口，简单看下文档就会了，现说下注意事项。</p>
+<h4 id="api-key"><a href="#api-key" class="headerlink" title="api key"></a>api key</h4><ol>
+<li>这个每个注册帐号都有一个，不区分开发账户，也没有开发账户，查看地址在：<a href="https://www.pushbullet.com/account" target="_blank" rel="external">登录后查看</a></li>
+<li>查询的时候需要调用 http 默认的 BasicAuth 认证方式，用户名就是 api key ，密码为空。</li>
+</ol>
+<h4 id="然后"><a href="#然后" class="headerlink" title="然后"></a>然后</h4><p>然后你就可以不停的推送了，如果要推送给别人，也需要先得到对方的 api key ，至于推送给好友， 可以通过 get 的方式得到对方的 ID。</p>
+<h3 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h3><ol>
+<li><a href="https://www.pushbullet.com/api" target="_blank" rel="external">https://www.pushbullet.com/api</a></li>
+<li><a href="http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang" target="_blank" rel="external">http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang</a></li>
+<li><a href="http://golang.org/pkg/net/http/#Request.SetBasicAuth" target="_blank" rel="external">http://golang.org/pkg/net/http/#Request.SetBasicAuth</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;坑&quot;&gt;&lt;a href=&quot;#坑&quot; class=&quot;headerlink&quot; title=&quot;坑&quot;&gt;&lt;/a&gt;坑&lt;/h3&gt;&lt;p&gt;我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。&lt;br&gt;但是 twider
     
     </summary>
     
       <category term="web" scheme="http://idc.wf/category/web/"/>
     
     
-      <category term="php" scheme="http://idc.wf/tags/php/"/>
+      <category term="twitter" scheme="http://idc.wf/tags/twitter/"/>
     
-      <category term="wsdl" scheme="http://idc.wf/tags/wsdl/"/>
+      <category term="api" scheme="http://idc.wf/tags/api/"/>
     
-      <category term="soap" scheme="http://idc.wf/tags/soap/"/>
-    
-      <category term=".net" scheme="http://idc.wf/tags/net/"/>
+      <category term="PushBullet" scheme="http://idc.wf/tags/PushBullet/"/>
     
   </entry>
   

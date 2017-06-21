@@ -221,6 +221,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-sitemap">
           <a href="/sitemap.xml" rel="section">
             
@@ -269,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2014/04/11/pushbullet-api/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2014/04/11/php-soap-and-net-soap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -288,7 +308,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/04/11/pushbullet-api/" itemprop="url">关于通过 PushBullet API 推送信息的设想</a></h1>
+                <a class="post-title-link" href="/2014/04/11/php-soap-and-net-soap/" itemprop="url">记一次 wsdl 服务的调用</a></h1>
         
 
         <div class="post-meta">
@@ -341,9 +361,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2014/04/11/pushbullet-api/#comments" itemprop="discussionUrl">
+                <a href="/2014/04/11/php-soap-and-net-soap/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2014/04/11/pushbullet-api/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/04/11/php-soap-and-net-soap/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -370,11 +390,13 @@
       
         
           
-          坑我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。但是 twidere 目前不支持推送，要实现推送必须有自己的服务器，自己的 google 注册应用，略麻烦了点，于是想到了 PushBullet ,如果她有 API 多好，查了
+          公司业务要用到某 wsdl 的服务，使用 php5 自带的 soapclient 进行链接，屡次连不上，然后换 nusoap 包进行测试，还是不行，最后找到修改官方包 namespace 的方法才通过，记录下经验吧。
+soapclient
+官方推荐的调用对方函数的方法 _soapCall 函数调用如
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/04/11/pushbullet-api/#more" rel="contents">
+            <a class="btn" href="/2014/04/11/php-soap-and-net-soap/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1861,10 +1883,10 @@ examples:https://github.com/yegle/flask_twip/tree/master/exam
             
             
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
@@ -1872,10 +1894,10 @@ examples:https://github.com/yegle/flask_twip/tree/master/exam
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">114</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
