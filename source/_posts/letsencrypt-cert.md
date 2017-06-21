@@ -1,7 +1,12 @@
+---
 layout: blog
 title: 使用 acme.sh 来更新 letsencrypt 证书
 date: 2017-06-21 12:55:52
+categories:
+- linux
 tags:
+- letsencrypt
+- acme
 ---
 
 # 1. 安装 **acme.sh**
