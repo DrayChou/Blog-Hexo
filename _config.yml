@@ -8,7 +8,7 @@ subtitle: 疯狂痴呆傻，美甘苦涩禅。
 keywords: dray,_0dc,we_get,疯,狂,痴,呆,傻,美,甘,苦,涩,禅,疯狂,痴呆,傻,美甘,苦涩,禅,疯狂痴呆傻,美甘苦涩禅
 description: Dray's Blog
 author: Dray
-language: zh-CN
+language: zh-Hans
 timezone: Asia/ShangHai
 
 # URL
@@ -64,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: fexo
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
