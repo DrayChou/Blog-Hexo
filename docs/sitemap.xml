@@ -4,7 +4,7 @@
   <url>
     <loc>http://idc.wf/about/index.html</loc>
     
-    <lastmod>2017-06-21T07:36:48.744Z</lastmod>
+    <lastmod>2017-06-21T07:40:32.557Z</lastmod>
     
   </url>
   
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/03/24/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/</loc>
+    <loc>http://idc.wf/2011/01/28/xml-cdata/</loc>
     
     <lastmod>2017-03-09T08:13:10.978Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/01/28/xml-cdata/</loc>
+    <loc>http://idc.wf/2011/03/24/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/</loc>
     
     <lastmod>2017-03-09T08:13:10.978Z</lastmod>
     
@@ -82,6 +82,13 @@
     <loc>http://idc.wf/2011/01/08/zhong-ji-shellzsh/</loc>
     
     <lastmod>2017-03-09T08:13:10.978Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/12/06/xiu-gai-vs2010-mo-ren-liu-lan-qi/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.977Z</lastmod>
     
   </url>
   
@@ -107,28 +114,7 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/12/06/xiu-gai-vs2010-mo-ren-liu-lan-qi/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.977Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://idc.wf/2013/06/13/vps-dropbox/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.976Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2016/03/12/vbox-ubuntu-nginx-redmine/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.976Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://idc.wf/2011/03/19/vps-hosting-to-do-with-just-bought-a-mirror/</loc>
     
     <lastmod>2017-03-09T08:13:10.976Z</lastmod>
     
@@ -142,9 +128,16 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2013/06/16/uwsginginx-run-flask-twip/</loc>
+    <loc>http://idc.wf/2011/03/19/vps-hosting-to-do-with-just-bought-a-mirror/</loc>
     
-    <lastmod>2017-03-09T08:13:10.975Z</lastmod>
+    <lastmod>2017-03-09T08:13:10.976Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2013/06/13/vps-dropbox/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.976Z</lastmod>
     
   </url>
   
@@ -156,7 +149,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/02/23/ubuntu-using-svn/</loc>
+    <loc>http://idc.wf/2013/06/16/uwsginginx-run-flask-twip/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/12/26/under-windows-nodejs/</loc>
     
     <lastmod>2017-03-09T08:13:10.974Z</lastmod>
     
@@ -170,21 +170,21 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/12/26/under-windows-nodejs/</loc>
+    <loc>http://idc.wf/2011/02/23/ubuntu-using-svn/</loc>
     
     <lastmod>2017-03-09T08:13:10.974Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2013/04/15/ubuntu-sources-update-error/</loc>
+    <loc>http://idc.wf/2013/04/15/ubuntu-sources-list/</loc>
     
     <lastmod>2017-03-09T08:13:10.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2013/04/15/ubuntu-sources-list/</loc>
+    <loc>http://idc.wf/2013/04/15/ubuntu-sources-update-error/</loc>
     
     <lastmod>2017-03-09T08:13:10.973Z</lastmod>
     
@@ -219,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2014/05/15/ubuntu-bash-completion/</loc>
+    <loc>http://idc.wf/2013/06/16/ubuntu-nginx-php-shell/</loc>
     
     <lastmod>2017-03-09T08:13:10.971Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2013/06/16/ubuntu-nginx-php-shell/</loc>
+    <loc>http://idc.wf/2014/05/15/ubuntu-bash-completion/</loc>
     
     <lastmod>2017-03-09T08:13:10.971Z</lastmod>
     
@@ -275,13 +275,6 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/04/23/to-laugh-at-the-worlds-historians-distorted-the-history-of-china-the-chinese-yuan-and-qing-ever/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.968Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2011/01/15/three-rules-programmers/</loc>
     
     <lastmod>2017-03-09T08:13:10.968Z</lastmod>
@@ -289,21 +282,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/03/09/tai-shen-qi-le--yuan-lai-url-mao-dian/</loc>
+    <loc>http://idc.wf/2011/04/23/to-laugh-at-the-worlds-historians-distorted-the-history-of-china-the-chinese-yuan-and-qing-ever/</loc>
     
-    <lastmod>2017-03-09T08:13:10.967Z</lastmod>
+    <lastmod>2017-03-09T08:13:10.968Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://idc.wf/2011/04/27/synchronized-to-the-official-facebook-twitter-services-httpapps-facebook-comtwitter/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.967Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://idc.wf/2011/01/20/sql-distinct-qu-diao-zhong-fu-de-shu-ju-tong-ji-fang-fa/</loc>
     
     <lastmod>2017-03-09T08:13:10.967Z</lastmod>
     
@@ -317,16 +303,23 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/05/20/solve-sysfader-iexplore-exe-application-error/</loc>
+    <loc>http://idc.wf/2011/03/09/tai-shen-qi-le--yuan-lai-url-mao-dian/</loc>
     
-    <lastmod>2017-03-09T08:13:10.966Z</lastmod>
+    <lastmod>2017-03-09T08:13:10.967Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/01/21/smarty-e6-a8-a1-e6-9d-bf-e4-b8-ad-e5-ae-9a-e4-b9-89-e5-8f-98-e9-87-8f-e7-9a-84-e6-96-b9-e6-b3-95/</loc>
+    <loc>http://idc.wf/2011/01/20/sql-distinct-qu-diao-zhong-fu-de-shu-ju-tong-ji-fang-fa/</loc>
     
-    <lastmod>2017-03-09T08:13:10.965Z</lastmod>
+    <lastmod>2017-03-09T08:13:10.967Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/05/20/solve-sysfader-iexplore-exe-application-error/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.966Z</lastmod>
     
   </url>
   
@@ -345,6 +338,20 @@
   </url>
   
   <url>
+    <loc>http://idc.wf/2011/01/21/smarty-e6-a8-a1-e6-9d-bf-e4-b8-ad-e5-ae-9a-e4-b9-89-e5-8f-98-e9-87-8f-e7-9a-84-e6-96-b9-e6-b3-95/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/04/27/shared-google-reader-content-to-twitter-facebook/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.964Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://idc.wf/2014/06/02/shadowsocks/</loc>
     
     <lastmod>2017-03-09T08:13:10.964Z</lastmod>
@@ -353,13 +360,6 @@
   
   <url>
     <loc>http://idc.wf/2011/02/15/seven-misconceptions-https/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.964Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://idc.wf/2011/04/27/shared-google-reader-content-to-twitter-facebook/</loc>
     
     <lastmod>2017-03-09T08:13:10.964Z</lastmod>
     
@@ -380,14 +380,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/05/04/remove-the-extra-css-style-page/</loc>
+    <loc>http://idc.wf/2016/01/23/root-google-now/</loc>
     
     <lastmod>2017-03-09T08:13:10.962Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2016/01/23/root-google-now/</loc>
+    <loc>http://idc.wf/2011/05/04/remove-the-extra-css-style-page/</loc>
     
     <lastmod>2017-03-09T08:13:10.962Z</lastmod>
     
@@ -429,13 +429,6 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/02/12/php-to-get-a-date-for-the-first-few-weeks-of-the-month/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.960Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2013/06/24/pi-webcam/</loc>
     
     <lastmod>2017-03-09T08:13:10.960Z</lastmod>
@@ -443,9 +436,9 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/02/12/php-remove-html-tags-javascript-code-blank-characters-etc/</loc>
+    <loc>http://idc.wf/2011/02/12/php-to-get-a-date-for-the-first-few-weeks-of-the-month/</loc>
     
-    <lastmod>2017-03-09T08:13:10.959Z</lastmod>
+    <lastmod>2017-03-09T08:13:10.960Z</lastmod>
     
   </url>
   
@@ -464,6 +457,13 @@
   </url>
   
   <url>
+    <loc>http://idc.wf/2011/02/12/php-remove-html-tags-javascript-code-blank-characters-etc/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.959Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://idc.wf/2011/01/28/php-shan-chu-wen-jian-unlink/</loc>
     
     <lastmod>2017-03-09T08:13:10.959Z</lastmod>
@@ -471,14 +471,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/04/28/php-log-system-plog/</loc>
+    <loc>http://idc.wf/2011/01/28/php-jian-ce-yong-hu-shi-fou-shi-yong-dai-li-shang-wang-de-fang-fa/</loc>
     
     <lastmod>2017-03-09T08:13:10.958Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/01/28/php-jian-ce-yong-hu-shi-fou-shi-yong-dai-li-shang-wang-de-fang-fa/</loc>
+    <loc>http://idc.wf/2011/04/28/php-log-system-plog/</loc>
     
     <lastmod>2017-03-09T08:13:10.958Z</lastmod>
     
@@ -499,6 +499,13 @@
   </url>
   
   <url>
+    <loc>http://idc.wf/2011/02/18/php-bmp-format-image-into-jpg-format-program/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.956Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://idc.wf/2011/02/09/password-viewer-to-view-the-machine-saved-passwords/</loc>
     
     <lastmod>2017-03-09T08:13:10.956Z</lastmod>
@@ -514,13 +521,6 @@
   
   <url>
     <loc>http://idc.wf/2011/04/15/original-mysql_insert_id-is-not-safe-ah-do-not-know-any-other-ways-to-get-into-the-self-by-id/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://idc.wf/2011/02/18/php-bmp-format-image-into-jpg-format-program/</loc>
     
     <lastmod>2017-03-09T08:13:10.956Z</lastmod>
     
@@ -548,13 +548,6 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/05/04/my-home-network-and-the-connectivity-of-several-servers/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.954Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2011/04/14/mysql-database-into-memcached-support-nosql/</loc>
     
     <lastmod>2017-03-09T08:13:10.954Z</lastmod>
@@ -569,14 +562,21 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/02/23/modify-the-hosts-file-under-ubuntu/</loc>
+    <loc>http://idc.wf/2011/05/04/my-home-network-and-the-connectivity-of-several-servers/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.954Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/03/20/modify-the-ssh-password/</loc>
     
     <lastmod>2017-03-09T08:13:10.953Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/03/20/modify-the-ssh-password/</loc>
+    <loc>http://idc.wf/2011/02/23/modify-the-hosts-file-under-ubuntu/</loc>
     
     <lastmod>2017-03-09T08:13:10.953Z</lastmod>
     
@@ -597,13 +597,6 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2015/01/14/mac-apps/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.952Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2011/01/08/mantis-han-hua-fang-fa/</loc>
     
     <lastmod>2017-03-09T08:13:10.952Z</lastmod>
@@ -611,7 +604,21 @@
   </url>
   
   <url>
+    <loc>http://idc.wf/2015/01/14/mac-apps/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.952Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://idc.wf/2011/02/11/litespeed_-baidu-encyclopedia/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.951Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2015/01/30/laravel/</loc>
     
     <lastmod>2017-03-09T08:13:10.951Z</lastmod>
     
@@ -632,21 +639,7 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2015/01/30/laravel/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.951Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2011/04/02/interpretation-of-god-i-think-thats-very-good/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.950Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://idc.wf/2012/02/29/insert-ruby-on-rails-in-ubuntu-11-dot-10/</loc>
     
     <lastmod>2017-03-09T08:13:10.950Z</lastmod>
     
@@ -660,14 +653,21 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/01/18/i-do-not-know-that-the-above-gives-strong-feelings-meager-sentence/</loc>
+    <loc>http://idc.wf/2012/02/29/insert-ruby-on-rails-in-ubuntu-11-dot-10/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.950Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/02/18/http-functions-php/</loc>
     
     <lastmod>2017-03-09T08:13:10.949Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/02/18/http-functions-php/</loc>
+    <loc>http://idc.wf/2011/01/18/i-do-not-know-that-the-above-gives-strong-feelings-meager-sentence/</loc>
     
     <lastmod>2017-03-09T08:13:10.949Z</lastmod>
     
@@ -716,14 +716,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/01/28/found-2-wordpress-plugin-share-music-related-oh-well/</loc>
+    <loc>http://idc.wf/2013/04/15/gedit-plugin/</loc>
     
     <lastmod>2017-03-09T08:13:10.946Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2013/04/15/gedit-plugin/</loc>
+    <loc>http://idc.wf/2011/01/28/found-2-wordpress-plugin-share-music-related-oh-well/</loc>
     
     <lastmod>2017-03-09T08:13:10.946Z</lastmod>
     
@@ -751,14 +751,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/09/23/delete-ubuntu-desktop/</loc>
+    <loc>http://idc.wf/2017/03/09/composer-tools/</loc>
     
     <lastmod>2017-03-09T08:13:10.944Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2017/03/09/composer-tools/</loc>
+    <loc>http://idc.wf/2011/09/23/delete-ubuntu-desktop/</loc>
     
     <lastmod>2017-03-09T08:13:10.944Z</lastmod>
     
@@ -772,13 +772,6 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2014/05/15/centos-commands/</loc>
-    
-    <lastmod>2017-03-09T08:13:10.943Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://idc.wf/2016/01/26/centos-delete-php/</loc>
     
     <lastmod>2017-03-09T08:13:10.943Z</lastmod>
@@ -786,14 +779,21 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/01/08/bluehost-xia-zhu-yu-ming-he-fu-jia-yu-mu-lu-lu-jing-de-zi-ding-yi/</loc>
+    <loc>http://idc.wf/2014/05/15/centos-commands/</loc>
+    
+    <lastmod>2017-03-09T08:13:10.943Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://idc.wf/2011/04/25/bug-ie6-the-div-a-height-of/</loc>
     
     <lastmod>2017-03-09T08:13:10.942Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/04/25/bug-ie6-the-div-a-height-of/</loc>
+    <loc>http://idc.wf/2011/01/08/bluehost-xia-zhu-yu-ming-he-fu-jia-yu-mu-lu-lu-jing-de-zi-ding-yi/</loc>
     
     <lastmod>2017-03-09T08:13:10.942Z</lastmod>
     
@@ -814,14 +814,14 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/05/17/automatically-generated-navigation-menu-using-jquery/</loc>
+    <loc>http://idc.wf/2011/04/30/archlinux-some-of-the-information/</loc>
     
     <lastmod>2017-03-09T08:13:10.941Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/2011/04/30/archlinux-some-of-the-information/</loc>
+    <loc>http://idc.wf/2011/05/17/automatically-generated-navigation-menu-using-jquery/</loc>
     
     <lastmod>2017-03-09T08:13:10.941Z</lastmod>
     
