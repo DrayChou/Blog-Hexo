@@ -5,7 +5,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://idc.wf/"/>
-  <updated>2017-06-21T05:06:43.687Z</updated>
+  <updated>2017-07-10T09:53:09.418Z</updated>
   <id>http://idc.wf/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>yii2 用 asset 压缩js,css文件</title>
+    <link href="http://idc.wf/2017/07/10/yii-asset/"/>
+    <id>http://idc.wf/2017/07/10/yii-asset/</id>
+    <published>2017-07-10T09:44:00.000Z</published>
+    <updated>2017-07-10T09:53:09.418Z</updated>
+    
+    <content type="html"><![CDATA[<p>偶尔一次使用的东西，记一下！</p>
+<h2 id="安装-java"><a href="#安装-java" class="headerlink" title="安装 java"></a>安装 <strong>java</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install default-jre</div></pre></td></tr></table></figure>
+<h2 id="安装压缩工具"><a href="#安装压缩工具" class="headerlink" title="安装压缩工具"></a>安装压缩工具</h2><h3 id="compiler"><a href="#compiler" class="headerlink" title="compiler"></a>compiler</h3><p>Yii 压缩 JavaScript 默认使用名为 compiler.jar 的 Google Closure compiler 压缩工具。<br><a href="https://developers.google.com/closure/compiler/" target="_blank" rel="external">https://developers.google.com/closure/compiler/</a></p>
+<h3 id="yuicompressor"><a href="#yuicompressor" class="headerlink" title="yuicompressor"></a>yuicompressor</h3><p>Yii 压缩 CSS 使用名为 yuicompressor.jar 的YUI Compressor 压缩工具。<br><a href="https://github.com/yui/yuicompressor/" target="_blank" rel="external">https://github.com/yui/yuicompressor/</a></p>
+<h2 id="生成默认配置脚本"><a href="#生成默认配置脚本" class="headerlink" title="生成默认配置脚本"></a>生成默认配置脚本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yii asset/template asset.php</div></pre></td></tr></table></figure>
+<p>生成的模板如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/**</div><div class="line"> * &quot;yii asset&quot; 控制台命令的配置文件</div><div class="line"> * 注意控制台环境下有些路径别名可能不存在，如 &apos;@webroot&apos; 和 &apos;@web&apos;</div><div class="line"> * 请先定义找不到的路径别名</div><div class="line"> */</div><div class="line"></div><div class="line">// In the console environment, some path aliases may not exist. Please define these:</div><div class="line">Yii::setAlias(&apos;@webroot&apos;, __DIR__ . &apos;/backend/web/&apos;);</div><div class="line">Yii::setAlias(&apos;@web&apos;, &apos;/backend/web/&apos;);</div><div class="line"></div><div class="line">return [</div><div class="line">    // 为 JavaScript 文件压缩调整 command/callback 命令：</div><div class="line">    &apos;jsCompressor&apos; =&gt; &apos;java -jar compiler.jar --js &#123;from&#125; --js_output_file &#123;to&#125;&apos;,</div><div class="line">    // 为 CSS 文件压缩调整 command/callback 命令：</div><div class="line">    &apos;cssCompressor&apos; =&gt; &apos;java -jar yuicompressor.jar --type css &#123;from&#125; -o &#123;to&#125;&apos;,</div><div class="line">    // 要压缩的资源包列表：</div><div class="line">    &apos;bundles&apos; =&gt; [</div><div class="line">        &apos;backend\assets\AppAsset&apos;,</div><div class="line">        // &apos;yii\web\YiiAsset&apos;,</div><div class="line">        // &apos;yii\web\JqueryAsset&apos;,</div><div class="line">    ],</div><div class="line">    // 输出的已压缩资源包：</div><div class="line">    &apos;targets&apos; =&gt; [</div><div class="line">        &apos;app\config\AllAsset&apos; =&gt; [</div><div class="line">            &apos;basePath&apos; =&gt; &apos;path/to/web&apos;,</div><div class="line">            &apos;baseUrl&apos; =&gt; &apos;&apos;,</div><div class="line">            &apos;js&apos; =&gt; &apos;js/all-&#123;ts&#125;.js&apos;,</div><div class="line">            &apos;css&apos; =&gt; &apos;css/all-&#123;ts&#125;.css&apos;,</div><div class="line">        ],</div><div class="line">    ],</div><div class="line">    // 资源管理器配置：</div><div class="line">    &apos;assetManager&apos; =&gt; [</div><div class="line">        &apos;basePath&apos; =&gt; &quot;@webroot&quot;,</div><div class="line">        &apos;baseUrl&apos; =&gt; &apos;@web&apos;,</div><div class="line">    ],</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<h2 id="执行脚本压缩生成配置文件"><a href="#执行脚本压缩生成配置文件" class="headerlink" title="执行脚本压缩生成配置文件"></a>执行脚本压缩生成配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php yii asset/compress assets_backend.php backend/config/assets_compressed.php</div></pre></td></tr></table></figure>
+<h2 id="把生成的配置文件加到主配置中"><a href="#把生成的配置文件加到主配置中" class="headerlink" title="把生成的配置文件加到主配置中"></a>把生成的配置文件加到主配置中</h2><p>修改 config/main.php 添加下面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&apos;components&apos; =&gt; [</div><div class="line">    // ...</div><div class="line">    &apos;assetManager&apos; =&gt; [</div><div class="line">        &apos;bundles&apos; =&gt; require &apos;assets_compressed.php&apos;,</div><div class="line">    ],</div><div class="line">],</div></pre></td></tr></table></figure></p>
+<h2 id="参考页面"><a href="#参考页面" class="headerlink" title="参考页面"></a>参考页面</h2><p><a href="http://www.yiifans.com/yii2/guide/structure-assets.html" target="_blank" rel="external">http://www.yiifans.com/yii2/guide/structure-assets.html</a><br><a href="http://www.cnblogs.com/zergling9999/p/6097783.html" target="_blank" rel="external">http://www.cnblogs.com/zergling9999/p/6097783.html</a><br><a href="http://mayi.so/article/4" target="_blank" rel="external">http://mayi.so/article/4</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;偶尔一次使用的东西，记一下！&lt;/p&gt;
+&lt;h2 id=&quot;安装-java&quot;&gt;&lt;a href=&quot;#安装-java&quot; class=&quot;headerlink&quot; title=&quot;安装 java&quot;&gt;&lt;/a&gt;安装 &lt;strong&gt;java&lt;/strong&gt;&lt;/h2&gt;&lt;figure class=
+    
+    </summary>
+    
+      <category term="linux" scheme="http://idc.wf/category/linux/"/>
+    
+    
+      <category term="yii2" scheme="http://idc.wf/tags/yii2/"/>
+    
+      <category term="asset" scheme="http://idc.wf/tags/asset/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 acme.sh 来更新 letsencrypt 证书</title>
@@ -970,44 +1004,6 @@ fi
       <category term="bash" scheme="http://idc.wf/tags/bash/"/>
     
       <category term="completion" scheme="http://idc.wf/tags/completion/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于通过 PushBullet API 推送信息的设想</title>
-    <link href="http://idc.wf/2014/04/11/pushbullet-api/"/>
-    <id>http://idc.wf/2014/04/11/pushbullet-api/</id>
-    <published>2014-04-10T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.961Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。<br>但是 twidere 目前不支持推送，要实现推送必须有自己的服务器，自己的 google 注册应用，略麻烦了点，于是想到了 PushBullet ,如果她有 API 多好，查了下，果然有，然后一个“坑”出现了。</p>
-<h3 id="PushBullet"><a href="#PushBullet" class="headerlink" title="PushBullet"></a>PushBullet</h3><p>PushBullet API 的官方介绍地址在这里 <a href="https://www.pushbullet.com/api" target="_blank" rel="external">戳我</a> ,她的 API 太简单了，简直是我见过的最简单的 API 了。通篇上下只有2个接口，简单看下文档就会了，现说下注意事项。</p>
-<h4 id="api-key"><a href="#api-key" class="headerlink" title="api key"></a>api key</h4><ol>
-<li>这个每个注册帐号都有一个，不区分开发账户，也没有开发账户，查看地址在：<a href="https://www.pushbullet.com/account" target="_blank" rel="external">登录后查看</a></li>
-<li>查询的时候需要调用 http 默认的 BasicAuth 认证方式，用户名就是 api key ，密码为空。</li>
-</ol>
-<h4 id="然后"><a href="#然后" class="headerlink" title="然后"></a>然后</h4><p>然后你就可以不停的推送了，如果要推送给别人，也需要先得到对方的 api key ，至于推送给好友， 可以通过 get 的方式得到对方的 ID。</p>
-<h3 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h3><ol>
-<li><a href="https://www.pushbullet.com/api" target="_blank" rel="external">https://www.pushbullet.com/api</a></li>
-<li><a href="http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang" target="_blank" rel="external">http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang</a></li>
-<li><a href="http://golang.org/pkg/net/http/#Request.SetBasicAuth" target="_blank" rel="external">http://golang.org/pkg/net/http/#Request.SetBasicAuth</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;坑&quot;&gt;&lt;a href=&quot;#坑&quot; class=&quot;headerlink&quot; title=&quot;坑&quot;&gt;&lt;/a&gt;坑&lt;/h3&gt;&lt;p&gt;我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。&lt;br&gt;但是 twider
-    
-    </summary>
-    
-      <category term="web" scheme="http://idc.wf/category/web/"/>
-    
-    
-      <category term="twitter" scheme="http://idc.wf/tags/twitter/"/>
-    
-      <category term="api" scheme="http://idc.wf/tags/api/"/>
-    
-      <category term="PushBullet" scheme="http://idc.wf/tags/PushBullet/"/>
     
   </entry>
   
