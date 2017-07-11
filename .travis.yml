@@ -15,6 +15,9 @@ script:
 - git config --global user.email "$GIT_EMAIL"
 - git config --global push.default simple
 
+# 更新
+- git pull origin master
+
 # 生成
 - hexo generate
 
@@ -22,4 +25,4 @@ script:
 - git add --all .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
-- git push --force "https://${GH_TOKEN}@${GH_REF}" master
+- git push --force "https://${GH_TOKEN}@${GH_REF}" origin master
