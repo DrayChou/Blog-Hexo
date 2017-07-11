@@ -16,6 +16,7 @@ script:
 - git config --global push.default simple
 
 # 更新
+- git checkout master
 - git pull origin master
 
 # 生成
