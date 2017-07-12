@@ -1,0 +1,793 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="nodejs," />
+
+
+
+
+
+  <link rel="alternate" href="/rss.xml" title="Dray's Home" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="为什么搞这个？ 公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行    我又想在空闲的时候做点东西    所以坑爹的我只能自己研究在windows下运行nodejs了">
+<meta name="keywords" content="nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 下的 Nodejs">
+<meta property="og:url" content="http://idc.wf/2011/12/25/under-windows-nodejs/index.html">
+<meta property="og:site_name" content="Dray&#39;s Home">
+<meta property="og:description" content="为什么搞这个？ 公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行    我又想在空闲的时候做点东西    所以坑爹的我只能自己研究在windows下运行nodejs了">
+<meta property="og:updated_time" content="2017-07-12T05:42:38.045Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows 下的 Nodejs">
+<meta name="twitter:description" content="为什么搞这个？ 公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行    我又想在空闲的时候做点东西    所以坑爹的我只能自己研究在windows下运行nodejs了">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"方片子的博客":"http://www.fangshanzi.com/","Locyoo Manor|部落格":"http://locyoo.com/blog/","方片快报":"http://fpnews.cn/"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://idc.wf/2011/12/25/under-windows-nodejs/"/>
+
+
+
+
+
+  <title>Windows 下的 Nodejs | Dray's Home</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dray's Home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">疯狂痴呆傻，美甘苦涩禅。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/12/25/under-windows-nodejs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Windows 下的 Nodejs</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-12-26T00:00:00+08:00">
+                2011-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/windows/" itemprop="url" rel="index">
+                    <span itemprop="name">windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2011/12/25/under-windows-nodejs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2011/12/25/under-windows-nodejs/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p></p><h2>为什么搞这个？</h2><p></p>
+<ol><br><li>公司电脑的权限管理比较严，不能安装软件，不能常驻系统进程等，所以像 xampp 之类的都不能正常执行</li><br>    <li>我又想在空闲的时候做点东西</li><br>    <li>所以坑爹的我只能自己研究在windows下运行nodejs了<a id="more"></a><br></li><br></ol><br><h2>怎么执行？</h2><br><ol><br><li>下载并解压到一个目录</li><br>    <li>进入目录双击 Start.bat 执行</li><br>    <li>在命令行下执行<br><br>node ex_project\jade\app.jse\app.js</li><br></ol><br>你会看到<br><br>    E:\nodejs4win&gt;node ex_project\jade\app.js Express server listening on port 3000 in development mode<br><br>这样的结果，那么打开浏览器输入：<br><br>    E:\nodejs4win&gt;node ex_project\jade\app.js Express server listening on port 3000 in development mode<br><br>OK，这样一个 nodejs + express + jade 的项目就跑起来了<br><h2>所有 windows 都可以执行吗？</h2><br><ol><br><li>在 Windows Xp 下可以直接执行，不需要权限</li><br>    <li>在 Windows 7 下本地执行的话不需要 windows 权限，局域网内执行的话，需要开放局域网访问的权限。</li><br></ol><br><h2>都有什么？</h2><br><ol><br><li>nodejs.exe – windows 版 nodejs</li><br>    <li>npm – nodejs 的模板库管理工具，但windows下很多库都不能直接安装使用</li><br>    <li>express – mvc framework<br><ol><br><li>jade – template</li><br>    <li>dot – template</li><br>    <li>ejs – template</li><br>    <li>Tenjin – template</li><br>    <li>jst – template ，有错误，还未修复</li><br></ol><br></li><br>    <li>dirty – 因为windows 下数据库还不支持，所以只能采用一些其他的工具替换了。这个是目前我找到的最好的工具了。</li><br>    <li>n2Mvc – 国人开发的一个独立的轻型的mvc架构</li><br></ol><br><h2>怎么用？</h2><br><ol><br><li>刚接触nodejs的建议先从project 目录下的代码看起，从最简单的hello_world，到n2mvc，可以让你对Nodejs有一个初步的了解</li><br>    <li>然后可以在express的模板中选一套主攻吧</li><br></ol><br><h2>这套环境可以用来生产吗？</h2><br>你开玩笑呢？哥，这个只是让你折腾玩的，想到生产环境还是用linux吧，虽然我现在是做.net的，但我还是觉得windows不适合做服务器。<br><h2>这些都是你写的吗？</h2><br>不是，我只是把他们拼在一起。我会在后面给出他们的项目地址。<br><h2>有文档可以参考吗？</h2><br><ol><br><li>nodejs官方文档：<br><a href="http://nodejs.org/docs/latest/api/process.html#process.platform" target="_blank" rel="external">http://nodejs.org/docs/latest/api/process.html#process.platform</a></li><br>    <li>国内社区的翻译版（未完成）：<a href="http://cnodejs.org/cman/all.html" target="_blank" rel="external">http://cnodejs.org/cman/all.html</a></li><br>    <li>nodecn 翻译的文档（未完成）：<a href="http://www.nodecn.org/all.html" target="_blank" rel="external">http://www.nodecn.org/all.html</a></li><br>    <li>Express JS 中文入门指引手册：<a href="http://www.csser.com/tools/express-js/express-guide-reference-zh-CN.html" target="_blank" rel="external">http://www.csser.com/tools/express-js/express-guide-reference-zh-CN.html</a></li><br></ol><br><h2>有问题了问谁？</h2><br><ol><br><li>可以去cnodejs.org社区提问</li><br>    <li>可以去各项目主页发 Issues</li><br>    <li>也可以直接在我的项目主页留言等，我会尽量解答</li><br></ol><br><h2>项目【下载】地址</h2><br><a href="https://github.com/DrayChou/nodejs4win" target="_blank" rel="external">https://github.com/DrayChou/nodejs4win</a><br><h2>引用到的项目地址</h2><br><ol><br><li>nodejs : <a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a></li><br>    <li>express : <a href="https://github.com/visionmedia/express" target="_blank" rel="external">https://github.com/visionmedia/express</a></li><br>    <li>dirty : <a href="https://github.com/felixge/node-dirty" target="_blank" rel="external">https://github.com/felixge/node-dirty</a></li><br>    <li>n2Mvc : <a href="https://github.com/QLeelulu/n2Mvc" target="_blank" rel="external">https://github.com/QLeelulu/n2Mvc</a></li><br>    <li>jade : <a href="https://github.com/visionmedia/jade" target="_blank" rel="external">https://github.com/visionmedia/jade</a></li><br>    <li>dot : <a href="https://github.com/olado/doT" target="_blank" rel="external">https://github.com/olado/doT</a></li><br>    <li>nTenjin : <a href="https://github.com/QLeelulu/nTenjin" target="_blank" rel="external">https://github.com/QLeelulu/nTenjin</a></li><br>    <li>ejs : <a href="https://github.com/visionmedia/ejs" target="_blank" rel="external">https://github.com/visionmedia/ejs</a></li><br>    <li>jst : <a href="https://github.com/shaunlee/node-jst" target="_blank" rel="external">https://github.com/shaunlee/node-jst</a></li><br></ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2011/12/05/xiu-gai-vs2010-mo-ren-liu-lan-qi/" rel="next" title="修改 vs2010 默认浏览器">
+                <i class="fa fa-chevron-left"></i> 修改 vs2010 默认浏览器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2012/02/05/hello-octopress/" rel="prev" title="Hello Octopress">
+                Hello Octopress <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200"
+               alt="Dray" />
+          <p class="site-author-name" itemprop="name">Dray</p>
+           
+              <p class="site-description motion-element" itemprop="description">Dray's Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">116</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">为什么搞这个？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">怎么执行？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">所有 windows 都可以执行吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">都有什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">怎么用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">这套环境可以用来生产吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">这些都是你写的吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">有文档可以参考吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">有问题了问谁？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">项目【下载】地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">引用到的项目地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dray</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://weshome.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://idc.wf/2011/12/25/under-windows-nodejs/';
+          this.page.identifier = '2011/12/25/under-windows-nodejs/';
+          this.page.title = 'Windows 下的 Nodejs';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://weshome.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -110,10 +110,10 @@
   
   <entry>
     <title>html 转为 pdf</title>
-    <link href="http://idc.wf/2017/06/02/html-to-pdf/"/>
-    <id>http://idc.wf/2017/06/02/html-to-pdf/</id>
+    <link href="http://idc.wf/2017/06/01/html-to-pdf/"/>
+    <id>http://idc.wf/2017/06/01/html-to-pdf/</id>
     <published>2017-06-01T16:00:00.000Z</published>
-    <updated>2017-06-02T10:38:15.625Z</updated>
+    <updated>2017-07-12T05:42:38.041Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li><p>使用 wkhtmltopdf</p>
@@ -163,7 +163,7 @@
     <link href="http://idc.wf/2017/03/09/composer-tools/"/>
     <id>http://idc.wf/2017/03/09/composer-tools/</id>
     <published>2017-03-09T08:07:07.000Z</published>
-    <updated>2017-03-09T08:13:10.944Z</updated>
+    <updated>2017-07-12T05:42:38.037Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Composer-常用-PHP-小工具"><a href="#Composer-常用-PHP-小工具" class="headerlink" title="Composer 常用 PHP 小工具"></a>Composer 常用 PHP 小工具</h2><p>composer 安装方法:<br><a href="https://getcomposer.org/doc/00-intro.md#installation-windows" target="_blank" rel="external">https://getcomposer.org/doc/00-intro.md#installation-windows</a></p>
 <p>常用小工具:</p>
@@ -199,7 +199,7 @@ composer global require friendsofphp/php-cs-fixer
     <link href="http://idc.wf/2016/05/18/babyun-pad/"/>
     <id>http://idc.wf/2016/05/18/babyun-pad/</id>
     <published>2016-05-18T07:18:00.000Z</published>
-    <updated>2017-03-09T08:13:10.941Z</updated>
+    <updated>2017-07-12T05:42:38.037Z</updated>
     
     <content type="html"><![CDATA[<h2 id="事由"><a href="#事由" class="headerlink" title="事由"></a>事由</h2><p>120 块钱在 <a href="http://www.v2ex.com/t/276507?p=1" target="_blank" rel="external">v2ex</a> 上买了一个平板，至于买来干嘛？没想多。<br>于是，这里记录下刷机过程，省得之后再找。</p>
 <h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>感谢 <a href="http://www.v2ex.com/t/276507?p=1" target="_blank" rel="external">@mimzy</a></p>
@@ -241,7 +241,7 @@ composer global require friendsofphp/php-cs-fixer
     <link href="http://idc.wf/2016/05/13/travis-ci/"/>
     <id>http://idc.wf/2016/05/13/travis-ci/</id>
     <published>2016-05-13T12:05:00.000Z</published>
-    <updated>2017-03-09T08:13:10.969Z</updated>
+    <updated>2017-07-12T05:42:38.045Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。<br><a href="https://github.com/wendal/gor" target="_blank" rel="external">Gor</a> 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。<br>今天在查 CI 系统的时候发现了 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> ,于是，一切都很开心了。</p>
 <h2 id="关于-Travis-CI"><a href="#关于-Travis-CI" class="headerlink" title="关于 Travis CI"></a>关于 Travis CI</h2><p>这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。</p>
@@ -323,7 +323,7 @@ script:
     <link href="http://idc.wf/2016/03/12/vbox-ubuntu-nginx-redmine/"/>
     <id>http://idc.wf/2016/03/12/vbox-ubuntu-nginx-redmine/</id>
     <published>2016-03-12T07:40:12.000Z</published>
-    <updated>2017-03-09T08:13:10.976Z</updated>
+    <updated>2017-07-12T05:42:38.049Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装-ubuntu"><a href="#安装-ubuntu" class="headerlink" title="安装 ubuntu"></a>安装 ubuntu</h2><h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p>然后在 vb 中配置安装 ubuntu ，这里需要注意的是，把网络类型改为 桥接。</p>
 <h3 id="配置静态IP"><a href="#配置静态IP" class="headerlink" title="配置静态IP"></a>配置静态IP</h3><pre><code>sudo vi /etc/network/interfaces
@@ -438,7 +438,7 @@ sudo chmod +x /etc/init.d/nginx
     <link href="http://idc.wf/2016/01/26/centos-delete-php/"/>
     <id>http://idc.wf/2016/01/26/centos-delete-php/</id>
     <published>2016-01-26T14:50:37.000Z</published>
-    <updated>2017-03-09T08:13:10.943Z</updated>
+    <updated>2017-07-12T05:42:38.037Z</updated>
     
     <content type="html"><![CDATA[<h3 id="可以编译删除的"><a href="#可以编译删除的" class="headerlink" title="可以编译删除的"></a>可以编译删除的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">make   uninstall</div><div class="line">make   clean</div><div class="line">rm -rf php   //php目录</div></pre></td></tr></table></figure>
 <h3 id="单独的可执行文件"><a href="#单独的可执行文件" class="headerlink" title="单独的可执行文件"></a>单独的可执行文件</h3><p>whereis xxx 找到软件安装目录，rm -rf 把这些目录都删除</p>
@@ -467,7 +467,7 @@ sudo chmod +x /etc/init.d/nginx
     <link href="http://idc.wf/2016/01/26/centos-php-mcrypt/"/>
     <id>http://idc.wf/2016/01/26/centos-php-mcrypt/</id>
     <published>2016-01-26T14:41:04.000Z</published>
-    <updated>2017-03-09T08:13:10.943Z</updated>
+    <updated>2017-07-12T05:42:38.037Z</updated>
     
     <content type="html"><![CDATA[<h2 id="确认你的linux没有安装mcrypt库，如果已安装，跳过安装步骤"><a href="#确认你的linux没有安装mcrypt库，如果已安装，跳过安装步骤" class="headerlink" title="确认你的linux没有安装mcrypt库，如果已安装，跳过安装步骤"></a>确认你的linux没有安装mcrypt库，如果已安装，跳过安装步骤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@test-206 ~]# yum list installed|grep mcrypt</div><div class="line">libmcrypt.x86_64                          2.5.8-4.el5.centos           installed</div><div class="line">libmcrypt-devel.x86_64                    2.5.8-4.el5.centos           installed</div><div class="line">mcrypt.x86_64                             2.6.8-1.el5                  installed</div></pre></td></tr></table></figure>
 <p>以上显示已经安装过，若没有，则按以下两种方式安装</p>
@@ -525,7 +525,7 @@ sudo chmod +x /etc/init.d/nginx
     <link href="http://idc.wf/2016/01/23/root-google-now/"/>
     <id>http://idc.wf/2016/01/23/root-google-now/</id>
     <published>2016-01-23T06:18:57.000Z</published>
-    <updated>2017-03-09T08:13:10.962Z</updated>
+    <updated>2017-07-12T05:42:38.045Z</updated>
     
     <content type="html"><![CDATA[<p>使用 root 权限运行以下命令(重启后失效)</p>
 <pre><code>setprop gsm.sim.operator.alpha &quot;AT&amp;T&quot; &amp;&amp; 
@@ -555,10 +555,10 @@ setprop gsm.sim.operator.iso-count
   
   <entry>
     <title>HTTP_X_FORWARDED_PROTO</title>
-    <link href="http://idc.wf/2015/12/31/HTTP-X-FORWARDED-PROTO/"/>
-    <id>http://idc.wf/2015/12/31/HTTP-X-FORWARDED-PROTO/</id>
+    <link href="http://idc.wf/2015/12/30/HTTP-X-FORWARDED-PROTO/"/>
+    <id>http://idc.wf/2015/12/30/HTTP-X-FORWARDED-PROTO/</id>
     <published>2015-12-30T18:08:26.000Z</published>
-    <updated>2017-03-09T08:13:10.940Z</updated>
+    <updated>2017-07-12T05:42:38.037Z</updated>
     
     <content type="html"><![CDATA[<p>yii2 框架中根据 2 个值判断是不是 https ，如下：</p>
 <pre><code>isset($\_SERVER[&apos;HTTPS&apos;]) &amp;&amp; (strcasecmp($\_SERVER[&apos;HTTPS&apos;], &apos;on&apos;) === 0 || $\_SERVER[&apos;HTTPS&apos;] == 1) ||
@@ -588,10 +588,10 @@ isset($\_SERVER[&apos;HTTP_X_FORWARDED_PROTO&apos;]) &amp;&amp; strcasecmp($\_SE
   
   <entry>
     <title>mysql 导入导出数据</title>
-    <link href="http://idc.wf/2015/12/31/mysqldump/"/>
-    <id>http://idc.wf/2015/12/31/mysqldump/</id>
+    <link href="http://idc.wf/2015/12/30/mysqldump/"/>
+    <id>http://idc.wf/2015/12/30/mysqldump/</id>
     <published>2015-12-30T18:04:30.000Z</published>
-    <updated>2017-03-09T08:13:10.954Z</updated>
+    <updated>2017-07-12T05:42:38.041Z</updated>
     
     <content type="html"><![CDATA[<p>##　导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：</p>
 <h3 id="导出数据和表结构："><a href="#导出数据和表结构：" class="headerlink" title="导出数据和表结构："></a>导出数据和表结构：</h3><pre><code>mysqldump -u用户名 -p密码 数据库名 &gt; 数据库名.sql
@@ -629,7 +629,7 @@ isset($\_SERVER[&apos;HTTP_X_FORWARDED_PROTO&apos;]) &amp;&amp; strcasecmp($\_SE
     <link href="http://idc.wf/2015/08/03/mailgun/"/>
     <id>http://idc.wf/2015/08/03/mailgun/</id>
     <published>2015-08-03T07:30:00.000Z</published>
-    <updated>2017-03-09T08:13:10.952Z</updated>
+    <updated>2017-07-12T05:42:38.041Z</updated>
     
     <content type="html"><![CDATA[<p>目前手贱收了一个域名，想配置成支持泛域名解析的邮箱地址，即随便写名称都可以寄到的邮件。</p>
 <p>之前有用 QQ 企业邮箱做过一个泛解析的域名，规则是错误的邮箱地址都转发到一个固定地址，参见地址 <a href="http://service.exmail.qq.com/cgi-bin/help?subtype=1&amp;&amp;id=23&amp;&amp;no=1000815" target="_blank" rel="external">什么是错误地址转发功能？</a>。</p>
@@ -661,10 +661,10 @@ re 域名注册地址：[internetbs.net](https://internetbs.net/)
   
   <entry>
     <title>laravel 部署</title>
-    <link href="http://idc.wf/2015/01/30/laravel/"/>
-    <id>http://idc.wf/2015/01/30/laravel/</id>
+    <link href="http://idc.wf/2015/01/29/laravel/"/>
+    <id>http://idc.wf/2015/01/29/laravel/</id>
     <published>2015-01-29T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.951Z</updated>
+    <updated>2017-07-12T05:42:38.041Z</updated>
     
     <content type="html"><![CDATA[<p>看最近 laravel 好像蛮流行的，部署一个玩玩。</p>
 <h2 id="基础环境"><a href="#基础环境" class="headerlink" title="基础环境"></a>基础环境</h2><h3 id="composer"><a href="#composer" class="headerlink" title="composer"></a>composer</h3><pre><code>$ curl -sS https://getcomposer.org/installer | php
@@ -729,10 +729,10 @@ git push
   
   <entry>
     <title>Mac 常用应用列表</title>
-    <link href="http://idc.wf/2015/01/14/mac-apps/"/>
-    <id>http://idc.wf/2015/01/14/mac-apps/</id>
+    <link href="http://idc.wf/2015/01/13/mac-apps/"/>
+    <id>http://idc.wf/2015/01/13/mac-apps/</id>
     <published>2015-01-13T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.952Z</updated>
+    <updated>2017-07-12T05:42:38.041Z</updated>
     
     <content type="html"><![CDATA[<h3 id="系统类"><a href="#系统类" class="headerlink" title="系统类"></a>系统类</h3><h4 id="Moom"><a href="#Moom" class="headerlink" title="Moom"></a>Moom</h4><pre><code>非常实用的窗口位置调整工具，哈哈，终于不用羡慕 windos 下面的 win + 箭头 快捷键了。
 </code></pre><h4 id="CleanMyMac2"><a href="#CleanMyMac2" class="headerlink" title="CleanMyMac2"></a>CleanMyMac2</h4><pre><code>几乎算是必备的工具了，清理系统什么的很好用的。
@@ -782,10 +782,10 @@ git push
   
   <entry>
     <title>python 版本 shadowsocks</title>
-    <link href="http://idc.wf/2015/01/14/pip-ss/"/>
-    <id>http://idc.wf/2015/01/14/pip-ss/</id>
+    <link href="http://idc.wf/2015/01/13/pip-ss/"/>
+    <id>http://idc.wf/2015/01/13/pip-ss/</id>
     <published>2015-01-13T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.961Z</updated>
+    <updated>2017-07-12T05:42:38.045Z</updated>
     
     <content type="html"><![CDATA[<p>因为墙更高了， fqrouter 都用不了了，没办法，只能把之前的 ss 拿起来用了。<br>这次重新使用 python 版本的 ss。</p>
 <p>首先，安装</p>
@@ -829,10 +829,10 @@ apt-get install python-pi
   
   <entry>
     <title>P2P 微薄</title>
-    <link href="http://idc.wf/2014/07/28/twister/"/>
-    <id>http://idc.wf/2014/07/28/twister/</id>
+    <link href="http://idc.wf/2014/07/27/twister/"/>
+    <id>http://idc.wf/2014/07/27/twister/</id>
     <published>2014-07-27T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.969Z</updated>
+    <updated>2017-07-12T05:42:38.045Z</updated>
     
     <content type="html"><![CDATA[<p>twister 是</p>
 <pre><code>twister 本质上是一个不需要中心服务器的 twitter。
@@ -863,10 +863,10 @@ twister 不需要中心服务器，它使用基于比特币与 bt 下载的技�
   
   <entry>
     <title>Shadowsocks 新手指南</title>
-    <link href="http://idc.wf/2014/06/02/shadowsocks/"/>
-    <id>http://idc.wf/2014/06/02/shadowsocks/</id>
+    <link href="http://idc.wf/2014/06/01/shadowsocks/"/>
+    <id>http://idc.wf/2014/06/01/shadowsocks/</id>
     <published>2014-06-01T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.964Z</updated>
+    <updated>2017-07-12T05:42:38.045Z</updated>
     
     <content type="html"><![CDATA[<p>#Shadowsocks</p>
 <p>shadowsocks 簡稱 ss 是一套的代理協議，包含服務端應用和客戶端應用。使用 ss:// 格式的鏈接協議來標識服務器地址。</p>
@@ -919,10 +919,10 @@ listen = cow://aes-128-cfb:password@0.0.0.0:8388
   
   <entry>
     <title>Centos 常用命令备录</title>
-    <link href="http://idc.wf/2014/05/15/centos-commands/"/>
-    <id>http://idc.wf/2014/05/15/centos-commands/</id>
+    <link href="http://idc.wf/2014/05/14/centos-commands/"/>
+    <id>http://idc.wf/2014/05/14/centos-commands/</id>
     <published>2014-05-14T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.943Z</updated>
+    <updated>2017-07-12T05:42:38.037Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><p>安装包命令查找：</p>
@@ -975,10 +975,10 @@ listen = cow://aes-128-cfb:password@0.0.0.0:8388
   
   <entry>
     <title>ubuntu 安装命令行自动补全</title>
-    <link href="http://idc.wf/2014/05/15/ubuntu-bash-completion/"/>
-    <id>http://idc.wf/2014/05/15/ubuntu-bash-completion/</id>
+    <link href="http://idc.wf/2014/05/14/ubuntu-bash-completion/"/>
+    <id>http://idc.wf/2014/05/14/ubuntu-bash-completion/</id>
     <published>2014-05-14T16:00:00.000Z</published>
-    <updated>2017-03-09T08:13:10.971Z</updated>
+    <updated>2017-07-12T05:42:38.045Z</updated>
     
     <content type="html"><![CDATA[<h3 id="ubuntu-安装命令行自动补全"><a href="#ubuntu-安装命令行自动补全" class="headerlink" title="ubuntu 安装命令行自动补全"></a>ubuntu 安装命令行自动补全</h3><pre><code>~# apt-get install bash-completion
 ~# source /etc/bash_completion
