@@ -26,4 +26,5 @@ script:
 - git add --all .
 - MESSAGE=`date +\ %Y-%m-%d\ %H:%M:%S`
 - git commit -m "Site updated:$MESSAGE"
-- git push --force "https://${GH_TOKEN}@${GH_REF}" origin master
+# - git push --force "https://${GH_TOKEN}@${GH_REF}" origin master
+- git push origin master
