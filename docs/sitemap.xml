@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://idc.wf/2011/01/27/xml-cdata/</loc>
+    <loc>http://idc.wf/about/index.html</loc>
     
-    <lastmod>2017-07-12T05:42:38.049Z</lastmod>
+    <lastmod>2017-07-14T10:08:22.721Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://idc.wf/search/index.html</loc>
+    <loc>http://idc.wf/2011/01/27/xml-cdata/</loc>
     
     <lastmod>2017-07-12T05:42:38.049Z</lastmod>
     
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>http://idc.wf/about/index.html</loc>
+    <loc>http://idc.wf/search/index.html</loc>
     
     <lastmod>2017-07-12T05:42:38.049Z</lastmod>
     
