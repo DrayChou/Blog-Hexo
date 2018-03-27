@@ -8,6 +8,7 @@ before_install:
 
 install:
 - npm install
+- npm install hexo --save
 
 script:
 # 初始化 GIT
