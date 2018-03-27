@@ -5,7 +5,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://idc.wf/"/>
-  <updated>2017-07-10T09:53:09.418Z</updated>
+  <updated>2018-03-27T01:20:50.853Z</updated>
   <id>http://idc.wf/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pi 安装 ssr，cow 备注</title>
+    <link href="http://idc.wf/2017/07/10/pi-ssr,cow/"/>
+    <id>http://idc.wf/2017/07/10/pi-ssr,cow/</id>
+    <published>2017-07-10T09:44:00.000Z</published>
+    <updated>2018-03-27T01:20:50.853Z</updated>
+    
+    <content type="html"><![CDATA[<p>偶尔一次使用的东西，记一下！</p>
+<h2 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h2><h3 id="安装-python"><a href="#安装-python" class="headerlink" title="安装 python"></a>安装 <strong>python</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-pip python3-pip git htop</div></pre></td></tr></table></figure>
+<h3 id="安装-ssr"><a href="#安装-ssr" class="headerlink" title="安装 ssr"></a>安装 <strong>ssr</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /srv/approot</div><div class="line">git clone https://github.com/ToyoDAdoubi/shadowsocksr shadowsocksr-doubi</div></pre></td></tr></table></figure>
+<h3 id="配置-ssr"><a href="#配置-ssr" class="headerlink" title="配置 ssr"></a>配置 <strong>ssr</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">nano /srv/approot/ssr-config/jp1.json</div><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_ipv6&quot;: &quot;::&quot;,</div><div class="line">    &quot;server_port&quot;: 8388,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080,</div><div class="line"></div><div class="line">    &quot;password&quot;: &quot;m&quot;,</div><div class="line">    &quot;method&quot;: &quot;aes-128-ctr&quot;,</div><div class="line">    &quot;protocol&quot;: &quot;auth_aes128_md5&quot;,</div><div class="line">    &quot;protocol_param&quot;: &quot;&quot;,</div><div class="line">    &quot;obfs&quot;: &quot;tls1.2_ticket_auth_compatible&quot;,</div><div class="line">    &quot;obfs_param&quot;: &quot;&quot;,</div><div class="line">    &quot;speed_limit_per_con&quot;: 0,</div><div class="line">    &quot;speed_limit_per_user&quot;: 0,</div><div class="line"></div><div class="line">    &quot;additional_ports&quot; : &#123;&#125;, // only works under multi-user mode</div><div class="line">    &quot;timeout&quot;: 120,</div><div class="line">    &quot;udp_timeout&quot;: 60,</div><div class="line">    &quot;dns_ipv6&quot;: false,</div><div class="line">    &quot;connect_verbose_info&quot;: 0,</div><div class="line">    &quot;redirect&quot;: &quot;&quot;,</div><div class="line">    &quot;fast_open&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="启动-ssr-服务"><a href="#启动-ssr-服务" class="headerlink" title="启动 ssr 服务"></a>启动 <strong>ssr</strong> 服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo python3 /srv/approot/shadowsocksr-doubi/shadowsocks/local.py \</div><div class="line">    -c /srv/approot/ssr-config/jp1.json \</div><div class="line">    --pid-file /var/run/shadowsocks-rix.pid \</div><div class="line">    -d start</div></pre></td></tr></table></figure>
+<p>这样的话，ssr 服务就起来了，需要启动多个的话，修改 Pid file 的路径就可以了。</p>
+<h2 id="cow"><a href="#cow" class="headerlink" title="cow"></a>cow</h2><h3 id="安装-golang"><a href="#安装-golang" class="headerlink" title="安装 golang"></a>安装 <strong>golang</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mkdir /srv/approot</div><div class="line">cd /srv/approot</div><div class="line">wget https://dl.google.com/go/go1.10.linux-armv6l.tar.gz</div><div class="line">sudo -xzf go1.10.linux-armv6l.tar.gz</div><div class="line">cd /usr/local</div><div class="line">ln -s /srv/approot/go</div><div class="line">cd /usr/local/bin</div><div class="line">ln -s /srv/approot/go/bin/go</div><div class="line">ln -s /srv/approot/go/bin/godoc</div><div class="line">ln -s /srv/approot/go/bin/gofmt</div></pre></td></tr></table></figure>
+<h3 id="安装-cow"><a href="#安装-cow" class="headerlink" title="安装 cow"></a>安装 <strong>cow</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get github.com/cyfdecyf/cow</div></pre></td></tr></table></figure>
+<h3 id="配置-cow"><a href="#配置-cow" class="headerlink" title="配置 cow"></a>配置 <strong>cow</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nano ~/.cow/rc</div><div class="line"></div><div class="line">listen = http://127.0.0.1:7777</div><div class="line"></div><div class="line"># SOCKS5 二级代理</div><div class="line">proxy = socks5://127.0.0.1:1080</div><div class="line">proxy = socks5://127.0.0.1:1081</div></pre></td></tr></table></figure>
+<h3 id="配置-cow-启动脚本"><a href="#配置-cow-启动脚本" class="headerlink" title="配置 cow 启动脚本"></a>配置 <strong>cow</strong> 启动脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo wget https://github.com/cyfdecyf/cow/blob/master/doc/init.d/cow /etc/init.d/cow</div><div class="line">sudo /etc/init.d/cow</div><div class="line"></div><div class="line">修改</div><div class="line">USER=pi</div><div class="line">GROUP=root</div></pre></td></tr></table></figure>
+<h2 id="参考页面"><a href="#参考页面" class="headerlink" title="参考页面"></a>参考页面</h2><p><a href="https://doub.io/ss-jc45/" target="_blank" rel="external">https://doub.io/ss-jc45/</a><br><a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Python-client-setup-(Mult-language" target="_blank" rel="external">https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Python-client-setup-(Mult-language</a>)<br><a href="https://golang.org/dl/" target="_blank" rel="external">https://golang.org/dl/</a><br><a href="https://github.com/cyfdecyf/cow" target="_blank" rel="external">https://github.com/cyfdecyf/cow</a><br><a href="https://www.wandianshenme.com/play/use-golang-build-iot-application-on-raspberry-pi/" target="_blank" rel="external">https://www.wandianshenme.com/play/use-golang-build-iot-application-on-raspberry-pi/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;偶尔一次使用的东西，记一下！&lt;/p&gt;
+&lt;h2 id=&quot;ssr&quot;&gt;&lt;a href=&quot;#ssr&quot; class=&quot;headerlink&quot; title=&quot;ssr&quot;&gt;&lt;/a&gt;ssr&lt;/h2&gt;&lt;h3 id=&quot;安装-python&quot;&gt;&lt;a href=&quot;#安装-python&quot; class=&quot;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://idc.wf/category/linux/"/>
+    
+    
+      <category term="pi" scheme="http://idc.wf/tags/pi/"/>
+    
+      <category term="cow" scheme="http://idc.wf/tags/cow/"/>
+    
+      <category term="ssr" scheme="http://idc.wf/tags/ssr/"/>
+    
+      <category term="ss" scheme="http://idc.wf/tags/ss/"/>
+    
+  </entry>
   
   <entry>
     <title>yii2 用 asset 压缩js,css文件</title>
@@ -46,6 +86,46 @@
       <category term="yii2" scheme="http://idc.wf/tags/yii2/"/>
     
       <category term="asset" scheme="http://idc.wf/tags/asset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pi 安装 ssr，cow 备注</title>
+    <link href="http://idc.wf/2017/07/10/pi-ssr&amp;cow/"/>
+    <id>http://idc.wf/2017/07/10/pi-ssr&amp;cow/</id>
+    <published>2017-07-10T09:44:00.000Z</published>
+    <updated>2018-03-27T01:20:50.853Z</updated>
+    
+    <content type="html"><![CDATA[<p>偶尔一次使用的东西，记一下！</p>
+<h2 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h2><h3 id="安装-python"><a href="#安装-python" class="headerlink" title="安装 python"></a>安装 <strong>python</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-pip python3-pip git htop</div></pre></td></tr></table></figure>
+<h3 id="安装-ssr"><a href="#安装-ssr" class="headerlink" title="安装 ssr"></a>安装 <strong>ssr</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /srv/approot</div><div class="line">git clone https://github.com/ToyoDAdoubi/shadowsocksr shadowsocksr-doubi</div></pre></td></tr></table></figure>
+<h3 id="配置-ssr"><a href="#配置-ssr" class="headerlink" title="配置 ssr"></a>配置 <strong>ssr</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">nano /srv/approot/ssr-config/jp1.json</div><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_ipv6&quot;: &quot;::&quot;,</div><div class="line">    &quot;server_port&quot;: 8388,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080,</div><div class="line"></div><div class="line">    &quot;password&quot;: &quot;m&quot;,</div><div class="line">    &quot;method&quot;: &quot;aes-128-ctr&quot;,</div><div class="line">    &quot;protocol&quot;: &quot;auth_aes128_md5&quot;,</div><div class="line">    &quot;protocol_param&quot;: &quot;&quot;,</div><div class="line">    &quot;obfs&quot;: &quot;tls1.2_ticket_auth_compatible&quot;,</div><div class="line">    &quot;obfs_param&quot;: &quot;&quot;,</div><div class="line">    &quot;speed_limit_per_con&quot;: 0,</div><div class="line">    &quot;speed_limit_per_user&quot;: 0,</div><div class="line"></div><div class="line">    &quot;additional_ports&quot; : &#123;&#125;, // only works under multi-user mode</div><div class="line">    &quot;timeout&quot;: 120,</div><div class="line">    &quot;udp_timeout&quot;: 60,</div><div class="line">    &quot;dns_ipv6&quot;: false,</div><div class="line">    &quot;connect_verbose_info&quot;: 0,</div><div class="line">    &quot;redirect&quot;: &quot;&quot;,</div><div class="line">    &quot;fast_open&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="启动-ssr-服务"><a href="#启动-ssr-服务" class="headerlink" title="启动 ssr 服务"></a>启动 <strong>ssr</strong> 服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo python3 /srv/approot/shadowsocksr-doubi/shadowsocks/local.py \</div><div class="line">    -c /srv/approot/ssr-config/jp1.json \</div><div class="line">    --pid-file /var/run/shadowsocks-rix.pid \</div><div class="line">    -d start</div></pre></td></tr></table></figure>
+<p>这样的话，ssr 服务就起来了，需要启动多个的话，修改 Pid file 的路径就可以了。</p>
+<h2 id="cow"><a href="#cow" class="headerlink" title="cow"></a>cow</h2><h3 id="安装-golang"><a href="#安装-golang" class="headerlink" title="安装 golang"></a>安装 <strong>golang</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mkdir /srv/approot</div><div class="line">cd /srv/approot</div><div class="line">wget https://dl.google.com/go/go1.10.linux-armv6l.tar.gz</div><div class="line">sudo -xzf go1.10.linux-armv6l.tar.gz</div><div class="line">cd /usr/local</div><div class="line">ln -s /srv/approot/go</div><div class="line">cd /usr/local/bin</div><div class="line">ln -s /srv/approot/go/bin/go</div><div class="line">ln -s /srv/approot/go/bin/godoc</div><div class="line">ln -s /srv/approot/go/bin/gofmt</div></pre></td></tr></table></figure>
+<h3 id="安装-cow"><a href="#安装-cow" class="headerlink" title="安装 cow"></a>安装 <strong>cow</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get github.com/cyfdecyf/cow</div></pre></td></tr></table></figure>
+<h3 id="配置-cow"><a href="#配置-cow" class="headerlink" title="配置 cow"></a>配置 <strong>cow</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nano ~/.cow/rc</div><div class="line"></div><div class="line">listen = http://127.0.0.1:7777</div><div class="line"></div><div class="line"># SOCKS5 二级代理</div><div class="line">proxy = socks5://127.0.0.1:1080</div><div class="line">proxy = socks5://127.0.0.1:1081</div></pre></td></tr></table></figure>
+<h3 id="配置-cow-启动脚本"><a href="#配置-cow-启动脚本" class="headerlink" title="配置 cow 启动脚本"></a>配置 <strong>cow</strong> 启动脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo wget https://github.com/cyfdecyf/cow/blob/master/doc/init.d/cow /etc/init.d/cow</div><div class="line">sudo /etc/init.d/cow</div><div class="line"></div><div class="line">修改</div><div class="line">USER=pi</div><div class="line">GROUP=root</div></pre></td></tr></table></figure>
+<h2 id="参考页面"><a href="#参考页面" class="headerlink" title="参考页面"></a>参考页面</h2><p><a href="https://doub.io/ss-jc45/" target="_blank" rel="external">https://doub.io/ss-jc45/</a><br><a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Python-client-setup-(Mult-language" target="_blank" rel="external">https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Python-client-setup-(Mult-language</a>)<br><a href="https://golang.org/dl/" target="_blank" rel="external">https://golang.org/dl/</a><br><a href="https://github.com/cyfdecyf/cow" target="_blank" rel="external">https://github.com/cyfdecyf/cow</a><br><a href="https://www.wandianshenme.com/play/use-golang-build-iot-application-on-raspberry-pi/" target="_blank" rel="external">https://www.wandianshenme.com/play/use-golang-build-iot-application-on-raspberry-pi/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;偶尔一次使用的东西，记一下！&lt;/p&gt;
+&lt;h2 id=&quot;ssr&quot;&gt;&lt;a href=&quot;#ssr&quot; class=&quot;headerlink&quot; title=&quot;ssr&quot;&gt;&lt;/a&gt;ssr&lt;/h2&gt;&lt;h3 id=&quot;安装-python&quot;&gt;&lt;a href=&quot;#安装-python&quot; class=&quot;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://idc.wf/category/linux/"/>
+    
+    
+      <category term="pi" scheme="http://idc.wf/tags/pi/"/>
+    
+      <category term="cow" scheme="http://idc.wf/tags/cow/"/>
+    
+      <category term="ssr" scheme="http://idc.wf/tags/ssr/"/>
+    
+      <category term="ss" scheme="http://idc.wf/tags/ss/"/>
     
   </entry>
   
@@ -914,96 +994,6 @@ listen = cow://aes-128-cfb:password@0.0.0.0:8388
       <category term="Shadowsocks" scheme="http://idc.wf/tags/Shadowsocks/"/>
     
       <category term="cow" scheme="http://idc.wf/tags/cow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos 常用命令备录</title>
-    <link href="http://idc.wf/2014/05/14/centos-commands/"/>
-    <id>http://idc.wf/2014/05/14/centos-commands/</id>
-    <published>2014-05-14T16:00:00.000Z</published>
-    <updated>2017-07-12T05:42:38.037Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><p>安装包命令查找：</p>
-<p>  yum whatprovides */lspci</p>
-</li>
-<li><p>查看主板型号：</p>
-<p>  dmidecode |grep -A16 “System Information$”</p>
-</li>
-<li><p>内存槽及内存条：</p>
-<p>  dmidecode |grep -A16 “Memory Device$”</p>
-</li>
-<li><p>硬盘：</p>
-<p>  fdisk -l<br>  smartctl -a /dev/sda<br>  HP SmartArray (cciss) hardware RAID controllers：<br>  smartctl -d cciss,0 -a /dev/cciss/c0d0</p>
-</li>
-<li><p>网卡：</p>
-<p>  mii-tool</p>
-</li>
-<li><p>scsi/raid卡：</p>
-<p>  lspci</p>
-</li>
-<li><p>centos相关命令安装：</p>
-<p>  yum -y install smartmontools<br>  yum install pciutils -y</p>
-</li>
-<li><p>centos 安装 htop</p>
-<p>  rpm 包下载地址: <a href="http://packages.sw.be/htop/" target="_blank" rel="external">http://packages.sw.be/htop/</a><br>  安装命令： rpm –ivh htop-0.8.3-1.el4.rf.i386.rpm</p>
-</li>
-<li><p>end</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;安装包命令查找：&lt;/p&gt;
-&lt;p&gt;  yum whatprovides */lspci&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看主板型号：&lt;/p&gt;
-&lt;p&gt;  dmidecode |grep -A16 “System Information$”&lt;/p&gt;
-&lt;/li
-    
-    </summary>
-    
-      <category term="linux" scheme="http://idc.wf/category/linux/"/>
-    
-    
-      <category term="centos" scheme="http://idc.wf/tags/centos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ubuntu 安装命令行自动补全</title>
-    <link href="http://idc.wf/2014/05/14/ubuntu-bash-completion/"/>
-    <id>http://idc.wf/2014/05/14/ubuntu-bash-completion/</id>
-    <published>2014-05-14T16:00:00.000Z</published>
-    <updated>2017-07-12T05:42:38.045Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ubuntu-安装命令行自动补全"><a href="#ubuntu-安装命令行自动补全" class="headerlink" title="ubuntu 安装命令行自动补全"></a>ubuntu 安装命令行自动补全</h3><pre><code>~# apt-get install bash-completion
-~# source /etc/bash_completion
-</code></pre><p>编辑/etc/bash.bashrc，在最后加入如下代码</p>
-<pre><code>[plain]
-if [ -f /etc/bash_completion ]; then  
-    /etc/bash_completion  
-fi  
-</code></pre><p>重新登录</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;ubuntu-安装命令行自动补全&quot;&gt;&lt;a href=&quot;#ubuntu-安装命令行自动补全&quot; class=&quot;headerlink&quot; title=&quot;ubuntu 安装命令行自动补全&quot;&gt;&lt;/a&gt;ubuntu 安装命令行自动补全&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;~# apt
-    
-    </summary>
-    
-      <category term="linux" scheme="http://idc.wf/category/linux/"/>
-    
-    
-      <category term="linux" scheme="http://idc.wf/tags/linux/"/>
-    
-      <category term="bash" scheme="http://idc.wf/tags/bash/"/>
-    
-      <category term="completion" scheme="http://idc.wf/tags/completion/"/>
     
   </entry>
   

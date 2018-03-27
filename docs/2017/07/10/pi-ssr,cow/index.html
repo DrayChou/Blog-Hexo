@@ -1,0 +1,804 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="pi,cow,ssr,ss," />
+
+
+
+
+
+  <link rel="alternate" href="/rss.xml" title="Dray's Home" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="偶尔一次使用的东西，记一下！ ssr安装 python1sudo apt-get install python-pip python3-pip git htop 安装 ssr12mkdir /srv/approotgit clone https://github.com/ToyoDAdoubi/shadowsocksr shadowsocksr-doubi 配置 ssr12345678910111">
+<meta name="keywords" content="pi,cow,ssr,ss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pi 安装 ssr，cow 备注">
+<meta property="og:url" content="http://idc.wf/2017/07/10/pi-ssr,cow/index.html">
+<meta property="og:site_name" content="Dray&#39;s Home">
+<meta property="og:description" content="偶尔一次使用的东西，记一下！ ssr安装 python1sudo apt-get install python-pip python3-pip git htop 安装 ssr12mkdir /srv/approotgit clone https://github.com/ToyoDAdoubi/shadowsocksr shadowsocksr-doubi 配置 ssr12345678910111">
+<meta property="og:updated_time" content="2018-03-27T01:20:50.853Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pi 安装 ssr，cow 备注">
+<meta name="twitter:description" content="偶尔一次使用的东西，记一下！ ssr安装 python1sudo apt-get install python-pip python3-pip git htop 安装 ssr12mkdir /srv/approotgit clone https://github.com/ToyoDAdoubi/shadowsocksr shadowsocksr-doubi 配置 ssr12345678910111">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"方片子的博客":"http://www.fangshanzi.com/","Locyoo Manor|部落格":"http://locyoo.com/blog/","方片快报":"http://fpnews.cn/"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://idc.wf/2017/07/10/pi-ssr,cow/"/>
+
+
+
+
+
+  <title>pi 安装 ssr，cow 备注 | Dray's Home</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dray's Home</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">疯狂痴呆傻，美甘苦涩禅。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2017/07/10/pi-ssr,cow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">pi 安装 ssr，cow 备注</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T17:44:00+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/10/pi-ssr,cow/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/10/pi-ssr,cow/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>偶尔一次使用的东西，记一下！</p>
+<h2 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h2><h3 id="安装-python"><a href="#安装-python" class="headerlink" title="安装 python"></a>安装 <strong>python</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-pip python3-pip git htop</div></pre></td></tr></table></figure>
+<h3 id="安装-ssr"><a href="#安装-ssr" class="headerlink" title="安装 ssr"></a>安装 <strong>ssr</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /srv/approot</div><div class="line">git clone https://github.com/ToyoDAdoubi/shadowsocksr shadowsocksr-doubi</div></pre></td></tr></table></figure>
+<h3 id="配置-ssr"><a href="#配置-ssr" class="headerlink" title="配置 ssr"></a>配置 <strong>ssr</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">nano /srv/approot/ssr-config/jp1.json</div><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_ipv6&quot;: &quot;::&quot;,</div><div class="line">    &quot;server_port&quot;: 8388,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080,</div><div class="line"></div><div class="line">    &quot;password&quot;: &quot;m&quot;,</div><div class="line">    &quot;method&quot;: &quot;aes-128-ctr&quot;,</div><div class="line">    &quot;protocol&quot;: &quot;auth_aes128_md5&quot;,</div><div class="line">    &quot;protocol_param&quot;: &quot;&quot;,</div><div class="line">    &quot;obfs&quot;: &quot;tls1.2_ticket_auth_compatible&quot;,</div><div class="line">    &quot;obfs_param&quot;: &quot;&quot;,</div><div class="line">    &quot;speed_limit_per_con&quot;: 0,</div><div class="line">    &quot;speed_limit_per_user&quot;: 0,</div><div class="line"></div><div class="line">    &quot;additional_ports&quot; : &#123;&#125;, // only works under multi-user mode</div><div class="line">    &quot;timeout&quot;: 120,</div><div class="line">    &quot;udp_timeout&quot;: 60,</div><div class="line">    &quot;dns_ipv6&quot;: false,</div><div class="line">    &quot;connect_verbose_info&quot;: 0,</div><div class="line">    &quot;redirect&quot;: &quot;&quot;,</div><div class="line">    &quot;fast_open&quot;: true</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="启动-ssr-服务"><a href="#启动-ssr-服务" class="headerlink" title="启动 ssr 服务"></a>启动 <strong>ssr</strong> 服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo python3 /srv/approot/shadowsocksr-doubi/shadowsocks/local.py \</div><div class="line">    -c /srv/approot/ssr-config/jp1.json \</div><div class="line">    --pid-file /var/run/shadowsocks-rix.pid \</div><div class="line">    -d start</div></pre></td></tr></table></figure>
+<p>这样的话，ssr 服务就起来了，需要启动多个的话，修改 Pid file 的路径就可以了。</p>
+<h2 id="cow"><a href="#cow" class="headerlink" title="cow"></a>cow</h2><h3 id="安装-golang"><a href="#安装-golang" class="headerlink" title="安装 golang"></a>安装 <strong>golang</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mkdir /srv/approot</div><div class="line">cd /srv/approot</div><div class="line">wget https://dl.google.com/go/go1.10.linux-armv6l.tar.gz</div><div class="line">sudo -xzf go1.10.linux-armv6l.tar.gz</div><div class="line">cd /usr/local</div><div class="line">ln -s /srv/approot/go</div><div class="line">cd /usr/local/bin</div><div class="line">ln -s /srv/approot/go/bin/go</div><div class="line">ln -s /srv/approot/go/bin/godoc</div><div class="line">ln -s /srv/approot/go/bin/gofmt</div></pre></td></tr></table></figure>
+<h3 id="安装-cow"><a href="#安装-cow" class="headerlink" title="安装 cow"></a>安装 <strong>cow</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get github.com/cyfdecyf/cow</div></pre></td></tr></table></figure>
+<h3 id="配置-cow"><a href="#配置-cow" class="headerlink" title="配置 cow"></a>配置 <strong>cow</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nano ~/.cow/rc</div><div class="line"></div><div class="line">listen = http://127.0.0.1:7777</div><div class="line"></div><div class="line"># SOCKS5 二级代理</div><div class="line">proxy = socks5://127.0.0.1:1080</div><div class="line">proxy = socks5://127.0.0.1:1081</div></pre></td></tr></table></figure>
+<h3 id="配置-cow-启动脚本"><a href="#配置-cow-启动脚本" class="headerlink" title="配置 cow 启动脚本"></a>配置 <strong>cow</strong> 启动脚本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo wget https://github.com/cyfdecyf/cow/blob/master/doc/init.d/cow /etc/init.d/cow</div><div class="line">sudo /etc/init.d/cow</div><div class="line"></div><div class="line">修改</div><div class="line">USER=pi</div><div class="line">GROUP=root</div></pre></td></tr></table></figure>
+<h2 id="参考页面"><a href="#参考页面" class="headerlink" title="参考页面"></a>参考页面</h2><p><a href="https://doub.io/ss-jc45/" target="_blank" rel="external">https://doub.io/ss-jc45/</a><br><a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Python-client-setup-(Mult-language" target="_blank" rel="external">https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Python-client-setup-(Mult-language</a>)<br><a href="https://golang.org/dl/" target="_blank" rel="external">https://golang.org/dl/</a><br><a href="https://github.com/cyfdecyf/cow" target="_blank" rel="external">https://github.com/cyfdecyf/cow</a><br><a href="https://www.wandianshenme.com/play/use-golang-build-iot-application-on-raspberry-pi/" target="_blank" rel="external">https://www.wandianshenme.com/play/use-golang-build-iot-application-on-raspberry-pi/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pi/" rel="tag"># pi</a>
+          
+            <a href="/tags/cow/" rel="tag"># cow</a>
+          
+            <a href="/tags/ssr/" rel="tag"># ssr</a>
+          
+            <a href="/tags/ss/" rel="tag"># ss</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/10/yii-asset/" rel="next" title="yii2 用 asset 压缩js,css文件">
+                <i class="fa fa-chevron-left"></i> yii2 用 asset 压缩js,css文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200"
+               alt="Dray" />
+          <p class="site-author-name" itemprop="name">Dray</p>
+           
+              <p class="site-description motion-element" itemprop="description">Dray's Blog</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">118</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssr"><span class="nav-number">1.</span> <span class="nav-text">ssr</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-python"><span class="nav-number">1.1.</span> <span class="nav-text">安装 python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-ssr"><span class="nav-number">1.2.</span> <span class="nav-text">安装 ssr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-ssr"><span class="nav-number">1.3.</span> <span class="nav-text">配置 ssr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-ssr-服务"><span class="nav-number">1.4.</span> <span class="nav-text">启动 ssr 服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cow"><span class="nav-number">2.</span> <span class="nav-text">cow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-golang"><span class="nav-number">2.1.</span> <span class="nav-text">安装 golang</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-cow"><span class="nav-number">2.2.</span> <span class="nav-text">安装 cow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-cow"><span class="nav-number">2.3.</span> <span class="nav-text">配置 cow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-cow-启动脚本"><span class="nav-number">2.4.</span> <span class="nav-text">配置 cow 启动脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考页面"><span class="nav-number">3.</span> <span class="nav-text">参考页面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dray</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://weshome.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://idc.wf/2017/07/10/pi-ssr,cow/';
+          this.page.identifier = '2017/07/10/pi-ssr,cow/';
+          this.page.title = 'pi 安装 ssr，cow 备注';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://weshome.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
