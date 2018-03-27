@@ -7,28 +7,9 @@ before_install:
 - export TZ=Asia/ShangHai
 
 install:
-- npm install -g hexo-cli
-- npm install -g hexo-deployer-git
-- npm install -g hexo-generator-archive
-- npm install -g hexo-generator-category
-- npm install -g hexo-generator-feed
-- npm install -g hexo-generator-index
-- npm install -g hexo-generator-sitemap
-- npm install -g hexo-generator-tag
-- npm install -g hexo-renderer-ejs
-- npm install -g hexo-renderer-jade
-- npm install -g hexo-renderer-marked
-- npm install -g hexo-renderer-sass
-- npm install -g hexo-renderer-stylus
-- npm install -g hexo-search
-- npm install -g hexo-server
+- npm install --save
 
 script:
-# 检查环境
-- hexo version
-- which hexo 
-- /home/travis/.nvm/versions/node/v8.10.0/bin/hexo version
-
 # 初始化 GIT
 - git config --global user.name "$GIT_NAME"
 - git config --global user.email "$GIT_EMAIL"
@@ -39,7 +20,7 @@ script:
 - git pull origin master
 
 # 生成
-- /home/travis/.nvm/versions/node/v8.10.0/bin/hexo generate
+- hexo generate
 
 # 把 docs 发布出去
 - git add --all .
