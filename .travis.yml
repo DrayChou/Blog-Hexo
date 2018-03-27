@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-- '>5.1'
+- '8.10'
 
 before_install:
 - export TZ=Asia/ShangHai
