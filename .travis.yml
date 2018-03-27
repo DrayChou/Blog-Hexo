@@ -1,14 +1,14 @@
 language: node_js
 
 node_js:
-- '5.1'
+- '>5.1'
 
 before_install:
 - export TZ=Asia/ShangHai
 
 install:
 - npm install
-- npm install hexo --save
+- npm install -g hexo-cli
 
 script:
 # 初始化 GIT
