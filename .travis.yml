@@ -26,8 +26,8 @@ install:
 script:
 # 检查环境
 - hexo version
-- where hexo
 - which hexo 
+- /home/travis/.nvm/versions/node/v8.10.0/bin/hexo version
 
 # 初始化 GIT
 - git config --global user.name "$GIT_NAME"
@@ -39,7 +39,7 @@ script:
 - git pull origin master
 
 # 生成
-- hexo generate
+- /home/travis/.nvm/versions/node/v8.10.0/bin/hexo generate
 
 # 把 docs 发布出去
 - git add --all .
