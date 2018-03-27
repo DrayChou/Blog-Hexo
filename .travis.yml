@@ -7,7 +7,6 @@ before_install:
 - export TZ=Asia/ShangHai
 
 install:
-- npm install -g hexo
 - npm install -g hexo-cli
 - npm install -g hexo-deployer-git
 - npm install -g hexo-generator-archive
@@ -25,6 +24,11 @@ install:
 - npm install -g hexo-server
 
 script:
+# 检查环境
+- hexo version
+- where hexo
+- which hexo 
+
 # 初始化 GIT
 - git config --global user.name "$GIT_NAME"
 - git config --global user.email "$GIT_EMAIL"
