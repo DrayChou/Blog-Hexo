@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Dray&#39;s Home">
 <meta property="og:description" content="使用 wkhtmltopdf  安装  下载地址：https://wkhtmltopdf.org/downloads.html Linux 环境下， 0.12.4 版本有问题，需要使用 0.12.3 版本。 不要使用 apt install 的方式安装，安装的为 0.12.4 版本。   示例代码  python 12345import pdfkitpdfkit.from_url(&amp;apos;h">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-12T05:42:38.041Z">
+<meta property="og:updated_time" content="2018-03-28T07:25:31.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html 转为 pdf">
 <meta name="twitter:description" content="使用 wkhtmltopdf  安装  下载地址：https://wkhtmltopdf.org/downloads.html Linux 环境下， 0.12.4 版本有问题，需要使用 0.12.3 版本。 不要使用 apt install 的方式安装，安装的为 0.12.4 版本。   示例代码  python 12345import pdfkitpdfkit.from_url(&amp;apos;h">
@@ -391,7 +391,7 @@
 <ol>
 <li><p>安装</p>
 <ol>
-<li>下载地址：<a href="https://wkhtmltopdf.org/downloads.html" target="_blank" rel="external">https://wkhtmltopdf.org/downloads.html</a></li>
+<li>下载地址：<a href="https://wkhtmltopdf.org/downloads.html" target="_blank" rel="noopener">https://wkhtmltopdf.org/downloads.html</a></li>
 <li>Linux 环境下， 0.12.4 版本有问题，需要使用 0.12.3 版本。</li>
 <li>不要使用 apt install 的方式安装，安装的为 0.12.4 版本。</li>
 </ol>
@@ -399,10 +399,10 @@
 <li><p>示例代码</p>
 <ol>
 <li><p>python</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import pdfkit</div><div class="line"></div><div class="line">pdfkit.from_url(&apos;https://wkhtmltopdf.org/docs.html&apos;, &apos;out.pdf&apos;)</div><div class="line"># pdfkit.from_file(&apos;test.html&apos;, &apos;out.pdf&apos;)</div><div class="line"># pdfkit.from_string(&apos;Hello!&apos;, &apos;out.pdf&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import pdfkit</span><br><span class="line"></span><br><span class="line">pdfkit.from_url(&apos;https://wkhtmltopdf.org/docs.html&apos;, &apos;out.pdf&apos;)</span><br><span class="line"># pdfkit.from_file(&apos;test.html&apos;, &apos;out.pdf&apos;)</span><br><span class="line"># pdfkit.from_string(&apos;Hello!&apos;, &apos;out.pdf&apos;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>php</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">include &apos;./vendor/autoload.php&apos;;</div><div class="line"></div><div class="line">use mikehaertl\wkhtmlto\Pdf;</div><div class="line"></div><div class="line">if (empty($_GET[&apos;url&apos;])) &#123;</div><div class="line">    die();</div><div class="line">&#125;</div><div class="line"></div><div class="line">$pdf = new Pdf($_GET[&apos;url&apos;]);</div><div class="line">$pdf-&gt;send();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">include &apos;./vendor/autoload.php&apos;;</span><br><span class="line"></span><br><span class="line">use mikehaertl\wkhtmlto\Pdf;</span><br><span class="line"></span><br><span class="line">if (empty($_GET[&apos;url&apos;])) &#123;</span><br><span class="line">    die();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$pdf = new Pdf($_GET[&apos;url&apos;]);</span><br><span class="line">$pdf-&gt;send();</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -533,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

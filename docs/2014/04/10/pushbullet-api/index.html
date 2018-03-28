@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Dray&#39;s Home">
 <meta property="og:description" content="坑我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。但是 twidere 目前不支持推送，要实现推送必须有自己的服务器，自己的 google 注册应用，略麻烦了点，于是想到了 PushBullet ,如果她有 API 多好，查了下，果然有，然后一个“坑”出现了。 PushBulletPushBullet API 的官方介绍地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-12T05:42:38.045Z">
+<meta property="og:updated_time" content="2018-03-28T07:25:31.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于通过 PushBullet API 推送信息的设想">
 <meta name="twitter:description" content="坑我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。但是 twidere 目前不支持推送，要实现推送必须有自己的服务器，自己的 google 注册应用，略麻烦了点，于是想到了 PushBullet ,如果她有 API 多好，查了下，果然有，然后一个“坑”出现了。 PushBulletPushBullet API 的官方介绍地址">
@@ -387,16 +387,16 @@
 
       
         <h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>我不喜欢 twitter 官方客户端 ，感觉官方客户端里 Timeline 乱乱的，平常都是使用 twidere 来用的。<br>但是 twidere 目前不支持推送，要实现推送必须有自己的服务器，自己的 google 注册应用，略麻烦了点，于是想到了 PushBullet ,如果她有 API 多好，查了下，果然有，然后一个“坑”出现了。</p>
-<h3 id="PushBullet"><a href="#PushBullet" class="headerlink" title="PushBullet"></a>PushBullet</h3><p>PushBullet API 的官方介绍地址在这里 <a href="https://www.pushbullet.com/api" target="_blank" rel="external">戳我</a> ,她的 API 太简单了，简直是我见过的最简单的 API 了。通篇上下只有2个接口，简单看下文档就会了，现说下注意事项。</p>
+<h3 id="PushBullet"><a href="#PushBullet" class="headerlink" title="PushBullet"></a>PushBullet</h3><p>PushBullet API 的官方介绍地址在这里 <a href="https://www.pushbullet.com/api" target="_blank" rel="noopener">戳我</a> ,她的 API 太简单了，简直是我见过的最简单的 API 了。通篇上下只有2个接口，简单看下文档就会了，现说下注意事项。</p>
 <h4 id="api-key"><a href="#api-key" class="headerlink" title="api key"></a>api key</h4><ol>
-<li>这个每个注册帐号都有一个，不区分开发账户，也没有开发账户，查看地址在：<a href="https://www.pushbullet.com/account" target="_blank" rel="external">登录后查看</a></li>
+<li>这个每个注册帐号都有一个，不区分开发账户，也没有开发账户，查看地址在：<a href="https://www.pushbullet.com/account" target="_blank" rel="noopener">登录后查看</a></li>
 <li>查询的时候需要调用 http 默认的 BasicAuth 认证方式，用户名就是 api key ，密码为空。</li>
 </ol>
 <h4 id="然后"><a href="#然后" class="headerlink" title="然后"></a>然后</h4><p>然后你就可以不停的推送了，如果要推送给别人，也需要先得到对方的 api key ，至于推送给好友， 可以通过 get 的方式得到对方的 ID。</p>
 <h3 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h3><ol>
-<li><a href="https://www.pushbullet.com/api" target="_blank" rel="external">https://www.pushbullet.com/api</a></li>
-<li><a href="http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang" target="_blank" rel="external">http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang</a></li>
-<li><a href="http://golang.org/pkg/net/http/#Request.SetBasicAuth" target="_blank" rel="external">http://golang.org/pkg/net/http/#Request.SetBasicAuth</a></li>
+<li><a href="https://www.pushbullet.com/api" target="_blank" rel="noopener">https://www.pushbullet.com/api</a></li>
+<li><a href="http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang" target="_blank" rel="noopener">http://stackoverflow.com/questions/11361431/authenticated-http-client-requests-from-golang</a></li>
+<li><a href="http://golang.org/pkg/net/http/#Request.SetBasicAuth" target="_blank" rel="noopener">http://golang.org/pkg/net/http/#Request.SetBasicAuth</a></li>
 </ol>
 
       
@@ -454,8 +454,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/05/14/ubuntu-bash-completion/" rel="prev" title="ubuntu 安装命令行自动补全">
-                ubuntu 安装命令行自动补全 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/05/14/centos-commands/" rel="prev" title="Centos 常用命令备录">
+                Centos 常用命令备录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -535,7 +535,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

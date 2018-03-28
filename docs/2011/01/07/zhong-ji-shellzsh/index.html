@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Dray&#39;s Home">
 <meta property="og:description" content="[撰文/Kardinal] http://linuxtoy.org/archives/zsh.html 子曾经曰过，zsh: The last shell you’ll ever need! Z是最后一个字母，所以它是终极Shell。我曾经搜索到一个比较各种Shell的文章，Zsh交互性是A+级别的，远高于其它Shell。在编程方面，Zsh是A级的吧，也是最高的。只是不知道出于什么原因，Zsh被严">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-12T05:42:38.049Z">
+<meta property="og:updated_time" content="2018-03-28T07:25:31.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终极Shell——Zsh">
 <meta name="twitter:description" content="[撰文/Kardinal] http://linuxtoy.org/archives/zsh.html 子曾经曰过，zsh: The last shell you’ll ever need! Z是最后一个字母，所以它是终极Shell。我曾经搜索到一个比较各种Shell的文章，Zsh交互性是A+级别的，远高于其它Shell。在编程方面，Zsh是A级的吧，也是最高的。只是不知道出于什么原因，Zsh被严">
@@ -386,7 +386,7 @@
       
 
       
-        <p>[撰文/Kardinal] <a href="http://linuxtoy.org/archives/zsh.html" target="_blank" rel="external">http://linuxtoy.org/archives/zsh.html</a> 子曾经曰过，zsh: The last shell you’ll ever need! Z是最后一个字母，所以它是终极Shell。我曾经搜索到一个比较各种Shell的文章，Zsh交互性是A+级别的，远高于其它Shell。在编程方面，Zsh是A级的吧，也是最高的。只是不知道出于什么原因，Zsh被严重的低估了。 大多数的linux用户比较偏爱Bash，因为大多数的发行版默认的就是它。平心而论，Bash确实比Csh之流的好用多了。不过Bash也有很多地方不尽人意，像自动补全的功能不够强大，定位较长路径不够方便等。 后来我使用Zsh。如果不调整一些必要的配置的话，Zsh甚至还不如Bash好用。这也是很多人尝试过并放弃过的原因。 Zsh配置文件试用 (内附讲解) 不熟悉Zsh的人，对Zsh最深刻的印象应该就是它的命令提示符了。它支持右侧对齐的提示符，并且可以配置成这个样子的：   不过我还是喜欢比较简单的样式。 Zsh的 自动补全功能 十分的强大，如图所示：   它可以自动补全命令、参数、文件名、进程、用户名、变量、权限符等。 Zsh还有一个贴心的功能： 路径别名 。假设有一个很长的路径，例如/home/lighttpd/html，可以把这个路径命名为 ~WWW。   Zsh可以使用 Emacs风格的键绑定 ，习惯Bash键绑定的朋友无需重新适应。Zsh兼容大多数主流Shell，像Bash、Csh等。 错误校正  – directory – 是补全类型提示</p>
+        <p>[撰文/Kardinal] <a href="http://linuxtoy.org/archives/zsh.html" target="_blank" rel="noopener">http://linuxtoy.org/archives/zsh.html</a> 子曾经曰过，zsh: The last shell you’ll ever need! Z是最后一个字母，所以它是终极Shell。我曾经搜索到一个比较各种Shell的文章，Zsh交互性是A+级别的，远高于其它Shell。在编程方面，Zsh是A级的吧，也是最高的。只是不知道出于什么原因，Zsh被严重的低估了。 大多数的linux用户比较偏爱Bash，因为大多数的发行版默认的就是它。平心而论，Bash确实比Csh之流的好用多了。不过Bash也有很多地方不尽人意，像自动补全的功能不够强大，定位较长路径不够方便等。 后来我使用Zsh。如果不调整一些必要的配置的话，Zsh甚至还不如Bash好用。这也是很多人尝试过并放弃过的原因。 Zsh配置文件试用 (内附讲解) 不熟悉Zsh的人，对Zsh最深刻的印象应该就是它的命令提示符了。它支持右侧对齐的提示符，并且可以配置成这个样子的：   不过我还是喜欢比较简单的样式。 Zsh的 自动补全功能 十分的强大，如图所示：   它可以自动补全命令、参数、文件名、进程、用户名、变量、权限符等。 Zsh还有一个贴心的功能： 路径别名 。假设有一个很长的路径，例如/home/lighttpd/html，可以把这个路径命名为 ~WWW。   Zsh可以使用 Emacs风格的键绑定 ，习惯Bash键绑定的朋友无需重新适应。Zsh兼容大多数主流Shell，像Bash、Csh等。 错误校正  – directory – 是补全类型提示</p>
 <p>/etc/x11 [tab] 后被修正为 /etc/X11<br>补全类型提示变成了 – corrections –</p>
 <p>请注意，这个功能不是单纯的修正大小写，而是各种拼写错误 比如说上面的例子，如果输入的是11或者s11，它一样会修正为X11<br>有一个前提，就是每次修正，只允许有一处字符错误 两个以上的错误，除非可以匹配其它的选项，否则就不能修正 12 就不能修正为X11 ，除非候选里有 X12、Y12、Z12……</p>
 <p>在配置文件里找到这一行，修改容错字数<br>zstyle ‘:completion: :approximate: ‘ max-errors 1 numeric<br>当然可以把容错字数改大一些，不过太大了也没有意义了 随便输点什么，就可以匹配所有的，和没有一样</p>
@@ -436,10 +436,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2011/01/07/mantis-han-hua-fang-fa/" rel="next" title="mantis汉化方法">
-                <i class="fa fa-chevron-left"></i> mantis汉化方法
-              </a>
             
           </div>
 
@@ -519,7 +515,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Dray&#39;s Home">
 <meta property="og:description" content="前言之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。Gor 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。今天在查 CI 系统的时候发现了 Travis CI ,于是，一切都很开心了。 关于 Travis CI这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。 开启travis-ci首先去 Trav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-12T05:42:38.045Z">
+<meta property="og:updated_time" content="2018-03-28T07:25:31.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Travis CI自动部署Hexo">
 <meta name="twitter:description" content="前言之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。Gor 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。今天在查 CI 系统的时候发现了 Travis CI ,于是，一切都很开心了。 关于 Travis CI这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。 开启travis-ci首先去 Trav">
@@ -386,10 +386,10 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。<br><a href="https://github.com/wendal/gor" target="_blank" rel="external">Gor</a> 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。<br>今天在查 CI 系统的时候发现了 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> ,于是，一切都很开心了。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前换过很多的静态博客系统，但是每个系统都需要本地做一定的部署，这点很麻烦。<br><a href="https://github.com/wendal/gor" target="_blank" rel="noopener">Gor</a> 倒是有可执行文件，但是本地部署的时候还是需要合并提交代码，还是略不爽。<br>今天在查 CI 系统的时候发现了 <a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a> ,于是，一切都很开心了。</p>
 <h2 id="关于-Travis-CI"><a href="#关于-Travis-CI" class="headerlink" title="关于 Travis CI"></a>关于 Travis CI</h2><p>这是一个通过脚本来进行自动部署的系统，本身与 Github 高度集成，目前对于公开的项目免费支持。</p>
-<h2 id="开启travis-ci"><a href="#开启travis-ci" class="headerlink" title="开启travis-ci"></a>开启travis-ci</h2><p>首先去 <a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 官网，点击右上角Sign in with GitHub通过github授权登录。然后去到个人信息页面，开启需要使用 travis 的项目，在我这里就是 DrayChou/Blog-Hexo 。</p>
-<h2 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h2><p>因为需要通过脚本提交到 Github ，所以需要先申请一个 token ，避免密码或者证书问题造成的麻烦。<br>Token 申请地址是 <a href="https://github.com/settings/tokens" target="_blank" rel="external">https://github.com/settings/tokens</a> 。<br>记得给予 public_repo 的权限，要不无法提交修改到 GitHub。<br>记得这个 token ，后面会用到。</p>
+<h2 id="开启travis-ci"><a href="#开启travis-ci" class="headerlink" title="开启travis-ci"></a>开启travis-ci</h2><p>首先去 <a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a> 官网，点击右上角Sign in with GitHub通过github授权登录。然后去到个人信息页面，开启需要使用 travis 的项目，在我这里就是 DrayChou/Blog-Hexo 。</p>
+<h2 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h2><p>因为需要通过脚本提交到 Github ，所以需要先申请一个 token ，避免密码或者证书问题造成的麻烦。<br>Token 申请地址是 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a> 。<br>记得给予 public_repo 的权限，要不无法提交修改到 GitHub。<br>记得这个 token ，后面会用到。</p>
 <h2 id="Travis-CI-的命令行工具"><a href="#Travis-CI-的命令行工具" class="headerlink" title="Travis CI 的命令行工具"></a>Travis CI 的命令行工具</h2><h3 id="执行下面的命令安装命令行工具。"><a href="#执行下面的命令安装命令行工具。" class="headerlink" title="执行下面的命令安装命令行工具。"></a>执行下面的命令安装命令行工具。</h3><pre><code>gem install travis
 </code></pre><h3 id="生成脚本"><a href="#生成脚本" class="headerlink" title="生成脚本"></a>生成脚本</h3><p>切换到 blog 的目录下，执行下面的命令，记得输入 node 语言</p>
 <pre><code>$ travis init
@@ -435,12 +435,12 @@ script:
 </code></pre><h2 id="执行下面的命令添加执行操作"><a href="#执行下面的命令添加执行操作" class="headerlink" title="执行下面的命令添加执行操作"></a>执行下面的命令添加执行操作</h2><p>命令的参数请自行替换。</p>
 <pre><code>travis encrypt &apos;GIT_NAME=&quot;&lt;Personal GitHub Name&gt;&quot; GIT_EMAIL=&quot;&lt;Personal GitHub Email&gt;&quot; HEXO_BLOG=&quot;&lt;Personal Blog Repositories&gt;&quot; GH_TOKEN=&quot;&lt;Personal Access Token&gt;&quot;&apos; --add
 </code></pre><p>命令执行完毕之后会自动修改 .travis.yml 添加对应的 env.global.secure。<br>把这个文件提交到 Github。</p>
-<h2 id="开始执行"><a href="#开始执行" class="headerlink" title="开始执行"></a>开始执行</h2><p>Push 到 Github 之后， Github 就会通过之前定义的 hook 去调用 travis ,然后 travis 就会在后台开始按照脚本执行，可以在 <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci</a> 后台通过查看日志观察发布有没有问题，如果有问题再按照提示进行调试。</p>
-<h2 id="附记"><a href="#附记" class="headerlink" title="附记"></a>附记</h2><p><a href="http://ssk7833.github.io/blog/2016/01/21/using-TravisCI-to-deploy-on-GitHub-pages/" target="_blank" rel="external">注意：git push 時一定要加 –quiet，否則先前設定的 Personal Access Token 將會印出，這樣就失去加密意義了。</a></p>
+<h2 id="开始执行"><a href="#开始执行" class="headerlink" title="开始执行"></a>开始执行</h2><p>Push 到 Github 之后， Github 就会通过之前定义的 hook 去调用 travis ,然后 travis 就会在后台开始按照脚本执行，可以在 <a href="https://travis-ci.org/" target="_blank" rel="noopener">travis-ci</a> 后台通过查看日志观察发布有没有问题，如果有问题再按照提示进行调试。</p>
+<h2 id="附记"><a href="#附记" class="headerlink" title="附记"></a>附记</h2><p><a href="http://ssk7833.github.io/blog/2016/01/21/using-TravisCI-to-deploy-on-GitHub-pages/" target="_blank" rel="noopener">注意：git push 時一定要加 –quiet，否則先前設定的 Personal Access Token 將會印出，這樣就失去加密意義了。</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="http://ssk7833.github.io/blog/2016/01/21/using-TravisCI-to-deploy-on-GitHub-pages/" target="_blank" rel="external">使用 Travis CI 自動部署 GitHub Pages</a></li>
-<li><a href="http://w3cboy.com/post/2016/03/travisci-hexo-deploy/" target="_blank" rel="external">使用travis-ci自动部署hexo博客</a></li>
-<li><a href="https://hexo.io/zh-tw/docs/commands.html#generate" target="_blank" rel="external">hexo 指令</a></li>
+<li><a href="http://ssk7833.github.io/blog/2016/01/21/using-TravisCI-to-deploy-on-GitHub-pages/" target="_blank" rel="noopener">使用 Travis CI 自動部署 GitHub Pages</a></li>
+<li><a href="http://w3cboy.com/post/2016/03/travisci-hexo-deploy/" target="_blank" rel="noopener">使用travis-ci自动部署hexo博客</a></li>
+<li><a href="https://hexo.io/zh-tw/docs/commands.html#generate" target="_blank" rel="noopener">hexo 指令</a></li>
 </ol>
 
       
@@ -579,7 +579,7 @@ script:
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">120</span>
+                <span class="site-state-item-count">119</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
