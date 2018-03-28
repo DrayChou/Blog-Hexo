@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: pi 安装 ssr，cow 备注
-date: 2017-07-10 17:44:00
+date: 2018-03-28 17:44:00
 categories:
 - linux
 tags:
