@@ -290,7 +290,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/06/15/ubuntu-nginx-php-shell/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/06/15/nginx-ssl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/06/15/ubuntu-nginx-php-shell/" itemprop="url">ubuntu nginx php shell</a></h1>
+                <a class="post-title-link" href="/2013/06/15/nginx-ssl/" itemprop="url">ubuntu nginx ssl</a></h1>
         
 
         <div class="post-meta">
@@ -362,9 +362,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2013/06/15/ubuntu-nginx-php-shell/#comments" itemprop="discussionUrl">
+                <a href="/2013/06/15/nginx-ssl/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/06/15/ubuntu-nginx-php-shell/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2013/06/15/nginx-ssl/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,20 +391,15 @@
       
         
           
-          ubuntu 下一键安装 nginx php 的环境
-
-
-nginx 配置参考：
-server {
-
-    listen 80;
-    server_name 127.0.0.1 localhost;
-    root /usr/share/nginx/html/www;
-    index i
+          原文：http://www.douban.com/note/248058067/
+安装应用并生成证书
+apt-get install ssl-cert
+make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
+然后输
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/06/15/ubuntu-nginx-php-shell/#more" rel="contents">
+            <a class="btn" href="/2013/06/15/nginx-ssl/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1215,7 +1210,7 @@ W: Duplicate sources.list entry http://extras.ubuntu.com/ubuntu/ precise/main am
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/ubuntu-ruby/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/gedit-plugin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1234,7 +1229,7 @@ W: Duplicate sources.list entry http://extras.ubuntu.com/ubuntu/ precise/main am
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/04/14/ubuntu-ruby/" itemprop="url">ubuntu 安装 Ruby, Rails 运行环境</a></h1>
+                <a class="post-title-link" href="/2013/04/14/gedit-plugin/" itemprop="url">gedit 插件</a></h1>
         
 
         <div class="post-meta">
@@ -1269,8 +1264,8 @@ W: Duplicate sources.list entry http://extras.ubuntu.com/ubuntu/ precise/main am
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/category/ide/" itemprop="url" rel="index">
+                    <span itemprop="name">ide</span>
                   </a>
                 </span>
 
@@ -1287,9 +1282,9 @@ W: Duplicate sources.list entry http://extras.ubuntu.com/ubuntu/ precise/main am
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2013/04/14/ubuntu-ruby/#comments" itemprop="discussionUrl">
+                <a href="/2013/04/14/gedit-plugin/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/04/14/ubuntu-ruby/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2013/04/14/gedit-plugin/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1316,13 +1311,17 @@ W: Duplicate sources.list entry http://extras.ubuntu.com/ubuntu/ precise/main am
       
         
           
-          步骤0 － 安装系统需要的包
-Ubuntu 请安装
-$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libs
+          SublimeText 在 ubuntu 下面中文输入有问题，所以先把 gedit 配置起来盯着吧。
+
+安装插件包
+sudo apt-get install gedit-plugins
+
+安装 Gmate
+sudo apt-add-repository ppa:ubuntu-on-rails/ppa
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/04/14/ubuntu-ruby/#more" rel="contents">
+            <a class="btn" href="/2013/04/14/gedit-plugin/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1521,7 +1520,7 @@ deb http://archive.ubuntu.com/ubunt
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/gedit-plugin/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/ubuntu-ruby/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1540,7 +1539,7 @@ deb http://archive.ubuntu.com/ubunt
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/04/14/gedit-plugin/" itemprop="url">gedit 插件</a></h1>
+                <a class="post-title-link" href="/2013/04/14/ubuntu-ruby/" itemprop="url">ubuntu 安装 Ruby, Rails 运行环境</a></h1>
         
 
         <div class="post-meta">
@@ -1575,8 +1574,8 @@ deb http://archive.ubuntu.com/ubunt
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/ide/" itemprop="url" rel="index">
-                    <span itemprop="name">ide</span>
+                  <a href="/category/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -1593,9 +1592,9 @@ deb http://archive.ubuntu.com/ubunt
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2013/04/14/gedit-plugin/#comments" itemprop="discussionUrl">
+                <a href="/2013/04/14/ubuntu-ruby/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/04/14/gedit-plugin/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2013/04/14/ubuntu-ruby/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1622,17 +1621,13 @@ deb http://archive.ubuntu.com/ubunt
       
         
           
-          SublimeText 在 ubuntu 下面中文输入有问题，所以先把 gedit 配置起来盯着吧。
-
-安装插件包
-sudo apt-get install gedit-plugins
-
-安装 Gmate
-sudo apt-add-repository ppa:ubuntu-on-rails/ppa
+          步骤0 － 安装系统需要的包
+Ubuntu 请安装
+$ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libs
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/04/14/gedit-plugin/#more" rel="contents">
+            <a class="btn" href="/2013/04/14/ubuntu-ruby/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
