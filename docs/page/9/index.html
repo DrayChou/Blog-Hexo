@@ -290,7 +290,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/22/modify-the-hosts-file-under-ubuntu/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/22/ubuntu-using-svn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2011/02/22/modify-the-hosts-file-under-ubuntu/" itemprop="url">Ubuntu下修改hosts文件</a></h1>
+                <a class="post-title-link" href="/2011/02/22/ubuntu-using-svn/" itemprop="url">Ubuntu下使用svn</a></h1>
         
 
         <div class="post-meta">
@@ -362,9 +362,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2011/02/22/modify-the-hosts-file-under-ubuntu/#comments" itemprop="discussionUrl">
+                <a href="/2011/02/22/ubuntu-using-svn/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/22/modify-the-hosts-file-under-ubuntu/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2011/02/22/ubuntu-using-svn/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,12 +391,14 @@
       
         
           
-          在windows系统中,IIS建立站点后经常需要通过hosts指向地址在ubuntu下,修改hosts文件用方法#sudo gedit /etc/hosts编辑保存即可
-
-          
+          svn作为日常开发中不可缺少的工具，今天终于开始在Ubuntu下使用了。
+1、首先需要安装svn。Ubuntu下的svn安装十分简单，sudo apt-get install subversion，然后根据提示一步一步，就完成了svn的安装；
+2、检出文件（checkout）。
+使用命令：svn c
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2011/02/22/modify-the-hosts-file-under-ubuntu/#more" rel="contents">
+            <a class="btn" href="/2011/02/22/ubuntu-using-svn/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -593,155 +595,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/fund-22-asked-you-know-it/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dray">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dray's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2011/02/17/fund-22-asked-you-know-it/" itemprop="url">公积金22问，你懂它吗？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-18T00:00:00+08:00">
-                2011-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/diary/" itemprop="url" rel="index">
-                    <span itemprop="name">diary</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2011/02/17/fund-22-asked-you-know-it/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/17/fund-22-asked-you-know-it/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>第1问：住房公积金有什么用处？</strong>  <strong>什么是住房公积金？</strong>  住房公积金，是用人单位为了保障员工住房问题，每个月按照员工的工资比例，付出一部分钱，单独存到该员工的独立账户（专门用来缴纳公积金的账户），员工也从工资里扣除同等的钱，一并存到这个账户。  但是，公积金账户虽然是自己的，却并不像我们日常用的个人银行账户一样，能够随时的存取。它是按月缴存，并只有当个人要买房、租房或装修时，且能够提供出相应的证明材料（例如：购房合同…）后，方可申请提取出来。否则，就要等到退休后一次性全部取出。  <strong>住房公积金有什么用处？</strong>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2011/02/17/fund-22-asked-you-know-it/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/php-file-download-large-file-support-class-supports-http-over-2g/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -852,158 +705,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2011/02/17/php-file-download-large-file-support-class-supports-http-over-2g/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/a-few-good-free-resources/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dray">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dray's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2011/02/17/a-few-good-free-resources/" itemprop="url">几个比较好的免费资源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-18T00:00:00+08:00">
-                2011-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2011/02/17/a-few-good-free-resources/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/17/a-few-good-free-resources/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          2010年最新的100个免费HTML模板  108个漂亮而简约的免费图标  15个最佳jQuery幻灯插件和教程  国外30多个设计精良的电子商务网站  20个高质量的免费css模板  9款有用的javascript代码高亮脚本  10款有趣的免费字体
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2011/02/17/a-few-good-free-resources/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1208,7 +909,7 @@ function image
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/http-functions-php/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/fund-22-asked-you-know-it/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1227,7 +928,7 @@ function image
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2011/02/17/http-functions-php/" itemprop="url">php 断点续传功能</a></h1>
+                <a class="post-title-link" href="/2011/02/17/fund-22-asked-you-know-it/" itemprop="url">公积金22问，你懂它吗？</a></h1>
         
 
         <div class="post-meta">
@@ -1262,8 +963,8 @@ function image
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
+                  <a href="/category/diary/" itemprop="url" rel="index">
+                    <span itemprop="name">diary</span>
                   </a>
                 </span>
 
@@ -1280,9 +981,9 @@ function image
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2011/02/17/http-functions-php/#comments" itemprop="discussionUrl">
+                <a href="/2011/02/17/fund-22-asked-you-know-it/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/17/http-functions-php/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2011/02/17/fund-22-asked-you-know-it/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1308,18 +1009,10 @@ function image
 
       
         
-          
-          断点续传指的是在上传时，将上传任务（一个文件或一个压缩包）人为的划分为几个部分，每一个部分采用一个线程进行上传，下面我们来看看php 断点续传功能的实现方法吧。
-&lt;?php
-/**
- * 作者 于恩水&lt;yuenshui@126.com&gt;
- * 支持断点续传下载
- * 实例代码：
- 
-          ...
+          <p><strong>第1问：住房公积金有什么用处？</strong>  <strong>什么是住房公积金？</strong>  住房公积金，是用人单位为了保障员工住房问题，每个月按照员工的工资比例，付出一部分钱，单独存到该员工的独立账户（专门用来缴纳公积金的账户），员工也从工资里扣除同等的钱，一并存到这个账户。  但是，公积金账户虽然是自己的，却并不像我们日常用的个人银行账户一样，能够随时的存取。它是按月缴存，并只有当个人要买房、租房或装修时，且能够提供出相应的证明材料（例如：购房合同…）后，方可申请提取出来。否则，就要等到退休后一次性全部取出。  <strong>住房公积金有什么用处？</strong>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2011/02/17/http-functions-php/#more" rel="contents">
+            <a class="btn" href="/2011/02/17/fund-22-asked-you-know-it/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1514,6 +1207,163 @@ function image
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/http-functions-php/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2011/02/17/http-functions-php/" itemprop="url">php 断点续传功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-18T00:00:00+08:00">
+                2011-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2011/02/17/http-functions-php/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2011/02/17/http-functions-php/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          断点续传指的是在上传时，将上传任务（一个文件或一个压缩包）人为的划分为几个部分，每一个部分采用一个线程进行上传，下面我们来看看php 断点续传功能的实现方法吧。
+&lt;?php
+/**
+ * 作者 于恩水&lt;yuenshui@126.com&gt;
+ * 支持断点续传下载
+ * 实例代码：
+ 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2011/02/17/http-functions-php/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/notepad-to-remove-the-code-line-number-of-the-several-methods/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1621,6 +1471,158 @@ function image
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2011/02/17/notepad-to-remove-the-code-line-number-of-the-several-methods/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/17/a-few-good-free-resources/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2011/02/17/a-few-good-free-resources/" itemprop="url">几个比较好的免费资源</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-18T00:00:00+08:00">
+                2011-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2011/02/17/a-few-good-free-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2011/02/17/a-few-good-free-resources/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          2010年最新的100个免费HTML模板  108个漂亮而简约的免费图标  15个最佳jQuery幻灯插件和教程  国外30多个设计精良的电子商务网站  20个高质量的免费css模板  9款有用的javascript代码高亮脚本  10款有趣的免费字体
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2011/02/17/a-few-good-free-resources/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
