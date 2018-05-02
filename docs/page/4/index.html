@@ -443,7 +443,7 @@ examples:https://github.com/yegle/flask_twip/tree/master/exam
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/06/15/nginx-ssl/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/06/15/ubuntu-nginx-php-shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -462,7 +462,7 @@ examples:https://github.com/yegle/flask_twip/tree/master/exam
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/06/15/nginx-ssl/" itemprop="url">ubuntu nginx ssl</a></h1>
+                <a class="post-title-link" href="/2013/06/15/ubuntu-nginx-php-shell/" itemprop="url">ubuntu nginx php shell</a></h1>
         
 
         <div class="post-meta">
@@ -515,9 +515,9 @@ examples:https://github.com/yegle/flask_twip/tree/master/exam
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2013/06/15/nginx-ssl/#comments" itemprop="discussionUrl">
+                <a href="/2013/06/15/ubuntu-nginx-php-shell/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/06/15/nginx-ssl/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2013/06/15/ubuntu-nginx-php-shell/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -544,15 +544,20 @@ examples:https://github.com/yegle/flask_twip/tree/master/exam
       
         
           
-          原文：http://www.douban.com/note/248058067/
-安装应用并生成证书
-apt-get install ssl-cert
-make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
-然后输
+          ubuntu 下一键安装 nginx php 的环境
+
+
+nginx 配置参考：
+server {
+
+    listen 80;
+    server_name 127.0.0.1 localhost;
+    root /usr/share/nginx/html/www;
+    index i
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/06/15/nginx-ssl/#more" rel="contents">
+            <a class="btn" href="/2013/06/15/ubuntu-nginx-php-shell/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -903,7 +908,7 @@ make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/gedit-plugin/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/ubuntu-sources-list/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -922,7 +927,7 @@ make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/04/14/gedit-plugin/" itemprop="url">gedit 插件</a></h1>
+                <a class="post-title-link" href="/2013/04/14/ubuntu-sources-list/" itemprop="url">ubuntu sources list</a></h1>
         
 
         <div class="post-meta">
@@ -957,8 +962,8 @@ make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/ide/" itemprop="url" rel="index">
-                    <span itemprop="name">ide</span>
+                  <a href="/category/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -975,9 +980,9 @@ make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2013/04/14/gedit-plugin/#comments" itemprop="discussionUrl">
+                <a href="/2013/04/14/ubuntu-sources-list/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/04/14/gedit-plugin/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2013/04/14/ubuntu-sources-list/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1004,17 +1009,13 @@ make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
       
         
           
-          SublimeText 在 ubuntu 下面中文输入有问题，所以先把 gedit 配置起来盯着吧。
-
-安装插件包
-sudo apt-get install gedit-plugins
-
-安装 Gmate
-sudo apt-add-repository ppa:ubuntu-on-rails/ppa
+          当前我的 ubuntu 源列表
+# deb cdrom:[Ubuntu 12.10 _Quantal Quetzal_ - Release amd64 (20121017.5)]/ quantal main restricted
+deb http://archive.ubuntu.com/ubunt
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/04/14/gedit-plugin/#more" rel="contents">
+            <a class="btn" href="/2013/04/14/ubuntu-sources-list/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1368,6 +1369,163 @@ $ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/gedit-plugin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2013/04/14/gedit-plugin/" itemprop="url">gedit 插件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-04-15T00:00:00+08:00">
+                2013-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/ide/" itemprop="url" rel="index">
+                    <span itemprop="name">ide</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2013/04/14/gedit-plugin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2013/04/14/gedit-plugin/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          SublimeText 在 ubuntu 下面中文输入有问题，所以先把 gedit 配置起来盯着吧。
+
+安装插件包
+sudo apt-get install gedit-plugins
+
+安装 Gmate
+sudo apt-add-repository ppa:ubuntu-on-rails/ppa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/04/14/gedit-plugin/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/ubuntu-sources-update-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1475,159 +1633,6 @@ W: Duplicate sources.list entry http://extras.ubuntu.com/ubuntu/ precise/main am
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2013/04/14/ubuntu-sources-update-error/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/04/14/ubuntu-sources-list/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dray">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dray's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2013/04/14/ubuntu-sources-list/" itemprop="url">ubuntu sources list</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-04-15T00:00:00+08:00">
-                2013-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2013/04/14/ubuntu-sources-list/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/04/14/ubuntu-sources-list/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          当前我的 ubuntu 源列表
-# deb cdrom:[Ubuntu 12.10 _Quantal Quetzal_ - Release amd64 (20121017.5)]/ quantal main restricted
-deb http://archive.ubuntu.com/ubunt
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/04/14/ubuntu-sources-list/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
