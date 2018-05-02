@@ -290,7 +290,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2014/05/14/ubuntu-bash-completion/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2014/05/14/centos-commands/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2014/05/14/ubuntu-bash-completion/" itemprop="url">ubuntu 安装命令行自动补全</a></h1>
+                <a class="post-title-link" href="/2014/05/14/centos-commands/" itemprop="url">Centos 常用命令备录</a></h1>
         
 
         <div class="post-meta">
@@ -362,9 +362,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2014/05/14/ubuntu-bash-completion/#comments" itemprop="discussionUrl">
+                <a href="/2014/05/14/centos-commands/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2014/05/14/ubuntu-bash-completion/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2014/05/14/centos-commands/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,15 +391,22 @@
       
         
           
-          ubuntu 安装命令行自动补全~# apt-get install bash-completion
-~# source /etc/bash_completion
-编辑/etc/bash.bashrc，在最后加入如下代码
-[plain]
-if [ -f /etc/bash_completion ];
+          
+安装包命令查找：
+  yum whatprovides */lspci
+
+查看主板型号：
+  dmidecode |grep -A16 “System Information$”
+
+内存槽及内存条：
+  dmidecode |grep -A16 “Memory Device$”
+
+硬盘：
+  fd
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2014/05/14/ubuntu-bash-completion/#more" rel="contents">
+            <a class="btn" href="/2014/05/14/centos-commands/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1672,7 +1679,7 @@ ls /dev
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/06/15/nginx-ssl/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2013/06/15/uwsginginx-run-flask-twip/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1691,7 +1698,7 @@ ls /dev
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2013/06/15/nginx-ssl/" itemprop="url">ubuntu nginx ssl</a></h1>
+                <a class="post-title-link" href="/2013/06/15/uwsginginx-run-flask-twip/" itemprop="url">uWSGI+Nginx run flask twip</a></h1>
         
 
         <div class="post-meta">
@@ -1744,9 +1751,9 @@ ls /dev
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2013/06/15/nginx-ssl/#comments" itemprop="discussionUrl">
+                <a href="/2013/06/15/uwsginginx-run-flask-twip/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/06/15/nginx-ssl/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2013/06/15/uwsginginx-run-flask-twip/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1773,15 +1780,13 @@ ls /dev
       
         
           
-          原文：http://www.douban.com/note/248058067/
-安装应用并生成证书
-apt-get install ssl-cert
-make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/ssl/private/blog.crt
-然后输
+          原文:http://ichon.me/post/999.html
+twip.tar.gz:http://ichon.me/uploads/2013/02/twip.tar.gz
+examples:https://github.com/yegle/flask_twip/tree/master/exam
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2013/06/15/nginx-ssl/#more" rel="contents">
+            <a class="btn" href="/2013/06/15/uwsginginx-run-flask-twip/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
