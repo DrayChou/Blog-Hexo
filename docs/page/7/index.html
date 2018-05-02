@@ -1058,7 +1058,7 @@ PATH_SEPARATOR：include多个路径使用，在win下，当你要include多个�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/04/13/mysql-database-into-memcached-support-nosql/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1077,7 +1077,7 @@ PATH_SEPARATOR：include多个路径使用，在win下，当你要include多个�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2011/04/13/mysql-database-into-memcached-support-nosql/" itemprop="url">Mysql 数据库引入 memcached，支持 Nosql</a></h1>
+                <a class="post-title-link" href="/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/" itemprop="url">搜索引擎配置优化笔记 - 老板的讲课</a></h1>
         
 
         <div class="post-meta">
@@ -1130,9 +1130,9 @@ PATH_SEPARATOR：include多个路径使用，在win下，当你要include多个�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2011/04/13/mysql-database-into-memcached-support-nosql/#comments" itemprop="discussionUrl">
+                <a href="/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/04/13/mysql-database-into-memcached-support-nosql/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1159,13 +1159,18 @@ PATH_SEPARATOR：include多个路径使用，在win下，当你要include多个�
       
         
           
-          mysql 也开始支持Nosql了，这样一来如果可以直接用sql语句进行检索查询的话无疑会把原先的Memcache等给排挤出去，如果效率方面又很高的话，那么memcache还活什么啊？
-嗯。。。期待。。。
-Oracle 前天在 2011 Mysql user conference and expo 
+          搜索引擎优化 并不是 只seo 而是只自建搜索引擎的配置优化
+使用了两个开源的软件：sphinx 和 redis
+开源搜索引擎
+1.Lucence/Nutch/Solr    Java编写
+2.Sphinx/Coreseek    C++
+3.Xapian    豆瓣
+4.BosS
+Sphinx 介
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2011/04/13/mysql-database-into-memcached-support-nosql/#more" rel="contents">
+            <a class="btn" href="/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1365,7 +1370,7 @@ Oracle 前天在 2011 Mysql user conference and expo
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/04/13/mysql-database-into-memcached-support-nosql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1384,7 +1389,7 @@ Oracle 前天在 2011 Mysql user conference and expo
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/" itemprop="url">搜索引擎配置优化笔记 - 老板的讲课</a></h1>
+                <a class="post-title-link" href="/2011/04/13/mysql-database-into-memcached-support-nosql/" itemprop="url">Mysql 数据库引入 memcached，支持 Nosql</a></h1>
         
 
         <div class="post-meta">
@@ -1437,9 +1442,9 @@ Oracle 前天在 2011 Mysql user conference and expo
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/#comments" itemprop="discussionUrl">
+                <a href="/2011/04/13/mysql-database-into-memcached-support-nosql/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2011/04/13/mysql-database-into-memcached-support-nosql/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1466,18 +1471,13 @@ Oracle 前天在 2011 Mysql user conference and expo
       
         
           
-          搜索引擎优化 并不是 只seo 而是只自建搜索引擎的配置优化
-使用了两个开源的软件：sphinx 和 redis
-开源搜索引擎
-1.Lucence/Nutch/Solr    Java编写
-2.Sphinx/Coreseek    C++
-3.Xapian    豆瓣
-4.BosS
-Sphinx 介
+          mysql 也开始支持Nosql了，这样一来如果可以直接用sql语句进行检索查询的话无疑会把原先的Memcache等给排挤出去，如果效率方面又很高的话，那么memcache还活什么啊？
+嗯。。。期待。。。
+Oracle 前天在 2011 Mysql user conference and expo 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2011/04/13/search-engine-configuration-optimization-notes-the-bosss-lecture/#more" rel="contents">
+            <a class="btn" href="/2011/04/13/mysql-database-into-memcached-support-nosql/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1674,7 +1674,7 @@ Sphinx 介
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/03/23/modify-the-ssh-login-message/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/03/23/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1693,7 +1693,7 @@ Sphinx 介
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2011/03/23/modify-the-ssh-login-message/" itemprop="url">修改ssh登录的提示信息</a></h1>
+                <a class="post-title-link" href="/2011/03/23/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/" itemprop="url">Xmarks – 浏览器收藏夹同步工具 (支持IE9、chrome、Firefox、IESafari)</a></h1>
         
 
         <div class="post-meta">
@@ -1728,8 +1728,8 @@ Sphinx 介
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/category/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -1746,9 +1746,9 @@ Sphinx 介
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2011/03/23/modify-the-ssh-login-message/#comments" itemprop="discussionUrl">
+                <a href="/2011/03/23/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/03/23/modify-the-ssh-login-message/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2011/03/23/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1775,12 +1775,11 @@ Sphinx 介
       
         
           
-          vi /etc/motd
-
-          
+          Xmarks 一款支持实现跨平台 (Windows，linux，mac) 同步书签、密码、打开网页等信息的软件，Xmarks 支持将 IE (Internet Explorer 9）、Firefox 火狐、chrome、Safari 浏览器 的收藏夹同步到 Xmarks 的服务器上，这样您就可以随时
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2011/03/23/modify-the-ssh-login-message/#more" rel="contents">
+            <a class="btn" href="/2011/03/23/xmarks-browser-favorites-sync-tools-support-ie9-chrome-firefox-iesafari/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
