@@ -33,4 +33,10 @@
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <% } %>
   <%- css('css/style') %>
+  
+  <script type="text/javascript">
+    var host = "idc.wf";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
 </head>
