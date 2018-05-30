@@ -53,4 +53,10 @@
 
   <%- partial('google-analytics') %>
   <%- partial('baidu-analytics') %>
+  
+  <script type="text/javascript">
+    var host = "idc.wf";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
 </head>
