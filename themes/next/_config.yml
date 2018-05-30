@@ -162,7 +162,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: http://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200
+avatar: https://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200
 
 
 # Table Of Contents in the Sidebar
