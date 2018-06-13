@@ -73,7 +73,7 @@ sudo python3 /srv/approot/shadowsocksr-doubi/shadowsocks/local.py \
 mkdir /srv/approot
 cd /srv/approot
 wget https://dl.google.com/go/go1.10.linux-armv6l.tar.gz
-sudo -xzf go1.10.linux-armv6l.tar.gz
+tar -xzf go1.10.linux-armv6l.tar.gz
 cd /usr/local
 ln -s /srv/approot/go
 cd /usr/local/bin
