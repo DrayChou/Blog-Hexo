@@ -453,155 +453,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/15/php-smarty-cache-operation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dray">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dray's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2011/02/15/php-smarty-cache-operation/" itemprop="url">php,smarty 缓存操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-16T00:00:00+08:00">
-                2011-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2011/02/15/php-smarty-cache-operation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/15/php-smarty-cache-operation/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>一、使用缓存   <br>要开启smarty的缓存,只需将caching设为true,并指定cache_dir即可.    <br>使用cache_lefetime指定缓存生存时间,单位为秒    <br>要对相同页面生成多个不同的缓存,在display或fetch中加入第二参数cache_id,如$smarty-&gt;display(‘index.tpl’,$my_cache_id);此特性可用于对不同的$_GET进行不同的缓存    <br>二、清除缓存  clear_all_cache();//清除所有缓存   <br>clear_cache(‘index.tpl’);//清除index.tpl的缓存    <br>clear_cache(‘index.tpl’,cache_id);//清除指定id的缓存  三、使用自定义缓存方式  设置cache_handler_func使用自定义的函数处理缓存   <br>如:    <br>$smarty-&gt;cache_handler_func = “myCache”;    <br>function myCache($action, &amp;$smarty_obj, &amp;$cache_content, $tpl_file=null, $cache_id=null, $compile_id=null){    <br>}    <br>该函数的一般是根椐$action来判断缓存当前操作:    <br>switch($action){    <br>case “read”://读取缓存内容    <br>case “write”://写入缓存    <br>case “clear”://清空    <br>}    <br>一般使用md5($tpl_file.$cache_id.$compile_id)作为唯一的cache_id    <br>如果需要,可使用gzcompress和gzuncompress来压缩和解压
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2011/02/15/php-smarty-cache-operation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/15/how-to-determine-whether-a-site-is-the-wall/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -751,6 +602,155 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/15/php-smarty-cache-operation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2011/02/15/php-smarty-cache-operation/" itemprop="url">php,smarty 缓存操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-16T00:00:00+08:00">
+                2011-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2011/02/15/php-smarty-cache-operation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2011/02/15/php-smarty-cache-operation/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>一、使用缓存   <br>要开启smarty的缓存,只需将caching设为true,并指定cache_dir即可.    <br>使用cache_lefetime指定缓存生存时间,单位为秒    <br>要对相同页面生成多个不同的缓存,在display或fetch中加入第二参数cache_id,如$smarty-&gt;display(‘index.tpl’,$my_cache_id);此特性可用于对不同的$_GET进行不同的缓存    <br>二、清除缓存  clear_all_cache();//清除所有缓存   <br>clear_cache(‘index.tpl’);//清除index.tpl的缓存    <br>clear_cache(‘index.tpl’,cache_id);//清除指定id的缓存  三、使用自定义缓存方式  设置cache_handler_func使用自定义的函数处理缓存   <br>如:    <br>$smarty-&gt;cache_handler_func = “myCache”;    <br>function myCache($action, &amp;$smarty_obj, &amp;$cache_content, $tpl_file=null, $cache_id=null, $compile_id=null){    <br>}    <br>该函数的一般是根椐$action来判断缓存当前操作:    <br>switch($action){    <br>case “read”://读取缓存内容    <br>case “write”://写入缓存    <br>case “clear”://清空    <br>}    <br>一般使用md5($tpl_file.$cache_id.$compile_id)作为唯一的cache_id    <br>如果需要,可使用gzcompress和gzuncompress来压缩和解压
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2011/02/15/php-smarty-cache-operation/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/14/seven-misconceptions-https/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -855,6 +855,158 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2011/02/14/seven-misconceptions-https/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dray">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dray's Home">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/" itemprop="url">世界上最神奇的数字是...</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-14T00:00:00+08:00">
+                2011-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/diary/" itemprop="url" rel="index">
+                    <span itemprop="name">diary</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          世界上最神奇的数字是： 142857 http://is.gd/Um8nMh
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1056,7 +1208,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/">
+    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dray">
@@ -1075,7 +1227,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/" itemprop="url">世界上最神奇的数字是...</a></h1>
+                <a class="post-title-link" href="/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/" itemprop="url">php去掉 HTML标记、javascript 代码、空白字符等</a></h1>
         
 
         <div class="post-meta">
@@ -1087,8 +1239,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-14T00:00:00+08:00">
-                2011-02-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-12T00:00:00+08:00">
+                2011-02-12
               </time>
             
 
@@ -1110,8 +1262,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/diary/" itemprop="url" rel="index">
-                    <span itemprop="name">diary</span>
+                  <a href="/category/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -1128,9 +1280,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/#comments" itemprop="discussionUrl">
+                <a href="/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1157,12 +1309,17 @@
       
         
           
-          世界上最神奇的数字是： 142857 http://is.gd/Um8nMh
+          代码：
+preg_replace(&quot;&apos;([\r\n])[\s]+&apos;&quot;, &quot;&quot;, $content) //去除回车换行符
 
-          
+
+// $document 应包含一个 HTML 文档。
+
+// 本例将去掉 HTML 标记，javascript 代
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2011/02/13/shi-jie-shang-zui-shen-qi-de-shu-zi-shi/#more" rel="contents">
+            <a class="btn" href="/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1322,163 +1479,6 @@ $firstday = date(&apos;w&apo
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2011/02/11/php-to-get-a-date-for-the-first-few-weeks-of-the-month/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://idc.wf/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dray">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s.gravatar.com/avatar/00ced3a6cdfd0398fabe0717147a6a32?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dray's Home">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/" itemprop="url">php去掉 HTML标记、javascript 代码、空白字符等</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2011-02-12T00:00:00+08:00">
-                2011-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          代码：
-preg_replace(&quot;&apos;([\r\n])[\s]+&apos;&quot;, &quot;&quot;, $content) //去除回车换行符
-
-
-// $document 应包含一个 HTML 文档。
-
-// 本例将去掉 HTML 标记，javascript 代
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2011/02/11/php-remove-html-tags-javascript-code-blank-characters-etc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
